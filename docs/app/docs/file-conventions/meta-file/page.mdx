@@ -1,9 +1,9 @@
 ---
+
 icon: FileIcon
 sidebarTitle: _meta.js
 description:
-  The `_meta` file in Nextra allows you to customize page sidebar titles, order,
-  and theme visibility, enhancing site organization and user experience.
+  Nextra 中的 `_meta` 文件允许您自定义页面侧边栏标题、排序和主题可见性，从而优化站点组织结构和用户体验。
 ---
 
 import { ContentAndAppFileTee } from 'components/content-and-app-file-tree'
@@ -20,11 +20,9 @@ export function Block({ children }) {
   )
 }
 
-# `_meta.js` File
+# `_meta.js` 文件
 
-In Nextra, the site and individual page structure can be configured via the
-co-located `_meta` files. Those configurations affect the overall layout of your
-Nextra theme, especially the navigation bar and the sidebar:
+在 Nextra 中，站点和单个页面的结构可以通过同目录下的 `_meta` 文件进行配置。这些配置会影响 Nextra 主题的整体布局，特别是导航栏和侧边栏：
 
 <figure>
   <>![Example of Nextra Theme Docs](/assets/routing@1x.png)</>
@@ -33,24 +31,18 @@ Nextra theme, especially the navigation bar and the sidebar:
 </figure>
 
 {/* It's very common to customize each page's title, rather than just relying on filenames. Having a page titled "Index" lacks clarity. It is preferable to assign a meaningful title that accurately represents the content, such as "Home". */}
+
 {/* That's where `_meta` files comes in. You can have an `_meta` file in each directory, and it will be used to override the default configuration of each page. */}
 
-## Organizing files
+## 文件组织方式
 
-Nextra allows you to organize files in the following ways:
+Nextra 支持以下文件组织方式：
 
-- **In Next.js'
-  [`app` directory](https://nextjs.org/docs/app/getting-started/project-structure#top-level-folders):**<br />Nextra
-  gathers all `page` files, including
-  [`page.md` and `page.mdx` files](/docs/file-conventions/page-file) as well as
-  `_meta` files.
+- **在 Next.js 的 [`app` 目录](https://nextjs.org/docs/app/getting-started/project-structure#top-level-folders)中：**<br />Nextra 会收集所有 `page` 文件，包括 [`page.md` 和 `page.mdx` 文件](/docs/file-conventions/page-file) 以及 `_meta` 文件。
 
-- **In Nextra's
-  [`content` directory](/docs/file-conventions/content-directory):**<br/>Nextra
-  collects all `.md` and `.mdx` files, along with `_meta` files.
+- **在 Nextra 的 [`content` 目录](/docs/file-conventions/content-directory)中：**<br/>Nextra 会收集所有 `.md` 和 `.mdx` 文件，以及 `_meta` 文件。
 
-Below the same file-based routing structure is represented for `content` and
-`app`-only directories:
+以下展示了 `content` 目录和纯 `app` 目录下相同的基于文件路由的结构：
 
 <ContentAndAppFileTee>
   <FileTree.Folder name="about" defaultOpen>
@@ -65,18 +57,16 @@ Below the same file-based routing structure is represented for `content` and
 
 > [!NOTE]
 >
-> You can combine both organizational ways for your project:
+> 您可以在项目中组合使用这两种组织方式：
 >
-> - [x] the `content` directory with `.mdx` files
-> - [x] the `app` directory with `page` files
+> - [x] 包含 `.mdx` 文件的 `content` 目录
+> - [x] 包含 `page` 文件的 `app` 目录
 
-### `pageMap` structure
+### `pageMap` 结构
 
-Afterward, Nextra generates a `pageMap` array containing information about your
-entire site's routes and directories structure. Features such as the navigation
-bar and sidebar can be generated based on the `pageMap` information.
+随后，Nextra 会生成一个包含整个站点路由和目录结构信息的 `pageMap` 数组。导航栏和侧边栏等功能都可以基于 `pageMap` 信息自动生成。
 
-The generated `pageMap` will be:
+生成的 `pageMap` 结构如下：
 
 ```jsonc filename="pageMap" copy=false
 [
@@ -123,13 +113,11 @@ The generated `pageMap` will be:
 ]
 ```
 
-And the global `pageMap` will be imported to each page by Nextra. Then,
-configured theme will render the actual UI with that `pageMap`.
+Nextra 会将全局的 `pageMap` 导入到每个页面中。然后，配置的主题会使用该 `pageMap` 来渲染实际界面。
 
 ## API
 
-The title and order of a page shown in the sidebar/navbar can be configured in
-the `_meta` file as key-value pairs.
+侧边栏/导航栏中显示的页面标题和顺序可以通过 `_meta` 文件中的键值对进行配置。
 
 ```ts filename="_meta.ts"
 import type { MetaRecord } from 'nextra'
@@ -150,16 +138,15 @@ const meta: MetaRecord = {
 export default meta
 ```
 
-### `title` type
+### `title` 类型
 
-When specifying a `title` in `_meta` file, you can define it as either a simple
-string or a JSX element.
+在 `_meta` 文件中指定 `title` 时，可以将其定义为简单字符串或 JSX 元素。
 
 ```ts copy=false
 type TitleSchema = string | ReactElement
 ```
 
-For the below file structure:
+对于以下文件结构：
 
 <ContentAndAppFileTee className="shrink-0">
   <FileTree.File name="_meta.js" active />
@@ -168,7 +155,7 @@ For the below file structure:
   <FileTree.File name="index.mdx" />
 </ContentAndAppFileTee>
 
-The following `_meta` file defines pages titles:
+以下 `_meta` 文件定义了页面标题：
 
 ```jsx filename="_meta.jsx"
 import { GitHubIcon } from 'nextra/icons'
@@ -195,10 +182,9 @@ function Italic({ children, ...props }) {
 }
 ```
 
-### Pages
+### 页面配置
 
-In `_meta` file you can define how the pages are shown in the sidebar, e.g. for
-the following file structure:
+在 `_meta` 文件中可以定义页面在侧边栏中的显示方式，例如对于以下文件结构：
 
 <Block>
 <ContentAndAppFileTee className='shrink-0'>
@@ -218,9 +204,7 @@ export default {
 
 > [!NOTE]
 >
-> If any routes are not listed in the `_meta` file, they will be appended to the
-> end of the sidebar and sorted alphabetically (except for `index` key which
-> comes first if it's not specified in `_meta` file).
+> 如果某些路由未在 `_meta` 文件中列出，它们会被追加到侧边栏末尾并按字母顺序排序（`index` 键除外，若未在 `_meta` 中指定则会优先显示）。
 
 ```ts
 type PageItemSchema = {
@@ -231,16 +215,11 @@ type PageItemSchema = {
 }
 ```
 
-#### `type: 'page'` option
+#### `type: 'page'` 选项
 
-By defining a top-level page or folder as `type: 'page'{:js}`, it will be shown
-as a special page on the navigation bar, instead of the sidebar. With this
-feature, you can have multiple "sub docs", and special pages or links such as
-"Contact Us" that are always visible.
+通过将顶级页面或文件夹定义为 `type: 'page'{:js}`，它将在导航栏上显示为特殊页面而非侧边栏。利用此特性，您可以创建多个"子文档"以及始终可见的特殊页面或链接（如"联系我们"）。
 
-For example, you can have 2 docs folders `frameworks` and `fruits` in your
-project. In your top-level `_meta` file, you can set everything as a page,
-instead of a normal sidebar item:
+例如，您可以在项目中创建两个文档文件夹 `frameworks` 和 `fruits`。在顶层 `_meta` 文件中，可以将所有内容设置为页面而非普通侧边栏项目：
 
 <Block>
 <ContentAndAppFileTee className='shrink-0'>
@@ -279,7 +258,7 @@ export default {
 ```
 </Block>
 
-And it will look like this:
+效果将如下所示：
 
 <figure>
   <Video src="/assets/docs/sub-docs.mp4" />
@@ -289,11 +268,9 @@ And it will look like this:
 
 > [!TIP]
 >
-> You can also hide links like `Home` from the navbar with the
-> [`display: 'hidden'{:js}`](#display-hidden-option) option.
+> 您还可以通过 [`display: 'hidden'{:js}`](#display-hidden-option) 选项隐藏导航栏中的 `Home` 等链接。
 >
-> You can have external links in the navbar, similar to the
-> [links section](#links):
+> 导航栏中可以包含外部链接，类似于 [links 章节](#links)：
 >
 > ```js filename="_meta.js" {4-5}
 > export default {
@@ -305,11 +282,9 @@ And it will look like this:
 > }
 > ```
 
-#### `display: 'hidden'` option
+#### `display: 'hidden'` 选项
 
-By default, all MDX routes in the filesystem will be shown on the sidebar. But
-you can hide a specific pages or folders by using the `display: 'hidden'{:ts}`
-configuration:
+默认情况下，文件系统中的所有 MDX 路由都会显示在侧边栏。但您可以通过 `display: 'hidden'{:ts}` 配置隐藏特定页面或文件夹：
 
 ```js filename="_meta.js" {3}
 export default {
@@ -321,13 +296,11 @@ export default {
 
 > [!NOTE]
 >
-> The page will still be accessible via the `/contact` URL, but it will not be
-> shown in the sidebar.
+> 页面仍可通过 `/contact` URL 访问，但不会显示在侧边栏中。
 
-#### `theme` option
+#### `theme` 选项
 
-You can configure the theme for each page using the `theme` option. For example,
-you can disable or enable specific components for specific pages:
+您可以使用 `theme` 选项为每个页面配置主题。例如，可以针对特定页面禁用或启用特定组件：
 
 ```js filename="_meta.js" {4}
 export default {
@@ -341,19 +314,16 @@ export default {
 
 > [!WARNING]
 >
-> This option will be inherited by all child pages if set to a folder.
+> 此选项若设置在文件夹上，将被所有子页面继承。
 
 <APIDocs
   code={`type $ = ${generateTsFromZod(pageThemeSchema)}
 export default $`}
 />
 
-##### Layouts
+##### 布局
 
-By default, each page has `layout: 'default'{:js}` in their theme config, which
-is the default behavior. You might want to render some page with the full
-container width and height, but keep all the other styles. You can use the
-`'full'{:js}` layout to do that:
+默认情况下，每个页面在主题配置中都包含 `layout: 'default'{:js}`，这是标准行为。若需要让某些页面撑满整个容器宽度和高度，同时保留其他样式，可以使用 `'full'{:js}` 布局实现：
 
 ```js filename="_meta.js" {4}
 export default {
@@ -365,14 +335,11 @@ export default {
 }
 ```
 
-##### Typesetting [#typesetting-section]
+##### 排版设置 [#typesetting-section]
 
-The `typesetting` option controls typesetting details like font features,
-heading styles and components like `<li>` and `<code>`. There are
-`'default'{:js}` and `'article'{:js}` typesettings available in the docs theme.
+`typesetting` 选项控制排版细节，包括字体特性、标题样式以及 `<li>` 和 `<code>` 等组件样式。文档主题提供 `'default'{:js}` 和 `'article'{:js}` 两种排版预设。
 
-The default one is suitable for most cases like documentation, but you can use
-the `'article'{:js}` typesetting to make it look like an elegant article page:
+默认预设适用于文档等大多数场景，而 `'article'{:js}` 预设可使页面呈现优雅的文章版式：
 
 <figure>
 ```js filename="_meta.js" {4}
@@ -386,13 +353,12 @@ export default {
 ```
   <figcaption>[Live example on StackBlitz](https://stackblitz.com/edit/nextra-2-docs-hg77h3?file=pages%2F_meta.js,pages%2Findex.mdx)</figcaption>
 </figure>
-### Folders
 
-Folders can be configured in the same way as pages.
+### 文件夹
 
-For example, the following top-level `_meta` file contains the meta information
-for the top-level pages and folders.<br/> The nested `_meta` file contains the
-meta information for pages in the same folder:
+文件夹的配置方式与页面完全相同。
+
+例如，以下顶层 `_meta` 文件包含顶层页面和文件夹的元信息。<br/> 嵌套的 `_meta` 文件则包含同文件夹内页面的元信息：
 
 <Block>
 <ContentAndAppFileTee className='shrink-0'>
@@ -426,17 +392,13 @@ export default {
 
 > [!NOTE]
 >
-> You can move directories around without having to change the `_meta` file
-> since information for pages are grouped together in directories.
+> 移动目录时无需修改 `_meta` 文件，因为页面信息是按目录分组管理的。
 
-#### With `/index` page
+#### 使用 `/index` 页面
 
-To create a folder with an index page, add `asIndexPage: true{:js}` to its front
-matter.
+如需创建带索引页的文件夹，需在其 front matter 中添加 `asIndexPage: true{:js}`。
 
-For example, to create a `/fruits` route, setting `asIndexPage: true{:js}` tells
-Nextra that `/fruits` is a folder with an index page. Clicking the folder in the
-sidebar will expand it and display the MDX page.
+例如，要创建 `/fruits` 路由，设置 `asIndexPage: true{:js}` 会告知 Nextra `/fruits` 是一个包含索引页的文件夹。点击侧边栏中的文件夹将展开它并显示 MDX 页面。
 
 <Block>
 <ContentAndAppFileTee className="shrink-0">
@@ -461,7 +423,7 @@ asIndexPage: true
 
 </Block>
 
-### Links
+### 链接
 
 ```ts
 type LinkSchema = {
@@ -470,8 +432,7 @@ type LinkSchema = {
 }
 ```
 
-You can add external links to the sidebar by adding an item with `href` in
-`_meta` file:
+您可以通过在 `_meta` 文件中添加带有 `href` 的项来向侧边栏添加外部链接：
 
 ```js filename="_meta.js" {2-5}
 export default {
@@ -484,9 +445,9 @@ export default {
 
 > [!TIP]
 >
-> You can use this option to link to relative internal links too.
+> 此选项也可用于链接到相对内部路径。
 
-### Separators
+### 分隔线
 
 ```ts
 type SeparatorSchema = {
@@ -495,8 +456,7 @@ type SeparatorSchema = {
 }
 ```
 
-You can use a "placeholder" item with `type: 'separator'{:js}` to create a
-separator line between items in the sidebar:
+您可以使用 `type: 'separator'{:js}` 的"占位符"项在侧边栏项目之间创建分隔线：
 
 ```js filename="_meta.js" {3-4}
 export default {
@@ -507,10 +467,9 @@ export default {
 }
 ```
 
-### Menus
+### 菜单
 
-You can also add menus to the navbar using `type: 'menu'{:js}` and the `items`
-option:
+您还可以使用 `type: 'menu'{:js}` 和 `items` 选项向导航栏添加菜单：
 
 <figure>
   <>![Navbar menu](/assets/docs/menu.png)</>
@@ -551,11 +510,9 @@ export default {
 }
 ```
 
-### Fallbacks
+### 回退配置
 
-In the [`type: 'page'{:js}` option](#type-page-option) above, we have to define
-the `type: 'page'{:js}` option for every page. To make it easier, you can use
-the `'*'` key to define the fallback configuration for all items in this folder:
+在上述 [`type: 'page'{:js}` 选项](#type-page-option)中，我们需要为每个页面定义 `type: 'page'{:js}` 选项。为简化操作，您可以使用 `'*'` 键为该文件夹中的所有项定义回退配置：
 
 ```js filename="_meta.js" {2-4}
 export default {
@@ -569,15 +526,13 @@ export default {
 }
 ```
 
-They are equivalent where all items have `type: 'page'{:js}` set.
+当所有项都设置了 `type: 'page'{:js}` 时，这两种方式是等效的。
 
-### `_meta.global` file
+### `_meta.global` 文件
 
-You can also define all your pages in a single `_meta` file, suffixed with
-`.global`. The API remains the same as for folder-specific `_meta` files, with 1
-exception: **folder items must include an `items` field**.
+您也可以在单个 `_meta` 文件中定义所有页面，文件名后缀为 `.global`。其 API 与文件夹特定的 `_meta` 文件相同，只有 1 个例外：**文件夹项必须包含 `items` 字段**。
 
-For the following structure, you might use the following `_meta` files:
+对于以下结构，您可以使用以下 `_meta` 文件：
 
 <Block>
 
@@ -608,7 +563,7 @@ export default {
 </div>
 </Block>
 
-With single `_meta.global` file it can be defined as below:
+使用单个 `_meta.global` 文件可以如下定义：
 
 ```js filename="_meta.global.js" copy=false
 export default {
@@ -625,24 +580,19 @@ export default {
 
 > [!WARNING]
 >
-> You can't use both `_meta.global` and `_meta` files in your project.
+> 项目中不能同时使用 `_meta.global` 和 `_meta` 文件。
 
-## Good to know
+## 须知事项
 
-### Sorting pages
+### 页面排序
 
-You can use ESLint's built-in `sort-keys` rule, append
-`/* eslint sort-keys: error */` comment at the top of your `_meta` file, and you
-will receive ESLint's errors about incorrect order.
+你可以使用 ESLint 内置的 `sort-keys` 规则，在 `_meta` 文件顶部添加 `/* eslint sort-keys: error */` 注释，ESLint 就会提示排序错误的警告。
 
-### Type of `_meta` keys
+### `_meta` 键的类型
 
-The type of your `_meta` keys should always **be a string** and **not a number**
-because
-[numbers are always ordered first](https://dev.to/frehner/the-order-of-js-object-keys-458d)
-in JavaScript objects.
+`_meta` 的键类型必须始终**是字符串**而**非数字**，因为在 JavaScript 对象中[数字键总是优先排序](https://dev.to/frehner/the-order-of-js-object-keys-458d)。
 
-For example, consider the following:
+例如以下情况：
 
 ```js filename="_meta.js" copy=false
 export default {
@@ -652,9 +602,10 @@ export default {
 }
 ```
 
-will be converted to:
+将会被转换为：
 
 {/* prettier-ignore */}
+
 ```js filename="_meta.js" copy=false
 export default {
   '1': '',
@@ -665,4 +616,4 @@ export default {
 
 > [!TIP]
 >
-> The `.js`, `.jsx`, or `.tsx` file extensions can be used for `_meta` file.
+> `_meta` 文件可以使用 `.js`、`.jsx` 或 `.tsx` 扩展名。

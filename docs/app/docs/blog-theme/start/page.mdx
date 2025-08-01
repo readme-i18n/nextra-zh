@@ -1,4 +1,5 @@
 ---
+
 icon: ChevronRightIcon
 ---
 
@@ -7,24 +8,21 @@ import ReadyToGo from '@components/ready-to-go.mdx'
 import { ExampleCode } from '@components/example-code'
 import { Steps } from 'nextra/components'
 
-# Get Started
+# 快速开始
 
 > [!NOTE]
 >
-> An example of the blog theme can be found [here](https://demo.vercel.blog),
-> with source code [here](https://github.com/vercel/nextjs-portfolio-starter).
+> 博客主题的示例可在此处查看 [here](https://demo.vercel.blog)，
+> 源代码位于 [here](https://github.com/vercel/nextjs-portfolio-starter)。
 
-Similar to the [Docs Theme](/docs/docs-theme/start), you can install the blog
-theme with the following commands:
+与 [文档主题](/docs/docs-theme/start) 类似，您可以通过以下命令安装博客主题：
 
-## Start as a new project
+## 作为新项目启动
 
 <Steps>
-### Install
+### 安装
 
-To create a Nextra Blog site manually, you have to install **Next.js**,
-**React**, **Nextra**, and **Nextra Blog Theme**. In your project directory, run
-the following command to install the dependencies:
+要手动创建 Nextra 博客站点，您需要安装 **Next.js**、**React**、**Nextra** 以及 **Nextra Blog Theme**。在项目目录中运行以下命令安装依赖项：
 
 ```sh npm2yarn
 npm i next react react-dom nextra nextra-theme-blog
@@ -32,8 +30,7 @@ npm i next react react-dom nextra nextra-theme-blog
 
 > [!NOTE]
 >
-> If you already have Next.js installed in your project, you only need to
-> install `nextra` and `nextra-theme-blog` as the add-ons.
+> 如果项目中已安装 Next.js，只需额外安装 `nextra` 和 `nextra-theme-blog` 作为附加组件即可。
 
 <InstallNextraTheme />
 
@@ -41,10 +38,9 @@ npm i next react react-dom nextra nextra-theme-blog
 
 {/*
 
-### Create Blog Theme Config
+### 创建博客主题配置
 
-Lastly, create the corresponding `theme.config.jsx` file in your project's root
-directory. This will be used to configure the Nextra Blog theme:
+最后，在项目根目录创建对应的 `theme.config.jsx` 文件，用于配置 Nextra 博客主题：
 
 ```jsx filename="theme.config.jsx"
 export default {
@@ -76,7 +72,7 @@ export default {
 
 </Steps>
 
-## Layout Props
+## 布局属性
 
 <APIDocs
   componentName="Layout"

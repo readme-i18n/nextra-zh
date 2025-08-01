@@ -1,10 +1,8 @@
 ---
+
 icon: FolderIcon
 sidebarTitle: content
-description:
-  The `content` directory in Nextra allows you to organize your Markdown files
-  without adhering to the `page` filename convention, simplifying the migration
-  from Next.js `pages` router.
+description: Nextra 中的 `content` 目录允许您在不遵循 `page` 文件命名约定的情况下组织 Markdown 文件，简化从 Next.js `pages` 路由的迁移过程。
 ---
 
 import fs from 'node:fs/promises'
@@ -21,52 +19,50 @@ ${(await fs.readFile(`../examples/docs/src/app/docs/${filename}`, 'utf8')).trimE
   return <MDXRemote compiledSource={rawJs} />
 }
 
-# `content` Directory
+# `content` 目录
 
-The `content` directory is designed to:
+`content` 目录的设计目的：
 
-1. Migrate your existing Next.js `pages` router with minimal changes, you just
-   need to rename your `pages` directory to `content`.
-1. Avoid having `page` filename convention, e.g. `app/configuration/page.mdx` ->
-   `content/configuration.mdx`
+1. 以最小改动迁移现有的 Next.js `pages` 路由，只需将 `pages` 目录重命名为 `content`
+1. 避免使用 `page` 文件命名约定，例如 `app/configuration/page.mdx` 可简化为 `content/configuration.mdx`
 
-## Setup
+## 配置
 
 <Steps>
 
-### Create your first MDX page as `content/index.mdx`:
+### 创建首个 MDX 页面 `content/index.mdx`：
 
 ```mdx filename="content/index.mdx"
-# Welcome to Nextra
+# 欢迎使用 Nextra
 
-Hello, world!
+你好，世界！
 ```
 
 > [!TIP]
 >
-> You can keep `content` directory in root of your project, or in
-> [`src` directory](./src-directory).
+> 你可以将 `content` 目录保留在项目根目录下，或者放在
+> [`src` 目录](./src-directory)中。
 
-### Set `contentDirBasePath` option in `next.config` file (_optional_)
+### 在 `next.config` 文件中设置 `contentDirBasePath` 选项（可选）
 
-If you want to serve your content from a different path, you can set
-`contentDirBasePath` option:
+如需从不同路径提供内容，可以设置
+`contentDirBasePath` 选项：
 
 ```js filename="next.config.mjs" {4}
 import nextra from 'nextra'
 
 const withNextra = nextra({
-  contentDirBasePath: '/docs' // Or even nested e.g. `/docs/advanced`
+  contentDirBasePath: '/docs' // 或嵌套路径如 `/docs/advanced`
 })
 ```
 
-### Add `[[...mdxPath]]/page.jsx` file
+### 添加 `[[...mdxPath]]/page.jsx` 文件
 
-Place this file in `app` directory with the following content:
+将此文件放置在 `app` 目录中，内容如下：
 
 <MDXPathPage />
 
-you should get the following structure:
+最终目录结构应如下所示：
 
 <FileTree>
   <FileTree.Folder name="app" open>
@@ -84,33 +80,31 @@ you should get the following structure:
 
 > [!TIP]
 >
-> Consider the single catch-all route `[[...mdxPath]]/page.jsx` as a gateway to
-> your `content` directory.
+> 将单一捕获所有路由的 `[[...mdxPath]]/page.jsx` 视为通往
+> `content` 目录的入口。
 >
-> If you set `contentDirBasePath` option in `next.config` file, you should put
-> `[[...mdxPath]]/page.jsx` in the corresponding directory.
+> 如果在 `next.config` 文件中设置了 `contentDirBasePath` 选项，
+> 应将 `[[...mdxPath]]/page.jsx` 放置在对应目录中。
 
-### You are ready to go!
+### 一切准备就绪！
 
 > [!NOTE]
 >
-> Many existing solutions such as
-> [Refreshing the Next.js App Router When Your Markdown Content Changes](https://steveruiz.me/posts/nextjs-refresh-content)
-> rely on extra dependencies like `concurrently` and `ws`. These approaches
-> include
-> [Dan Abramov workaround with `<AutoRefresh>` component and dev web socket server](https://github.com/hashicorp/next-remote-watch/issues/42#issuecomment-1794052655).
+> 现有许多方案如
+> [当 Markdown 内容变更时刷新 Next.js App Router](https://steveruiz.me/posts/nextjs-refresh-content)
+> 依赖额外依赖项如 `concurrently` 和 `ws`。这些方法包括
+> [Dan Abramov 的临时解决方案：使用 `<AutoRefresh>` 组件和开发 WebSocket 服务](https://github.com/hashicorp/next-remote-watch/issues/42#issuecomment-1794052655)。
 >
-> Nextra's `content` directory delivers a streamlined solution right out of the
-> box:
+> Nextra 的 `content` 目录提供了开箱即用的精简方案：
 >
-> - you don't need to install unnecessary dependencies
-> - you don't need to restart your server on changes in `content` directory
-> - hot reloading works out of the box
-> - you can use `import` statements in MDX files and
->   [static images](/docs/guide/image#static-image) works as well
+> - 无需安装不必要的依赖项
+> - 修改 `content` 目录内容时无需重启服务
+> - 热重载默认支持
+> - 可在 MDX 文件中使用 `import` 语句，
+>   [静态图片](/docs/guide/image#static-image)同样适用
 >
-> Checkout Nextra's
-> [docs website](https://github.com/shuding/nextra/tree/main/examples/docs) and
-> [i18n website example](https://github.com/shuding/nextra/tree/main/examples/swr-site).
+> 查看 Nextra 的
+> [文档网站](https://github.com/shuding/nextra/tree/main/examples/docs) 和
+> [国际化网站示例](https://github.com/shuding/nextra/tree/main/examples/swr-site)。
 
 </Steps>

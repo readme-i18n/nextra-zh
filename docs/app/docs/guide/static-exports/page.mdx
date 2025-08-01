@@ -1,18 +1,17 @@
 import { Steps } from 'nextra/components'
 
-# Static Exports
+# 静态导出
 
-Export your pages statically, and deploy with [Nginx](https://nginx.org),
-[GitHub Pages](https://pages.github.com) and more.
+将页面静态导出后，可部署至 [Nginx](https://nginx.org)、
+[GitHub Pages](https://pages.github.com) 等平台。
 
-## Getting started
+## 快速开始
 
 <Steps>
 
-### Configuration
+### 配置
 
-To enable a static export, update the options in `next.config.mjs` file as
-follows:
+启用静态导出功能，需在 `next.config.mjs` 文件中更新如下配置：
 
 ```js filename="next.config.mjs" {7-10}
 import nextra from 'nextra'
@@ -23,22 +22,22 @@ import nextra from 'nextra'
 const nextConfig = {
   output: 'export',
   images: {
-    unoptimized: true // mandatory, otherwise won't export
+    unoptimized: true // 必须设置，否则无法导出
   }
-  // Optional: Change the output directory `out` -> `dist`
+  // 可选：修改输出目录 `out` -> `dist`
   // distDir: "build"
 }
 const withNextra = nextra({
-  // ... other Nextra config options
+  // ... 其他 Nextra 配置选项
 })
 
 export default withNextra(nextConfig)
 ```
 
-### Update `postbuild` script
+### 更新 `postbuild` 脚本
 
-Update the Pagefind [search engine setup](./search#add-a-postbuild-script) to
-set the correct output path:
+更新 Pagefind [搜索引擎配置](./search#add-a-postbuild-script) 
+以设置正确的输出路径：
 
 ```json filename="package.json"
 "scripts": {
@@ -46,18 +45,17 @@ set the correct output path:
 }
 ```
 
-### Building
+### 构建
 
-Run the `build` command according to your package manager:
+根据包管理器运行构建命令：
 
 ```sh npm2yarn
 npm run build
 ```
 
-By default, static export will be stored in `out` directory in the root of your
-project.
+默认情况下，静态导出文件将存储在项目根目录的 `out` 文件夹中。
 
-For more in detail documentation for static export visit
-[Next.js docs](https://nextjs.org/docs/app/building-your-application/deploying/static-exports).
+更详细的静态导出文档请参阅 
+[Next.js 官方文档](https://nextjs.org/docs/app/building-your-application/deploying/static-exports)。
 
 </Steps>

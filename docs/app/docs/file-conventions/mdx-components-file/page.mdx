@@ -1,21 +1,19 @@
 ---
+
 icon: MdxIcon
 sidebarTitle: mdx-components.js
 description:
-  The `mdx-components` file in Nextra is essential for customizing styles via
-  the `useMDXComponents` function, allowing you to define and override MDX
-  components globally.
+  Nextra 中的 `mdx-components` 文件对于通过 `useMDXComponents` 函数自定义样式至关重要，允许您全局定义和覆盖 MDX 组件。
 ---
 
-# `mdx-components.js` File
+# `mdx-components.js` 文件
 
-The `mdx-components` file is **required**, you use it to customize styles via
-`useMDXComponents` function.
+`mdx-components` 文件是**必需的**，您可以通过 `useMDXComponents` 函数来自定义样式。
 
-## Example
+## 示例
 
-The `mdx-components.js` file must export
-[a single function named `useMDXComponents`](/api/usemdxcomponents).
+`mdx-components.js` 文件必须导出
+[一个名为 `useMDXComponents` 的函数](/api/usemdxcomponents)。
 
 ```ts filename="mdx-components.js"
 import { useMDXComponents as getThemeComponents } from 'nextra-theme-docs' // nextra-theme-blog or your custom theme
@@ -32,17 +30,16 @@ export function useMDXComponents(components) {
 }
 ```
 
-## Errors
+## 错误处理
 
-### Module not found: Can't resolve `'next-mdx-import-source-file'`
+### 模块未找到：无法解析 `'next-mdx-import-source-file'`
 
-To fix this, update the `turbopack.resolveAlias` section in your `next.config`
-file:
+要解决此问题，请更新 `next.config` 文件中的 `turbopack.resolveAlias` 配置：
 
 > [!NOTE]
 >
-> - If you're using Next.js < 15.3, use `experimental.turbopack.resolveAlias`
-> - If you're using Next.js ≥ 15.3, use `turbopack.resolveAlias`
+> - 如果使用 Next.js < 15.3 版本，请使用 `experimental.turbopack.resolveAlias`
+> - 如果使用 Next.js ≥ 15.3 版本，请使用 `turbopack.resolveAlias`
 
 ```diff filename="next.config.mjs"
 import nextra from 'nextra'
@@ -61,12 +58,9 @@ export default withNextra({
 
 > [!TIP]
 >
-> - You can keep `mdx-components` file in root of your project, or in
->   [`src` directory](./src-directory).
-> - The `.js`, `.jsx`, or `.tsx` file extensions can be used for
->   `mdx-components` file.
-> - When importing `useMDXComponents`, alias it as `getMDXComponents` to avoid a
->   false positive error from the ESLint React Hooks plugin.
+> - 您可以将 `mdx-components` 文件保存在项目根目录或 [`src` 目录](./src-directory)中
+> - `mdx-components` 文件可使用 `.js`、`.jsx` 或 `.tsx` 扩展名
+> - 导入 `useMDXComponents` 时，可将其别名设为 `getMDXComponents` 以避免 ESLint React Hooks 插件的误报错误
 >
 > ```bash filename="react-hooks/rules-of-hooks"
 > React Hook "useMDXComponents" cannot be called at the top level.

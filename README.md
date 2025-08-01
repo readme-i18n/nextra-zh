@@ -1,56 +1,50 @@
 # Nextra
 
-Simple, powerful and flexible site generation framework with everything you love
-from Next.js.
+基于 Next.js 构建的简单、强大且灵活的站点生成框架，囊括您喜爱的所有特性。
 
-## Documentation
+## 文档
 
 https://nextra.site
 
-## Development
+## 开发指南
 
-### Installation
+### 安装
 
-The Nextra repository uses [PNPM Workspaces](https://pnpm.io/workspaces) and
-[Turborepo](https://github.com/vercel/turborepo).
+Nextra 代码库采用 [PNPM Workspaces](https://pnpm.io/workspaces) 和 [Turborepo](https://github.com/vercel/turborepo) 架构。
 
-1. Run `corepack enable` to enable Corepack.
+1. 运行 `corepack enable` 启用 Corepack。
 
-   > If the command above fails, run `npm install -g corepack@latest` to install
-   > the latest version of
-   > [Corepack](https://github.com/nodejs/corepack?tab=readme-ov-file#manual-installs).
+   > 若上述命令失败，请执行 `npm install -g corepack@latest` 安装最新版 [Corepack](https://github.com/nodejs/corepack?tab=readme-ov-file#manual-installs)。
 
-2. Run `pnpm install` to install the project's dependencies.
+2. 运行 `pnpm install` 安装项目依赖。
 
-### Build `nextra`
+### 构建 `nextra`
 
 ```bash
 pnpm --filter nextra build
 ```
 
-Watch mode: `pnpm --filter nextra dev`
+监听模式：`pnpm --filter nextra dev`
 
-### Build `nextra-theme-docs`
+### 构建 `nextra-theme-docs`
 
 ```bash
 pnpm --filter nextra-theme-docs build
 ```
 
-### Development
+### 开发指南
 
-You can also debug them together with a website locally. For instance, to start
-`examples/docs` locally, run
+您可以在本地结合网站进行调试。例如要启动 `examples/docs` 本地环境，请运行
 
 ```bash
 pnpm --filter example-docs dev
 ```
 
-Any change to `example/docs` will be re-rendered instantly.
+对 `example/docs` 的任何修改都会即时重新渲染。
 
-If you update the core or theme packages, a rebuild is required. Or you can use
-the watch mode for both Nextra and the theme in separated terminals.
+若更新核心包或主题包，需重新构建。您也可以在独立终端中同时启用 Nextra 和主题的监听模式。
 
-## Sponsors
+## 赞助商
 
 <div>
  <a href="https://xyflow.com?utm_source=github&utm_campaign=nextra&utm_content=logolink">

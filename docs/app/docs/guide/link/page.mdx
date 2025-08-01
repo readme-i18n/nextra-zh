@@ -1,21 +1,21 @@
 ---
+
 icon: LinkIcon
 ---
 
-# Next.js Link
+# Next.js 链接
 
-All relative Markdown links are automatically converted into
-[Next.js links](https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating).
-This means that the target page will be prefetched. When you click on a link,
-the page will be loaded on the client-side like a
-[Single-Page Application (SPA)](https://en.wikipedia.org/wiki/Single-page_application),
-without making a full page load. For example:
+所有相对路径的 Markdown 链接都会自动转换为
+[Next.js 链接](https://nextjs.org/docs/app/building-your-application/routing/linking-and-navigating)。
+这意味着目标页面会被预加载。当您点击链接时，
+页面会像[单页应用(SPA)](https://en.wikipedia.org/wiki/Single-page_application)一样
+在客户端加载，无需完整页面刷新。例如：
 
 ```md filename="Markdown"
 Click [here](/about) to read more.
 ```
 
-Will be equivalent to:
+等价于：
 
 ```mdx filename="MDX"
 import Link from 'next/link'
@@ -23,4 +23,4 @@ import Link from 'next/link'
 Click <Link href="/about">here</Link> to read more.
 ```
 
-This feature makes navigation between Nextra pages fast and seamless.
+此特性使得 Nextra 页面间的导航快速且无缝。

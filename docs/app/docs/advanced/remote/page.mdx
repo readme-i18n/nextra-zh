@@ -1,4 +1,5 @@
 ---
+
 icon: CloudIcon
 ---
 
@@ -27,27 +28,25 @@ ${pageContent
   return <MDXRemote compiledSource={rawJs} />
 }
 
-# Remote Content
+# 远程内容
 
 > [!NOTE]
 >
-> You can check out the
-> [SWR i18n example](https://github.com/shuding/nextra/blob/main/examples/swr-site/app/%5Blang%5D/graphql-eslint/%5B%5B...slug%5D%5D/page.tsx)
-> source code.
+> 你可以查看
+> [SWR 国际化示例](https://github.com/shuding/nextra/blob/main/examples/swr-site/app/%5Blang%5D/graphql-eslint/%5B%5B...slug%5D%5D/page.tsx)
+> 的源代码。
 
 <Steps>
 
-## Create `[[...slug]]/page.tsx` file
+## 创建 `[[...slug]]/page.tsx` 文件
 
-Create `[[...slug]]/page.tsx` file in `app/` directory with the following
-content:
+在 `app/` 目录下创建 `[[...slug]]/page.tsx` 文件，内容如下：
 
 <Example />
 
-## Enhance `pageMap`
+## 增强 `pageMap`
 
-You need to modify `pageMap` list in `layout` file, to properly display sidebar
-and mobile navigation.
+需要修改 `layout` 文件中的 `pageMap` 列表，以正确显示侧边栏和移动端导航。
 
 ```tsx filename="app/layout.tsx"
 import { getPageMap } from 'nextra/page-map'

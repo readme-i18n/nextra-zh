@@ -1,4 +1,5 @@
 ---
+
 icon: FormulaIcon
 ---
 
@@ -21,18 +22,15 @@ import { MDXRemote } from 'nextra/mdx-remote'
 
 # LaTeX
 
-Nextra can use [KaTeX](https://katex.org) to pre-render LaTeX expressions
-directly in MDX or [MathJax](https://mathjax.org) to dynamically render math in
-the browser.
+Nextra 可以使用 [KaTeX](https://katex.org) 直接在 MDX 中预渲染 LaTeX 表达式，或通过 [MathJax](https://mathjax.org) 在浏览器中动态渲染数学公式。
 
-## Setup
+## 配置
 
 <Steps>
 
-### Enable the `latex` option
+### 启用 `latex` 选项
 
-By default, LaTeX is disabled. To enable it, you need to set the `latex` option
-in your `next.config.mjs` file:
+默认情况下 LaTeX 功能处于禁用状态。要启用该功能，您需要在 `next.config.mjs` 文件中配置 `latex` 选项：
 
 ```js filename="next.config.mjs" {4}
 import nextra from 'nextra'
@@ -44,14 +42,9 @@ const withNextra = nextra({
 export default withNextra()
 ```
 
-A value of `true{:js}` will use KaTeX as the math renderer. To explicitly
-specify the renderer, you may instead provide an object
-`{ renderer: 'katex' }{:js}` or `{ renderer: 'mathjax' }{:js}` as the value to
-`latex: ...`.
+设置为 `true{:js}` 将使用 KaTeX 作为数学公式渲染器。如需明确指定渲染器，可以传入对象值 `{ renderer: 'katex' }{:js}` 或 `{ renderer: 'mathjax' }{:js}` 作为 `latex: ...` 的值。
 
-When enabled, the required CSS and fonts will be automatically included in your
-site, and you can start writing math expressions by enclosing inline math in
-`$...$` or display math in a `math`-labeled fenced code block:
+启用后，所需的 CSS 和字体将自动包含在您的站点中，您可以通过 `$...$` 包裹行内公式或在标记为 `math` 的代码块中编写数学表达式：
 
 ````mdx
 ```math
@@ -59,21 +52,21 @@ site, and you can start writing math expressions by enclosing inline math in
 ```
 ````
 
-### Apply styles
+### 应用样式
 
 <Callout type="warning">
-  This is applicable only to KaTeX as the math renderer.
+  此配置仅适用于 KaTeX 数学渲染器。
 </Callout>
 
-<Tabs items={['Import CSS from `katex` package', 'Load CSS from CDN']}>
+<Tabs items={['从 `katex` 包导入 CSS', '从 CDN 加载 CSS']}>
 <Tabs.Tab>
-1. Install the `katex` package
+1. 安装 `katex` 包
 
 ```bash npm2yarn
 npm i katex
 ```
 
-2. Import CSS in the root layout
+2. 在根布局中导入 CSS
 
 ```js filename="app/layout.jsx"
 import 'katex/dist/katex.min.css'
@@ -81,12 +74,9 @@ import 'katex/dist/katex.min.css'
 
 </Tabs.Tab>
 <Tabs.Tab>
-Add `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.css" />{:jsx}`
-inside `<head>` element in your root `layout` file since `<link rel="stylesheet" />{:jsx}`
-[isn't supported with Next.js Metadata API](https://nextjs.org/docs/app/api-reference/functions/generate-metadata#unsupported-metadata).
+在根 `layout` 文件的 `<head>` 元素中添加 `<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.css" />{:jsx}`，因为 `<link rel="stylesheet" />{:jsx}` [不被 Next.js 元数据 API 支持](https://nextjs.org/docs/app/api-reference/functions/generate-metadata#unsupported-metadata)。
 
-Alternatively, you can include `<link rel="stylesheet" />{:jsx}` directly in
-your MDX file:
+或者，您可以直接在 MDX 文件中包含 `<link rel="stylesheet" />{:jsx}`：
 
 ````mdx filename="katex.mdx"
 <link
@@ -94,7 +84,7 @@ your MDX file:
   href="https://cdn.jsdelivr.net/npm/katex/dist/katex.css"
 />
 
-# My page with single usage of KaTeX
+# 使用 KaTeX 的页面
 
 ```math
 \int_2^3x^3\,\mathrm{d}x
@@ -105,9 +95,9 @@ your MDX file:
 </Tabs>
 </Steps>
 
-## Example
+## 示例
 
-For example, the following Markdown code:
+例如，以下 Markdown 代码：
 
 ````md filename="page.md"
 The **Pythagorean equation** is $a=\sqrt{b^2 + c^2}$ and the quadratic formula:
@@ -117,7 +107,7 @@ x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
 ```
 ````
 
-will be rendered as:
+将会被渲染为：
 
 <div className="mt-6 rounded-xl border p-4 nextra-border">
 The **Pythagorean equation** is $a=\sqrt{b^2 + c^2}$ and the quadratic formula:
@@ -128,23 +118,17 @@ x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
 
 </div>
 
-You can still use [Markdown and MDX syntax](../guide/markdown) in the same line
-as your LaTeX expression.
+您仍可在同一行内混合使用 [Markdown 和 MDX 语法](../guide/markdown) 与 LaTeX 表达式。
 
 > [!TIP]
 >
-> If you want to display `$` in your content instead of rendering it as an
-> equation, you can escape it with a backslash (`\`). For example `\$e = mc^2\$`
-> will be rendered as \$e = mc^2\$.
+> 若需在内容中显示 `$` 符号而非将其渲染为数学公式，可使用反斜杠 (`\`) 进行转义。例如 `\$e = mc^2\$` 将显示为 \$e = mc^2\$。
 
 ## API
 
 ### KaTeX
 
-`rehype-katex` is used to pre-render LaTeX expressions in your content. You can
-pass supported [KaTeX options](https://katex.org/docs/options) via the `options`
-key in your Nextra config. For example, to add a macro `\RR` that renders as
-`\mathbb{R}` you could use the following configuration.
+`rehype-katex` 用于预渲染内容中的 LaTeX 表达式。您可通过 Nextra 配置中的 `options` 键传递支持的 [KaTeX 选项](https://katex.org/docs/options)。例如，添加宏 `\RR` 使其渲染为 `\mathbb{R}`，可使用如下配置。
 
 ```js filename="next.config.mjs" {4-8}
 const withNextra = nextra({
@@ -159,24 +143,16 @@ const withNextra = nextra({
 })
 ```
 
-See [KaTeX's documentation](https://katex.org/docs/supported) for a list of
-supported commands.
+参阅 [KaTeX 文档](https://katex.org/docs/supported) 获取支持的命令列表。
 
 ### MathJax
 
-When MathJax is enabled (by setting `latex: { renderer: 'mathjax' }{:js}`) math
-is rendered on page load via
-[`better-react-mathjax`](https://github.com/fast-reflexes/better-react-mathjax)
-instead of being pre-rendered. By default, **MathJax is served via the MathJax
-CDN** instead of the files being directly included in your site.[^1]
+启用 MathJax 时（通过设置 `latex: { renderer: 'mathjax' }{:js}`），数学公式将在页面加载时通过 [`better-react-mathjax`](https://github.com/fast-reflexes/better-react-mathjax) 渲染而非预渲染。默认情况下，**MathJax 通过 MathJax CDN 提供服务**，而非直接包含在您的站点文件中。[^1]
 
 [^1]:
-    This can be changed by setting
-    [`{ options: { src: ... } }{:js}`](https://github.com/fast-reflexes/better-react-mathjax#src-string--undefined)
-    in the Nextra config.
+    可通过在 Nextra 配置中设置 [`{ options: { src: ... } }{:js}`](https://github.com/fast-reflexes/better-react-mathjax#src-string--undefined) 来更改此行为。
 
-MathJax rendering is enabled by setting `renderer: 'mathjax'{:js}` in your
-Nextra config.
+在 Nextra 配置中设置 `renderer: 'mathjax'{:js}` 即可启用 MathJax 渲染功能。
 
 ```js filename="next.config.mjs" {3}
 const withNextra = nextra({
@@ -186,18 +162,12 @@ const withNextra = nextra({
 })
 ```
 
-You can pass additional options to `better-react-mathjax` via the `options` key
-in your Nextra config. The `config: ...` option sets the
-[MathJax configuration](https://docs.mathjax.org/en/latest/options/index.html).
-However, note that you can only pass serializable options to
-`better-react-mathjax` via the `options` key in your Nextra config.[^2]
+您可以通过 Nextra 配置中的 `options` 键向 `better-react-mathjax` 传递额外参数。其中 `config: ...` 选项用于设置 [MathJax 配置](https://docs.mathjax.org/en/latest/options/index.html)。但请注意，通过 Nextra 配置的 `options` 键只能向 `better-react-mathjax` 传递可序列化的参数。[^2]
 
 [^2]:
-    To pass non-serializable objects like Functions, you must use the
-    `<MathJaxContext config={...} />{:jsx}` component directly in your source.
+    如需传递函数等不可序列化对象，必须直接在源码中使用 `<MathJaxContext config={...} />{:jsx}` 组件。
 
-For example, to configure MathJax to render `\RR` as `\mathbb{R}` you could use
-the following configuration.
+例如，若要将 `\RR` 配置为渲染为 `\mathbb{R}`，可采用以下配置。
 
 ```js filename="next.config.mjs" {4-12}
 const withNextra = nextra({
@@ -218,21 +188,13 @@ const withNextra = nextra({
 
 #### MathJax CDN
 
-By default, MathJax is served via the MathJax CDN. To serve files from another
-location (including locally in your project), you must pass the `src: ...`
-option to the latex config. See the
-[better-react-mathjax documentation](https://github.com/fast-reflexes/better-react-mathjax#src-string--undefined)
-for details about the `src` option. Additionally, you may need to copy the
-MathJax distribution into your `/public` folder for it to be served locally.
+默认情况下，MathJax 通过 MathJax CDN 提供服务。如需从其他位置（包括项目本地）加载文件，必须向 latex 配置传递 `src: ...` 选项。关于 `src` 选项的详细信息，请参阅 [better-react-mathjax 文档](https://github.com/fast-reflexes/better-react-mathjax#src-string--undefined)。此外，可能需要将 MathJax 发行版复制到项目的 `/public` 文件夹才能实现本地服务。
 
-## KaTeX vs. MathJax
+## KaTeX 与 MathJax 对比
 
-With KaTeX, math is pre-rendered which means flicker-free and faster page loads.
-However, KaTeX does not support all the features of MathJax, especially features
-related to accessibility.
+KaTeX 采用预渲染方式处理数学公式，可实现无闪烁效果和更快的页面加载速度。但 KaTeX 不支持 MathJax 的所有功能，特别是与无障碍访问相关的特性。
 
-The following two examples show the same formula rendered with KaTeX (first) and
-MathJax (second).
+以下两个示例分别展示了使用 KaTeX（第一个）和 MathJax（第二个）渲染的相同公式。
 
 ```math
 \int_2^3x^3\,\mathrm{d}x
@@ -240,9 +202,7 @@ MathJax (second).
 
 <MathJaxExample />
 
-Because of MathJax's accessibility features, the second formula is
-tab-accessible and has a context menu that helps screen readers reprocess math
-for the visually impaired.
+由于 MathJax 的无障碍特性，第二个公式支持通过 Tab 键访问，并具备上下文菜单功能，可帮助屏幕阅读器为视障用户重新处理数学公式。
 
 export async function MathJaxExample() {
   const rawMdx = `~~~math

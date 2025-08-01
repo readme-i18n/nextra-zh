@@ -1,12 +1,11 @@
 ---
+
 icon: PictureIcon
 ---
 
-# Next.js Image
+# Next.js 图片组件
 
-The standard way to use
-[Next.js Image](https://nextjs.org/docs/app/getting-started/images) inside MDX
-is to directly import the component:
+在 MDX 中使用 [Next.js Image](https://nextjs.org/docs/app/getting-started/images) 的标准方式是直接导入该组件：
 
 ```mdx filename="MDX"
 import Image from 'next/image'
@@ -14,47 +13,39 @@ import Image from 'next/image'
 <Image src="/demo.png" alt="Hello" width={500} height={500} />
 ```
 
-## Static image
+## 静态图片
 
 > [!NOTE]
 >
-> This feature is enabled via `staticImage: true` in the Nextra config by
-> default.
+> 该功能默认通过 Nextra 配置中的 `staticImage: true` 启用。
 
-Nextra supports automatically optimizing your static image imports with the
-Markdown syntax. You do not need to specify the width and height of the image,
-just use the `![]()` Markdown syntax:
+Nextra 支持通过 Markdown 语法自动优化静态图片导入。您无需指定图片的宽高，只需使用 `![]()` Markdown 语法：
 
 ```md filename="Markdown"
 ![Hello](/demo.png)
 ```
 
-This loads the `demo.png` file inside the `public` folder, and automatically
-wraps it with Next.js `<Image>`.
+这会加载 `public` 文件夹内的 `demo.png` 文件，并自动用 Next.js `<Image>` 组件进行包裹。
 
 > [!TIP]
 >
-> You can also use `![](../public/demo.png)` to load the image from a relative
-> path, if you don't want to host it via `public`.
+> 如果您不想通过 `public` 托管图片，也可以使用 `![](../public/demo.png)` 从相对路径加载图片。
 
-With Next.js Image, there will be no layout shift, and a beautiful blurry
-placeholder will be shown by default when loading the images:
+使用 Next.js Image 时，不会出现布局偏移，且在图片加载时会默认显示精美的模糊占位图：
 
 ![Nextra](/opengraph-image.jpeg)
 
-## Image zoom
+## 图片缩放
 
 > [!NOTE]
 >
-> The image zoom feature is enabled globally by default.
+> 图片缩放功能默认全局启用。
 
-In the default configuration, if you want to use this feature, simply insert
-images using `![]()` Markdown syntax.
+在默认配置下，如需使用此功能，只需通过 `![]()` Markdown 语法插入图片。
 
-### Disable image zoom
+### 禁用图片缩放
 
-For `nextra-docs-theme` and `nextra-blog-theme`, you can disable image zoom by
-replacing the `img` component used in MDX.
+对于 `nextra-docs-theme` 和 `nextra-blog-theme`，您可以通过替换 MDX 中使用的 `img` 组件来禁用图片缩放功能。
 
 ```jsx filename="theme.config.jsx"
 import { Image } from 'nextra/components'
@@ -67,10 +58,9 @@ export default {
 }
 ```
 
-### Enable/disable image zoom for specific images
+### 为特定图片启用/禁用缩放功能
 
-When zoom is **disabled globally**, but you want to enable it for specific
-images, you can do so by using the `<ImageZoom>` component:
+当缩放功能**全局禁用**时，若需对特定图片启用缩放，可使用 `<ImageZoom>` 组件：
 
 ```mdx
 import { ImageZoom } from 'nextra/components'
@@ -78,8 +68,7 @@ import { ImageZoom } from 'nextra/components'
 <ImageZoom src="/demo.png" />
 ```
 
-When zoom is **enabled globally**, and you want to disable zoom for a specific
-image, you can simply use the `<Image>` component:
+当缩放功能**全局启用**时，若需对特定图片禁用缩放，直接使用 `<Image>` 组件即可：
 
 ```mdx
 import { Image } from 'nextra/components'

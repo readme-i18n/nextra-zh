@@ -1,14 +1,15 @@
 ---
+
 icon: InformationCircleIcon
 ---
 
-# GitHub Alert Syntax
+# GitHub 警示语法
 
-`nextra-theme-docs` and `nextra-theme-blog` support replacing
-[GitHub alert syntax](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts)
-with `<Callout>` component for `.md`/`.mdx` files.
+`nextra-theme-docs` 和 `nextra-theme-blog` 支持将
+[GitHub 警示语法](https://docs.github.com/en/get-started/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax#alerts)
+替换为适用于 `.md`/`.mdx` 文件的 `<Callout>` 组件。
 
-## Usage
+## 使用指南
 
 ```md filename="Markdown"
 > [!NOTE]
@@ -32,49 +33,44 @@ with `<Callout>` component for `.md`/`.mdx` files.
 > Advises about risks or negative outcomes of certain actions.
 ```
 
-## Example
+## 示例
 
 > [!NOTE]
 >
-> Useful information that users should know, even when skimming content.
+> 用户应当了解的有用信息，即使是在快速浏览内容时。
 
 > [!TIP]
 >
-> Helpful advice for doing things better or more easily.
+> 帮助用户更高效或更便捷完成操作的实用建议。
 
 > [!IMPORTANT]
 >
-> Key information users need to know to achieve their goal.
+> 用户达成目标所需掌握的关键信息。
 
 > [!WARNING]
 >
-> Urgent info that needs immediate user attention to avoid problems.
+> 需要用户立即关注的紧急信息，以避免出现问题。
 
 > [!CAUTION]
 >
-> Advises about risks or negative outcomes of certain actions.
+> 关于某些操作可能带来风险或负面结果的警示。
 
-## Usage with your own theme
+## 在自定义主题中使用
 
-If you want to benefit this feature with your own theme and your own `<Callout>`
-component:
+若您希望在自定义主题中使用此功能，并搭配自己的 `<Callout>` 组件：
 
 import { Steps } from 'nextra/components'
 
 <Steps>
 
-### Create a `<Blockquote>` component
+### 创建 `<Blockquote>` 组件
 
-To create a `<Blockquote>` component, start by importing `withGitHubAlert` from
-`nextra/components`. You should then create the `<Blockquote>` component by
-invoking the `withGitHubAlert` function.
+要创建 `<Blockquote>` 组件，首先需要从 `nextra/components` 导入 `withGitHubAlert`。然后通过调用 `withGitHubAlert` 函数来创建 `<Blockquote>` 组件。
 
-The first argument should be a React HOC component that handles the GitHub alert
-syntax, and the second argument should be your standard `<blockquote>`
-component.
+第一个参数应是一个处理 GitHub 提示语法的 React HOC 组件，第二个参数应是标准的 `<blockquote>` 组件。
 
-The `type` prop can be one of the following:
-`'note' | 'tip' | 'important' | 'warning' | 'caution'{:ts}`.
+`type` 属性可以是以下值之一：
+`'note' | 'tip' | 'important' | 'warning' | 'caution'{:ts}`。
 
 ```jsx
 import { withGitHubAlert } from 'nextra/components'
@@ -84,10 +80,9 @@ const Blockquote = withGitHubAlert(({ type, ...props }) => {
 }, MyBlockquoteComponent)
 ```
 
-### Provide `<Blockquote>` to `useMDXComponents`
+### 将 `<Blockquote>` 提供给 `useMDXComponents`
 
-To make the `<Blockquote>` component available, you should integrate it into the
-`useMDXComponents` function:
+要使 `<Blockquote>` 组件可用，应将其集成到 `useMDXComponents` 函数中：
 
 ```jsx filename="mdx-components.jsx"
 export function useMDXComponents(components) {

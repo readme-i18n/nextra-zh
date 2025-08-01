@@ -1,4 +1,5 @@
 ---
+
 icon: LightningIcon
 ---
 
@@ -6,18 +7,11 @@ import { compileMdx } from 'nextra/compile'
 import { Callout } from 'nextra/components'
 import { MDXRemote } from 'nextra/mdx-remote'
 
-# Next.js Static Rendering
+# Next.js 静态渲染
 
-[Static Rendering](https://nextjs.org/docs/app/building-your-application/rendering/server-components#static-rendering-default)
-is default server rendering strategy, where routes are rendered at **build
-time** or in the background after
-[data revalidation](https://nextjs.org/docs/app/building-your-application/data-fetching/incremental-static-regeneration).
-The result is cached and can be distributed via a
-[Content Delivery Network (CDN)](https://developer.mozilla.org/docs/Glossary/CDN)
-for optimal performance.
+[静态渲染](https://nextjs.org/docs/app/building-your-application/rendering/server-components#static-rendering-default)是默认的服务端渲染策略，路由会在**构建时**或[数据重新验证](https://nextjs.org/docs/app/building-your-application/data-fetching/incremental-static-regeneration)后在后台完成渲染。渲染结果会被缓存，并可通过[内容分发网络(CDN)](https://developer.mozilla.org/docs/Glossary/CDN)进行分发以获得最佳性能。
 
-Static rendering is ideal for routes with non-personalized data that can be
-determined at build time, such as blog posts or product pages.
+静态渲染适用于构建时可确定的非个性化数据路由，例如博客文章或产品页面。
 
 <SSGPage />
 

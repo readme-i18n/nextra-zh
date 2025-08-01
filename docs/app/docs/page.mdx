@@ -1,8 +1,6 @@
 ---
-description:
-  Nextra is a framework built on top of Next.js that enables the creation of
-  content-focused websites. It combines the robust features of Next.js with
-  enhanced capabilities for crafting Markdown-based content.
+
+description: Nextra 是一个构建于 Next.js 之上的框架，能够创建以内容为核心的网站。它结合了 Next.js 的强大功能，并增强了基于 Markdown 的内容创作能力。
 ---
 
 import { Cards, Image } from 'nextra/components'
@@ -16,58 +14,51 @@ export default function MdxLayout(props) {
   })
 }
 
-# Introduction
+# 简介
 
-**Nextra** is a framework on top of Next.js, that lets you build content focused
-websites. It has all the great features from Next.js, plus extra power to create
-Markdown-based content with ease.
+**Nextra** 是构建在 Next.js 之上的框架，可帮助您构建以内容为核心的网站。它继承了 Next.js 的所有优秀特性，并额外提供了轻松创建基于 Markdown 内容的强大能力。
 
-## Quick start
+## 快速入门
 
-To start using Nextra, you need to select a theme first:
+要开始使用 Nextra，您需要先选择一个主题：
 
 <Cards num={2}>
-  <Cards.Card arrow title="Documentation theme" href="/docs/docs-theme/start">
-    <>![Documentation theme screenshot](/assets/docs-theme.png)</>
+  <Cards.Card arrow title="文档主题" href="/docs/docs-theme/start">
+    <>![文档主题截图](/assets/docs-theme.png)</>
   </Cards.Card>
-  <Cards.Card arrow title="Blog theme" href="/docs/blog-theme/start">
-    <>![Blog theme screenshot](/assets/blog-theme.png)</>
+  <Cards.Card arrow title="博客主题" href="/docs/blog-theme/start">
+    <>![博客主题截图](/assets/blog-theme.png)</>
   </Cards.Card>
 </Cards>
 
-If you want to use Nextra without using these built-in themes, you can follow
-the [Custom Theme](/docs/custom-theme) docs.
+如果您希望不使用这些内置主题来使用 Nextra，可以遵循[自定义主题](/docs/custom-theme)文档。
 
-## FAQ
+## 常见问题
 
-The Nextra FAQ is a collection of useful questions and answers about the
-project. If you have a question that isn't answered here, please
-[open a discussion](https://github.com/shuding/nextra/discussions).
+Nextra 常见问题解答收集了关于该项目的有用问答。如果您的问题在此未得到解答，请[发起讨论](https://github.com/shuding/nextra/discussions)。
 
 <details>
   {/* prettier-ignore */}
-  <summary>Can I use Nextra with Next.js `pages` router?</summary>
-Nextra 4 only works with the `app` router. Only Nextra 1/2/3 supports the
-`pages` router.
+  <summary>我能在 Next.js `pages` 路由中使用 Nextra 吗？</summary>
+Nextra 4 仅支持 `app` 路由。只有 Nextra 1/2/3 版本支持 `pages` 路由。
 
 </details>
 
 <details>
-  <summary>Can I use X with Nextra?</summary>
-The answer is "yes" for most things. Since Nextra is just a Next.js plugin, almost all the things
-that can be done with React can be done with Nextra. Here are some examples and guides:
+  <summary>Nextra 能否与 X 一起使用？</summary>
+大多数情况下答案是"可以"。由于 Nextra 只是 Next.js 的一个插件，几乎所有能在 React 中实现的功能都可以在 Nextra 中使用。以下是一些示例和指南：
 
-- [Use Tailwind CSS](/docs/guide/tailwind-css)
-- [Use custom CSS and Sass](/docs/guide/custom-css)
-- [Use custom fonts](https://nextjs.org/docs/basic-features/font-optimization)
+- [使用 Tailwind CSS](/docs/guide/tailwind-css)
+- [使用自定义 CSS 和 Sass](/docs/guide/custom-css)
+- [使用自定义字体](https://nextjs.org/docs/basic-features/font-optimization)
 
 </details>
 
 <details>
   {/* prettier-ignore */}
-  <summary>How can I add a live coding component in Nextra?</summary>
-There are libraries like [Sandpack](https://sandpack.codesandbox.io) and
-[react-live](https://github.com/FormidableLabs/react-live) that can help you
-add live coding components to your MDX.
+  <summary>如何在 Nextra 中添加实时编码组件？</summary>
+可以使用 [Sandpack](https://sandpack.codesandbox.io) 或 
+[react-live](https://github.com/FormidableLabs/react-live) 等库
+来为你的 MDX 添加实时编码组件。
 
 </details>

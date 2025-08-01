@@ -1,12 +1,13 @@
-# Twoslash Support
+# Twoslash 支持
 
-Twoslash provides an inline type hove inside the code block.
+Twoslash 可在代码块内实现内联类型悬停功能。
 
-## Basic usage
+## 基础用法
 
-You can enable twoslash to your code blocks by adding a `twoslash` metadata:
+通过添加 `twoslash` 元数据即可为代码块启用该功能：
 
 {/* prettier-ignore */}
+
 ````md copy=false filename="Markdown"
 ```ts twoslash
 // @errors: 2540
@@ -30,9 +31,10 @@ Number.parseInt('123', 10)
 ```
 ````
 
-Renders:
+渲染效果：
 
 {/* prettier-ignore */}
+
 ```ts twoslash
 // @errors: 2540
 interface Todo {
@@ -54,14 +56,14 @@ Number.parseInt('123', 10)
 
 ```
 
-## Custom log message
+## 自定义日志消息
 
-You can add log message to your code by adding:
+可通过以下方式添加自定义消息：
 
-- `@log: <message>` Custom log message
-- `@error: <message>` Custom error message
-- `@warn: <message>` Custom warn message
-- `@annotate: <message>` Custom annotate message
+- `@log: <message>` 自定义日志消息
+- `@error: <message>` 自定义错误消息
+- `@warn: <message>` 自定义警告消息
+- `@annotate: <message>` 自定义注解消息
 
 ```ts twoslash
 // @log: Custom log message

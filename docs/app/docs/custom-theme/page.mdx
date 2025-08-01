@@ -2,25 +2,23 @@ import { ExampleCode } from 'components/example-code'
 import { Steps } from 'nextra/components'
 import OldDocs from './old.mdx'
 
-# Custom Theme
+# 自定义主题
 
-A theme in Nextra works like a layout, that will be rendered as a wrapper for
-all pages. This docs will walk you through the process of creating a custom
-theme.
+Nextra 中的主题类似于布局，它将作为所有页面的包装器进行渲染。本文档将引导您完成创建自定义主题的过程。
 
 > [!NOTE]
 >
-> Source code for the following custom theme can be found
-> [here](https://github.com/shuding/nextra/tree/main/examples/custom-theme).
+> 以下自定义主题的源代码可在
+> [这里](https://github.com/shuding/nextra/tree/main/examples/custom-theme) 找到。
 
-## Create a custom theme
+## 创建自定义主题
 
 <Steps>
-### Create a root layout
+### 创建根布局
 
 <ExampleCode example="custom-theme" filePath="app/layout.tsx" />
 
-### Create [`mdx-components` file](/docs/file-conventions/mdx-components-file)
+### 创建 [`mdx-components` 文件](/docs/file-conventions/mdx-components-file)
 
 <ExampleCode
   example="custom-theme"
@@ -33,11 +31,9 @@ theme.
   metadata="/toc/"
 />
 
-### Create a basic theme
+### 创建基础主题
 
-You can now start working on your theme! Create the `nextra-theme.tsx` file, it
-accepts a `children` prop, which is the MDX content of the current page, and
-wraps some other elements around the content:
+现在可以开始构建你的主题了！创建 `nextra-theme.tsx` 文件，它接收一个 `children` 属性（即当前页面的 MDX 内容），并在内容周围包裹其他元素：
 
 <ExampleCode
   example="custom-theme"
@@ -45,7 +41,7 @@ wraps some other elements around the content:
   metadata="/children/"
 />
 
-### Create navbar and footer
+### 创建导航栏和页脚
 
 <ExampleCode example="custom-theme" filePath="app/_components/footer.tsx" />
 <ExampleCode
@@ -54,7 +50,7 @@ wraps some other elements around the content:
   metadata="/topLevelNavbarItems/"
 />
 
-### Create sidebar
+### 创建侧边栏
 
 <ExampleCode
   example="custom-theme"
@@ -62,17 +58,15 @@ wraps some other elements around the content:
   metadata="/docsDirectories/"
 />
 
-### Add first MDX page
+### 添加首个 MDX 页面
 
-After creating the theme, you can simply add a MDX file as `app/page.mdx` and
-see the result:
+创建主题后，只需添加一个 MDX 文件作为 `app/page.mdx` 即可查看效果：
 
-![Custom theme](/assets/docs/custom-theme.png)
+![自定义主题](/assets/docs/custom-theme.png)
 
 <br />
 
-Inside your theme layout, you can use CSS imports or other ways to style it.
-Next.js hooks such as `usePathname` are also available.
+在主题布局中，可以使用 CSS 导入或其他方式进行样式设计。Next.js 钩子如 `usePathname` 也可使用。
 
 {process.env.NODE_ENV !== 'production' && <OldDocs />}
 

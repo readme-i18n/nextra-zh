@@ -1,4 +1,5 @@
 ---
+
 sidebarTitle: Layout
 ---
 
@@ -16,10 +17,9 @@ export default $`}
   )
 }
 
-# Layout Component
+# 布局组件
 
-The theme is configured with the `<Layout>` component. You should pass your
-config options as Layout's `props`, for example:
+主题通过 `<Layout>` 组件进行配置。您应将配置选项作为 Layout 的 `props` 传递，例如：
 
 ```jsx filename="app/layout.jsx" {8-9}
 import { Layout } from 'nextra-theme-docs'
@@ -40,48 +40,43 @@ export default function MyLayout({ children, ...props }) {
 }
 ```
 
-Detailed information for each option is listed below.
+下方列出了每个选项的详细信息。
 
-## Props
+## Props 属性
 
-## Page Map
+## 页面映射
 
 <PartialTSDoc props={['pageMap']} />
 
-## Banner
+## 横幅区
 
 <PartialTSDoc props={['banner']} />
 
-## Navbar
+## 导航栏
 
 <PartialTSDoc props={['navbar']} />
 
 <ToggleVisibilitySection element="`<Navbar>`" property="navbar" />
 
-## Footer
+## 页脚
 
 <PartialTSDoc props={['footer']} />
 
 <ToggleVisibilitySection element="`<Footer>`" property="footer" />
 
-## Search
+## 搜索功能
 
 <PartialTSDoc props={['search']} />
 
-## Docs Repository
+## 文档仓库
 
-Set the repository URL of the documentation. It's used to generate the
-"[Edit this page](#edit-link)" link, the "[Feedback](#feedback-link)" link and
-"[Report of broken link](./not-found)" on
-[not found page](https://nextjs.org/docs/app/api-reference/file-conventions/not-found).
+设置文档的仓库 URL。用于生成"[编辑此页](#edit-link)"链接、"[反馈](#feedback-link)"链接以及[404页面](https://nextjs.org/docs/app/api-reference/file-conventions/not-found)上的"[报告失效链接](./not-found)"。
 
 <PartialTSDoc props={['docsRepositoryBase']} />
 
-### Specify a Path
+### 指定路径
 
-If the documentation is inside a monorepo, a subfolder, or a different branch of
-the repository, you can simply set the `docsRepositoryBase` to the root path of
-the `app/` (App Router) folder of your docs. For example:
+如果文档位于 monorepo、子文件夹或仓库的不同分支中，您只需将 `docsRepositoryBase` 设置为文档 `app/`（App Router）文件夹的根路径。例如：
 
 ```jsx filename="app/layout.jsx"
 <Layout docsRepositoryBase="https://github.com/shuding/nextra/tree/main/docs">
@@ -89,11 +84,11 @@ the `app/` (App Router) folder of your docs. For example:
 </Layout>
 ```
 
-Then Nextra will automatically generate the correct file path for all pages.
+Nextra 将自动为所有页面生成正确的文件路径。
 
-## Dark Mode and Themes
+## 暗黑模式与主题
 
-Customize the theme behavior of the website.
+自定义网站的主题行为。
 
 <PartialTSDoc props={['darkMode', 'nextThemes']} />
 
@@ -101,49 +96,45 @@ import Old from './old.mdx'
 
 {process.env.NODE_ENV !== 'production' && <Old />}
 
-## Edit Link
+## 编辑链接
 
-Show an "Edit this page" link on the page that points to the file URL on GitHub
-(or other places).
+在页面上显示指向 GitHub（或其他平台）文件 URL 的"编辑此页"链接。
 
 <PartialTSDoc props={['editLink']} />
 
 > [!TIP]
 >
-> To disable it, you can set `editLink` to `null`.
+> 如需禁用，可将 `editLink` 设为 `null`。
 
-## Feedback Link
+## 反馈链接
 
-The built-in feedback link provides a way for users to submit feedback about the
-documentation.
+内置的反馈链接为用户提供了提交文档反馈的途径。
 
 <PartialTSDoc props={['feedback']} flattened />
 
 > [!TIP]
 >
-> To disable it, you can set `feedback.content` to `null`.
+> 如需禁用此功能，可将 `feedback.content` 设为 `null`。
 
-## I18n
+## 国际化支持
 
 <PartialTSDoc props={['i18n']} />
 
-## Last Updated Date
+## 最后更新日期
 
-Show the last updated date of a page. It's useful for showing the freshness of
-the content.
+显示页面的最后更新时间。该功能有助于展示内容的新鲜度。
 
 <PartialTSDoc props={['lastUpdated']} />
 
 <ToggleVisibilitySection element="last update date" property="timestamp" />
 
-## Navigation
+## 页面导航
 
-Show previous and next page links on the bottom of the content. It's useful for
-navigating between pages.
+在内容底部显示上一页和下一页链接。便于用户在不同页面间跳转。
 
 <PartialTSDoc props={['navigation']} />
 
-![Navigation](/assets/docs/navigation.png)
+![导航栏](/assets/docs/navigation.png)
 
 ```jsx filename="app/layout.jsx"
 <Layout
@@ -156,31 +147,25 @@ navigating between pages.
 </Layout>
 ```
 
-The above is also equivalent to `navigation: true{:js}`.
+上述配置等价于 `navigation: true{:js}`。
 
 <ToggleVisibilitySection element="navigation" property="pagination" />
 
-## Sidebar
+## 侧边栏
 
 <PartialTSDoc props={['sidebar']} flattened />
 
-### Menu Collapse Level
+### 菜单折叠层级
 
-By default, the sidebar menu is collapsed at level `2`. You can change it by
-setting `sidebar.defaultMenuCollapseLevel` to a different number. For example,
-when set to `1`, every folder will be collapsed by default and when set to
-`Infinity`, all nested folders will be expanded by default.
+默认情况下，侧边栏菜单会在第 `2` 级折叠。您可以通过设置 `sidebar.defaultMenuCollapseLevel` 来调整该数值。例如：
+- 设为 `1` 时，所有文件夹默认折叠
+- 设为 `Infinity` 时，所有嵌套文件夹默认展开
 
-If `sidebar.autoCollapse` is set to `true`, then all folders that do not contain
-an active/focused route will automatically collapse up to the level set by
-`sidebar.defaultMenuCollapseLevel`. e.g. if `defaultMenuCollapseLevel` is `2`,
-then top-level folders will not auto-collapse.
+若 `sidebar.autoCollapse` 设为 `true`，则所有不包含当前活动路由的文件夹会自动折叠至 `sidebar.defaultMenuCollapseLevel` 设置的层级。例如当 `defaultMenuCollapseLevel` 为 `2` 时，顶级文件夹不会自动折叠。
 
-### Customize Sidebar Content
+### 自定义侧边栏内容
 
-Together with the [Separators](/docs/docs-theme/page-configuration#separators)
-item, you can customize how the sidebar content is rendered by using JSX
-elements:
+结合[分隔符](/docs/docs-theme/page-configuration#separators)配置项，您可以使用 JSX 元素自定义侧边栏渲染效果：
 
 ```jsx filename="_meta.jsx" {5-10}
 export default {
@@ -199,14 +184,13 @@ export default {
 }
 ```
 
-![Customized Sidebar](/assets/docs/sidebar-customized.png)
+![自定义侧边栏](/assets/docs/sidebar-customized.png)
 
 <ToggleVisibilitySection element="`<Sidebar>`" property="sidebar" />
 
-### Customize Sidebar with Front Matter
+### 通过 Front Matter 自定义侧边栏
 
-In addition, you can customize the sidebar title using the `sidebarTitle`
-property in your front matter:
+此外，您可以通过 front matter 中的 `sidebarTitle` 属性自定义侧边栏标题：
 
 ```mdx filename="getting-started.mdx"
 ---
@@ -214,21 +198,19 @@ sidebarTitle: Getting Started 🚀
 ---
 ```
 
-The priority of the sidebar title is as follows:
+侧边栏标题的优先级如下：
 
-1. A non-empty title from the `_meta` file.
-1. `sidebarTitle` in the front matter.
-1. `title` in the front matter.
-1. The title derived from the first `h1` Markdown heading (e.g.
-   `# Dima Machina`).
-1. If none of the above are available, it falls back to the filename of the
-   page, formatted according to [The Chicago Manual of Style](https://title.sh).
+1. 来自 `_meta` 文件的非空标题
+1. front matter 中的 `sidebarTitle`
+1. front matter 中的 `title`
+1. 从第一个 Markdown 一级标题派生的标题（例如 `# Dima Machina`）
+1. 如果以上均不可用，则回退到页面文件名，格式遵循 [The Chicago Manual of Style](https://title.sh)
 
-## Theme Switch
+## 主题切换
 
 <PartialTSDoc props={['themeSwitch']} />
 
-You are able to customize the option names for localization or other purposes:
+您可以自定义选项名称以适配本地化或其他用途：
 
 ```jsx filename="app/layout.jsx"
 <Layout
@@ -242,17 +224,14 @@ You are able to customize the option names for localization or other purposes:
 </Layout>
 ```
 
-## Table of Contents (TOC)
+## 目录 (TOC)
 
-Show a table of contents on the right side of the page. It's useful for
-navigating between headings.
+在页面右侧显示目录，便于在标题间导航。
 
 <PartialTSDoc props={['toc']} flattened />
 
-### Floating TOC
+### 浮动目录
 
-When enabled, the TOC will be displayed on the right side of the page, and it
-will be sticky when scrolling. If it's disabled, the TOC will be displayed
-directly on the page sidebar.
+启用时，目录会显示在页面右侧并在滚动时保持固定；禁用时，目录将直接显示在页面侧边栏中。
 
 <ToggleVisibilitySection element="`<TOC>`" property="toc" />

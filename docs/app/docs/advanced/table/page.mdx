@@ -1,16 +1,15 @@
 ---
+
 icon: TableIcon
 ---
 
-# Rendering Tables
+# 表格渲染指南
 
-This guide covers different ways to render tables in MDX, including GFM syntax
-and literal HTML tag.
+本文档介绍在MDX中渲染表格的不同方法，包括GFM语法和原生HTML标签。
 
-## GFM syntax
+## GFM语法
 
-In Markdown, it is preferable to write tables via
-[GFM syntax](https://github.github.com/gfm/#tables-extension-).
+在Markdown中，推荐使用[GFM语法](https://github.github.com/gfm/#tables-extension-)编写表格。
 
 ```mdx filename="MDX"
 | left   | center | right |
@@ -19,36 +18,28 @@ In Markdown, it is preferable to write tables via
 | banana | apple  |  kiwi |
 ```
 
-will be rendered as:
+将会被渲染为：
 
-| left   | center | right |
+| 左对齐   | 居中对齐 | 右对齐 |
 | :----- | :----: | ----: |
 | foo    |  bar   |   baz |
 | banana | apple  |  kiwi |
 
-## Literal HTML tables
+## 原生HTML表格
 
-If you try to render table with literal HTML elements `<table>{:js}`,
-`<thead>{:js}`, `<tbody>{:js}`, `<tr>{:js}`, `<th>{:js}` and `<td>{:js}` – your
-table will be unstyled because
-[MDX](https://mdxjs.com/docs/using-mdx/#components) doesn't replace literal HTML
-elements with components provided by `useMDXComponents(){:js}`[^1].
+如果尝试使用原生HTML元素`<table>{:js}`、`<thead>{:js}`、`<tbody>{:js}`、`<tr>{:js}`、`<th>{:js}`和`<td>{:js}`来渲染表格，由于[MDX](https://mdxjs.com/docs/using-mdx/#components)不会用`useMDXComponents(){:js}`[^1]提供的组件替换原生HTML元素，表格将无法获得样式。
 
 > [!TIP]
 >
-> Instead, use the [built-in `<Table>` component](/docs/built-ins/table)
-> available via `nextra/components`.
+> 建议改用[nextra/components](/docs/built-ins/table)提供的[内置`<Table>`组件](/docs/built-ins/table)。
 
-## Changing default behaviour
+## 修改默认行为
 
-If you want to use standard HTML elements for your tables but have them styled
-with components provided by `useMDXComponents(){:js}`[^1], you can do this by
-configuring Nextra.
+如需使用标准HTML元素但希望应用`useMDXComponents(){:js}`[^1]提供的组件样式，可通过配置Nextra实现。
 
-To achieve this, pass the `whiteListTagsStyling` option to the Nextra function,
-including an array of tags you want to replace.
+为此，需向Nextra函数传递`whiteListTagsStyling`选项，包含需要替换的标签数组。
 
-Here's an example configuration in your `next.config.mjs` file:
+以下是`next.config.mjs`文件中的配置示例：
 
 ```js filename="next.config.mjs" {4}
 import nextra from 'nextra'
@@ -60,8 +51,6 @@ const withNextra = nextra({
 export default withNextra()
 ```
 
-In this example, the tags `<table>`, `<thead>`, `<tbody>`, `<tr>`, `<th>`, and
-`<td>` will be replaced with corresponding MDX components, allowing for
-customized styling.
+在此示例中，`<table>`、`<thead>`、`<tbody>`、`<tr>`、`<th>` 和 `<td>` 标签将被替换为对应的 MDX 组件，从而实现自定义样式。
 
 [^1]: https://mdxjs.com/packages/react/#usemdxcomponentscomponents

@@ -1,67 +1,66 @@
 ---
-description:
-  Explore projects powered by Nextra, showcasing a diverse range of websites and
-  applications built with this powerful Next.js framework, from GraphQL tools to
-  JavaScript resources.
+
+description: 探索由 Nextra 驱动的项目，展示使用这一强大 Next.js 框架构建的多样化网站和应用，涵盖从 GraphQL 工具到 JavaScript 资源等各类案例。
 ---
 
 import { Cards, Image } from 'nextra/components'
 import { cloneElement } from 'react'
 
-# Showcase
+# 项目展示
 
-Projects powered by Nextra
+由 Nextra 驱动的项目集锦
 
 {/* prettier-ignore */}
+
 <Cards>
-<>[![React Flow preview](./_logos/react-flow.jpg)](https://reactflow.dev)</>
-<>[![Svelte Flow preview](./_logos/svelte-flow.jpg)](https://svelteflow.dev)</>
-<>[![Speakeasy preview](./_logos/speakeasy.png)](https://speakeasyapi.dev/docs)</>
-<>[![The Graph preview](./_logos/thegraph.jpeg)](https://thegraph.com/docs/en)</>
-<>[![GraphQL preview](./_logos/graphql.png)](https://graphql.org)</>
-<>[![GraphQL Hive preview](./_logos/graphql-hive.png)](https://the-guild.dev/graphql/hive)</>
-<>[![SWR preview](./_logos/swr.png)](https://swr.vercel.app)</>
-<>[![COBE preview](./_logos/cobe.png)](https://cobe.vercel.app)</>
-<>[![JavaScript Patterns preview](./_logos/javascript-patterns.jpg)](https://javascriptpatterns.vercel.app)</>
-<>[![CodeSandbox preview](./_logos/codesandbox.jpg)](https://codesandbox.io/docs/learn/introduction/overview)</>
-<>[![DocsGPT preview](./_logos/docsgpt.png)](https://docs.docsgpt.co.uk)</>
-<>[![CloudQuery preview](./_logos/cloudquery.svg)](https://cloudquery.io)</>
-<>[![Edge Runtime preview](./_logos/edge-runtime.jpeg)](https://edge-runtime.vercel.app)</>
-<>[![Sound.xyz preview](./_logos/sound.xyz.png)](https://docs.sound.xyz)</>
-<>[![Panda preview](./_logos/panda.png)](https://panda-css.com)</>
-<>[![Kuma UI preview](./_logos/kuma-ui.png)](https://kuma-ui.com)</>
-<>[![Langfuse Open Source LLM Engineering Platform](./_logos/langfuse.png)](https://langfuse.com)</>
-<>[![The Guild Blog preview](./_logos/the-guild.png)](https://the-guild.dev)</>
-<>[![GraphQL Yoga preview](./_logos/graphql-yoga.png)](https://the-guild.dev/graphql/yoga-server)</>
-<>[![GraphQL Envelop preview](./_logos/graphql-envelop.png)](https://the-guild.dev/graphql/envelop)</>
-<>[![GraphQL Inspector preview](./_logos/graphql-inspector.png)](https://the-guild.dev/graphql/inspector)</>
-<>[![GraphQL Code Generator preview](./_logos/graphql-codegen.png)](https://the-guild.dev/graphql/codegen)</>
-<>[![GraphQL Mesh preview](./_logos/graphql-mesh.png)](https://the-guild.dev/graphql/mesh)</>
-<>[![GraphQL Tools preview](./_logos/graphql-tools.png)](https://the-guild.dev/graphql/tools)</>
-<>[![GraphQL Modules preview](./_logos/graphql-modules.png)](https://the-guild.dev/graphql/modules)</>
-<>[![GraphQL ESLint preview](./_logos/graphql-eslint.png)](https://the-guild.dev/graphql/eslint)</>
-<>[![GraphQL Config preview](./_logos/graphql-config.png)](https://the-guild.dev/graphql/config)</>
-<>[![GraphQL Scalars preview](./_logos/graphql-scalars.png)](https://the-guild.dev/graphql/scalars)</>
-<>[![GraphQL Shield preview](./_logos/graphql-shield.png)](https://the-guild.dev/graphql/shield)</>
-<>[![GraphQL SOFA preview](./_logos/graphql-sofa.png)](https://the-guild.dev/graphql/sofa-api)</>
-<>[![Apollo Angular preview](./_logos/apollo-angular.png)](https://the-guild.dev/graphql/apollo-angular)</>
-<>[![GraphQL SSE preview](./_logos/graphql-sse.png)](https://the-guild.dev/graphql/sse)</>
-<>[![GraphQL WS preview](./_logos/graphql-ws.png)](https://the-guild.dev/graphql/ws)</>
-<>[![feTS preview](./_logos/fets.png)](https://the-guild.dev/openapi/fets)</>
-<>[![JavaScript Code Challenges preview](./_logos/jscodechallenges.png)](https://jscodechallenges.vercel.app)</>
-<>[![React Cosmos preview](./_logos/react-cosmos.png)](https://reactcosmos.org)</>
-<>[![Typia preview](./_logos/typia.png)](https://typia.io)</>
-<>[![Nestia preview](./_logos/nestia.png)](https://nestia.io)</>
-<>[![Safe preview](./_logos/safe-core.png)](https://docs.safe.global)</>
-<>[![Auth.js preview](./_logos/authjs.png)](https://authjs.dev)</>
-<>[![imgix preview](./_logos/imgix.png)](https://docs.imgix.com)</>
-<>[![AnythingLLM preview](./_logos/anythingllm.png)](https://anythingllm.com)</>
-<>[![Redbrick preview](./_logos/redbrick.jpg)](https://wiki.redbrick.land)</>
-<>[![Linito preview](./_logos/linito.png)](https://www.linito.io/docs)</>
-<>[![Makeform preview](./_logos/makeform.png)](https://www.makeform.ai/help)</>
-<>[![Rybbit preview](./_logos/rybbit.png)](https://rybbit.io)</>
-<>[![Canyonjs preview](./_logos/canyonjs.png)](https://docs.canyonjs.org)</>
-<>[![EmbedPDF preview](./_logos/embedpdf.png)](https://www.embedpdf.com)</>
+<>[![React Flow 预览](./_logos/react-flow.jpg)](https://reactflow.dev)</>
+<>[![Svelte Flow 预览](./_logos/svelte-flow.jpg)](https://svelteflow.dev)</>
+<>[![Speakeasy 预览](./_logos/speakeasy.png)](https://speakeasyapi.dev/docs)</>
+<>[![The Graph 预览](./_logos/thegraph.jpeg)](https://thegraph.com/docs/en)</>
+<>[![GraphQL 预览](./_logos/graphql.png)](https://graphql.org)</>
+<>[![GraphQL Hive 预览](./_logos/graphql-hive.png)](https://the-guild.dev/graphql/hive)</>
+<>[![SWR 预览](./_logos/swr.png)](https://swr.vercel.app)</>
+<>[![COBE 预览](./_logos/cobe.png)](https://cobe.vercel.app)</>
+<>[![JavaScript 模式预览](./_logos/javascript-patterns.jpg)](https://javascriptpatterns.vercel.app)</>
+<>[![CodeSandbox 预览](./_logos/codesandbox.jpg)](https://codesandbox.io/docs/learn/introduction/overview)</>
+<>[![DocsGPT 预览](./_logos/docsgpt.png)](https://docs.docsgpt.co.uk)</>
+<>[![CloudQuery 预览](./_logos/cloudquery.svg)](https://cloudquery.io)</>
+<>[![Edge Runtime 预览](./_logos/edge-runtime.jpeg)](https://edge-runtime.vercel.app)</>
+<>[![Sound.xyz 预览](./_logos/sound.xyz.png)](https://docs.sound.xyz)</>
+<>[![Panda 预览](./_logos/panda.png)](https://panda-css.com)</>
+<>[![Kuma UI 预览](./_logos/kuma-ui.png)](https://kuma-ui.com)</>
+<>[![Langfuse 开源 LLM 工程平台](./_logos/langfuse.png)](https://langfuse.com)</>
+<>[![The Guild 博客预览](./_logos/the-guild.png)](https://the-guild.dev)</>
+<>[![GraphQL Yoga 预览](./_logos/graphql-yoga.png)](https://the-guild.dev/graphql/yoga-server)</>
+<>[![GraphQL Envelop 预览](./_logos/graphql-envelop.png)](https://the-guild.dev/graphql/envelop)</>
+<>[![GraphQL Inspector 预览](./_logos/graphql-inspector.png)](https://the-guild.dev/graphql/inspector)</>
+<>[![GraphQL 代码生成器预览](./_logos/graphql-codegen.png)](https://the-guild.dev/graphql/codegen)</>
+<>[![GraphQL Mesh 预览](./_logos/graphql-mesh.png)](https://the-guild.dev/graphql/mesh)</>
+<>[![GraphQL Tools 预览](./_logos/graphql-tools.png)](https://the-guild.dev/graphql/tools)</>
+<>[![GraphQL 模块预览](./_logos/graphql-modules.png)](https://the-guild.dev/graphql/modules)</>
+<>[![GraphQL ESLint 预览](./_logos/graphql-eslint.png)](https://the-guild.dev/graphql/eslint)</>
+<>[![GraphQL 配置预览](./_logos/graphql-config.png)](https://the-guild.dev/graphql/config)</>
+<>[![GraphQL 标量预览](./_logos/graphql-scalars.png)](https://the-guild.dev/graphql/scalars)</>
+<>[![GraphQL Shield 预览](./_logos/graphql-shield.png)](https://the-guild.dev/graphql/shield)</>
+<>[![GraphQL SOFA 预览](./_logos/graphql-sofa.png)](https://the-guild.dev/graphql/sofa-api)</>
+<>[![Apollo Angular 预览](./_logos/apollo-angular.png)](https://the-guild.dev/graphql/apollo-angular)</>
+<>[![GraphQL SSE 预览](./_logos/graphql-sse.png)](https://the-guild.dev/graphql/sse)</>
+<>[![GraphQL WS 预览](./_logos/graphql-ws.png)](https://the-guild.dev/graphql/ws)</>
+<>[![feTS 预览](./_logos/fets.png)](https://the-guild.dev/openapi/fets)</>
+<>[![JavaScript 代码挑战预览](./_logos/jscodechallenges.png)](https://jscodechallenges.vercel.app)</>
+<>[![React Cosmos 预览](./_logos/react-cosmos.png)](https://reactcosmos.org)</>
+<>[![Typia 预览](./_logos/typia.png)](https://typia.io)</>
+<>[![Nestia 预览](./_logos/nestia.png)](https://nestia.io)</>
+<>[![Safe 预览](./_logos/safe-core.png)](https://docs.safe.global)</>
+<>[![Auth.js 预览](./_logos/authjs.png)](https://authjs.dev)</>
+<>[![imgix 预览](./_logos/imgix.png)](https://docs.imgix.com)</>
+<>[![AnythingLLM 预览](./_logos/anythingllm.png)](https://anythingllm.com)</>
+<>[![Redbrick 预览](./_logos/redbrick.jpg)](https://wiki.redbrick.land)</>
+<>[![Linito 预览](./_logos/linito.png)](https://www.linito.io/docs)</>
+<>[![Makeform 预览](./_logos/makeform.png)](https://www.makeform.ai/help)</>
+<>[![Rybbit 预览](./_logos/rybbit.png)](https://rybbit.io)</>
+<>[![Canyonjs 预览](./_logos/canyonjs.png)](https://docs.canyonjs.org)</>
+<>[![EmbedPDF 预览](./_logos/embedpdf.png)](https://www.embedpdf.com)</>
 </Cards>
 
 export default function MdxLayout(props) {

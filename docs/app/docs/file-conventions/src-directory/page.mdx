@@ -1,25 +1,20 @@
 ---
+
 icon: FolderIcon
 sidebarTitle: src
-description:
-  The `src` directory in Nextra allows you to organize your application code
-  separately from project configuration files, enhancing code structure and
-  maintainability.
+description: 
+  Nextra 中的 `src` 目录允许你将应用代码与项目配置文件分开组织，从而提升代码结构和可维护性。
 ---
 
 import { FileTree } from 'nextra/components'
 
-# `src` Directory
+# `src` 目录
 
-As an alternative to having the special Nextra `content` directory and
-`mdx-components` file in the root of your project, Nextra also supports the
-common pattern of placing application code under the `src` directory.
+除了在项目根目录下使用特殊的 Nextra `content` 目录和 `mdx-components` 文件外，Nextra 还支持将应用代码放在 `src` 目录下的常见模式。
 
-This separates application code from project configuration files which mostly
-live in the root of a project, which is preferred by some individuals and teams.
+这种方式将应用代码与主要位于项目根目录的配置文件分离，受到部分开发者和团队的青睐。
 
-To use the `src` directory, move the `content` directory and `mdx-components`
-file to `src/content` or `src/mdx-components` respectively.
+要使用 `src` 目录，请将 `content` 目录和 `mdx-components` 文件分别移动到 `src/content` 或 `src/mdx-components` 路径下。
 
 export const nextConfigPackageJson = (
   <>

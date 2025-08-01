@@ -1,37 +1,32 @@
 import { Steps, Tabs } from 'nextra/components'
 
-# Search Engine
+# 搜索引擎
 
-Nextra includes a full-page search feature that makes it easy for users to find
-relevant content across your entire documentation site.
+Nextra 内置全页面搜索功能，让用户能够轻松在整个文档站点中查找相关内容。
 
 > [!TIP]
 >
-> Check the
-> [migration guide](https://the-guild.dev/blog/nextra-4#new-search-engine--pagefind)
-> for more information.
+> 更多信息请查阅
+> [迁移指南](https://the-guild.dev/blog/nextra-4#new-search-engine--pagefind)
 
-## Setup
+## 配置
 
-Nextra integrates with [Pagefind](https://pagefind.app), a static search library
-that indexes your HTML files and provides lightning-fast, client-side full-text
-search — all with no server required.
+Nextra 集成了 [Pagefind](https://pagefind.app) —— 一个静态搜索库，它能索引您的 HTML 文件并提供闪电般快速的客户端全文检索，整个过程无需服务器支持。
 
 <Steps>
-### Install `pagefind` as a dev dependency
+### 安装 `pagefind` 作为开发依赖
 
 ```sh npm2yarn
 npm i -D pagefind
 ```
 
-### Add a `postbuild` script
+### 添加 `postbuild` 脚本
 
-Pagefind indexes `.html` files, so the indexing must happen **after building**
-your application.
+Pagefind 需要索引 `.html` 文件，因此索引操作必须在应用构建**完成后**执行。
 
-Add a `postbuild` script to your `package.json`:
+在 `package.json` 中添加 `postbuild` 脚本：
 
-<Tabs items={['Server builds', 'Static exports']}>
+<Tabs items={['服务端构建', '静态导出']}>
   <Tabs.Tab>
     ```json filename="package.json"
     "scripts": {
@@ -48,23 +43,20 @@ Add a `postbuild` script to your `package.json`:
   </Tabs.Tab>
 </Tabs>
 
-### Ignore generated files
+### 忽略生成文件
 
-Add `_pagefind/` to your `.gitignore` file to avoid committing generated index
-files.
+在 `.gitignore` 文件中添加 `_pagefind/` 以避免提交生成的索引文件。
 
-### Verify indexing output
+### 验证索引输出
 
-After building and running the `postbuild` script, check that a `_pagefind/`
-directory exists in `public/` or `out/`. Start your app and test the search bar
-to confirm everything is working.
+构建并运行 `postbuild` 脚本后，检查 `public/` 或 `out/` 目录下是否存在 `_pagefind/` 文件夹。启动应用并测试搜索栏以确认功能正常。
 
 </Steps>
 
-## Configuration
+## 配置
 
-Search is enabled by default. You can disable it entirely by setting
-`search: false{:js}` in your `next.config.mjs` file:
+搜索功能默认启用。如需完全禁用，可在 `next.config.mjs` 文件中设置：
+`search: false{:js}`
 
 ```js filename="next.config.mjs" {4}
 import nextra from 'nextra'
@@ -75,7 +67,7 @@ const withNextra = nextra({
 export default withNextra()
 ```
 
-To disable code block indexing while keeping search enabled set
+若需保留搜索功能但禁用代码块索引，可设置：
 `search: { codeblocks: false }{:js}`:
 
 ```js filename="next.config.mjs" {4}

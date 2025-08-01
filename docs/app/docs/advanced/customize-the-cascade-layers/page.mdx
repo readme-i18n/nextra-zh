@@ -1,36 +1,32 @@
 ---
-sidebarTitle: Customize Cascade Layers
+
+sidebarTitle: 自定义级联层
 ---
 
 import { Steps } from 'nextra/components'
 
-# Customize the Cascade Layers
+# 自定义级联层
 
-In some scenarios, you may need more control over the Nextra predefined CSS to
-avoid unintended overrides of styles within cascade layers. Below is an example
-of how `nextra-theme-docs` uses
-[postcss-import](https://github.com/postcss/postcss-import) to place predefined
-CSS into a specified cascade layer:
+在某些场景下，你可能需要对 Nextra 预定义的 CSS 进行更精细的控制，以避免级联层中的样式被意外覆盖。以下示例展示了如何通过 [postcss-import](https://github.com/postcss/postcss-import) 将 `nextra-theme-docs` 的预定义 CSS 放置到指定级联层中：
 
 <Steps>
 
-## Install `postcss-import`
+## 安装 `postcss-import`
 
-Install `postcss-import` and add it to `postcss.config.mjs`:
+安装 `postcss-import` 并添加到 `postcss.config.mjs`：
 
 ```js filename="postcss.config.mjs"
 export default {
   plugins: {
     'postcss-import': {}
-    // ... your other PostCSS plugins (e.g., `autoprefixer`, `cssnano`)
+    // ... 其他 PostCSS 插件（如 `autoprefixer`、`cssnano`）
   }
 }
 ```
 
-## Set up the cascade layers
+## 配置级联层
 
-In your CSS file (e.g. `styles.css`), import the `nextra-docs-theme` CSS and
-specify the layers:
+在 CSS 文件（如 `styles.css`）中导入 `nextra-docs-theme` 的 CSS 并指定层级：
 
 ```css filename="styles.css"
 @layer nextra, my-base;
@@ -38,20 +34,19 @@ specify the layers:
 @import 'nextra-theme-docs/dist/style.css' layer(nextra);
 
 @layer my-base {
-  /* my base styles */
+  /* 基础样式 */
 }
 ```
 
-## Import your CSS file
+## 导入 CSS 文件
 
-Import your CSS file at the top-level layout of your application (e.g.
-`app/layout.jsx`) to apply the styles.
+在应用的顶层布局（如 `app/layout.jsx`）中导入 CSS 文件以应用样式：
 
 ```jsx filename="app/layout.jsx"
 import '../path/to/your/styles.css'
 
 export default async function RootLayout({ children }) {
-  // ... Your layout logic here
+  // ... 布局逻辑
 }
 ```
 

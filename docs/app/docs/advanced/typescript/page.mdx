@@ -1,4 +1,5 @@
 ---
+
 icon: TypeScriptIcon
 ---
 
@@ -6,15 +7,14 @@ import { Steps } from 'nextra/components'
 
 # TypeScript
 
-Nextra is built with TypeScript and provides excellent TypeScript support out of
-the box. This guide will help you leverage TypeScript in your Nextra project.
+Nextra 基于 TypeScript 构建，并提供了开箱即用的优秀 TypeScript 支持。本指南将帮助您在 Nextra 项目中充分发挥 TypeScript 的优势。
 
-## Getting started
+## 快速开始
 
-To use TypeScript in your Nextra project, you need to:
+要在 Nextra 项目中使用 TypeScript，您需要：
 
 <Steps>
-### Install TypeScript and types packages as `devDependencies`
+### 将 TypeScript 和类型包安装为 `devDependencies`
 
 ```sh npm2yarn
 npm i -D typescript @types/react @types/node
@@ -22,19 +22,13 @@ npm i -D typescript @types/react @types/node
 
 ### `tsconfig.json`
 
-You can manually create a `tsconfig.json` file in the root of your project or
-rename the extension of some of the existing files to `.ts` or `.tsx` and then
-Next.js will detect TypeScript in your project and create a `tsconfig.json` file
-for you.
+您可以在项目根目录手动创建 `tsconfig.json` 文件，或者将现有文件的扩展名改为 `.ts` 或 `.tsx`，Next.js 会自动检测项目中的 TypeScript 并为您生成 `tsconfig.json` 文件。
 
 </Steps>
 
-## Type definitions
+## 类型定义
 
-Nextra provides type definitions for distribution code for its components and
-configurations. You can leverage these types by renaming your theme
-configuration file to `.ts` or `.tsx` extension and importing a theme config
-type, e.g. for `nextra-theme-docs`:
+Nextra 为其组件和配置提供了分发代码的类型定义。您可以通过将主题配置文件重命名为 `.ts` 或 `.tsx` 扩展名并导入主题配置类型来利用这些类型，例如对于 `nextra-theme-docs`：
 
 ```tsx filename="theme.config.tsx"
 import type { DocsThemeConfig } from 'nextra-theme-docs'
@@ -45,6 +39,4 @@ const config: DocsThemeConfig = {
 export default config
 ```
 
-By leveraging TypeScript in your Nextra project, you can catch errors early,
-improve code quality, and enhance the developer experience with better
-autocompletion and type inference.
+通过在 Nextra 项目中使用 TypeScript，您可以及早发现错误、提高代码质量，并通过更好的自动补全和类型推断来提升开发体验。

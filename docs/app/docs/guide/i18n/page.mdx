@@ -1,25 +1,25 @@
 ---
+
 icon: GlobeIcon
 ---
 
 import { ExampleCode } from '@components/example-code'
 import { Steps } from 'nextra/components'
 
-# Next.js I18n
+# Next.js 国际化支持
 
 > [!WARNING]
 >
-> This feature is only available in `nextra-theme-docs`.
+> 此功能仅在 `nextra-theme-docs` 中可用
 
-Nextra supports
-[Next.js Internationalized Routing](https://nextjs.org/docs/advanced-features/i18n-routing)
-out of the box. These docs explain how to configure and use it.
+Nextra 开箱即用地支持
+[Next.js 国际化路由](https://nextjs.org/docs/advanced-features/i18n-routing)
+。本文档将说明如何配置和使用该功能。
 
 <Steps>
-## Add i18n config
+## 添加国际化配置
 
-To add multi-language pages to your Nextra application, you need to config
-`i18n` in `next.config.mjs` first:
+要为 Nextra 应用添加多语言页面，首先需要在 `next.config.mjs` 中配置 `i18n`：
 
 ```js filename="next.config.mjs" {8-11}
 import nextra from 'nextra'
@@ -38,15 +38,13 @@ export default withNextra({
 
 > [!NOTE]
 >
-> You can use any format of
-> [UTS Locale Identifiers](https://www.unicode.org/reports/tr35/tr35-59/tr35.html#Identifiers)
-> for defining your locales in the `next.config` file, e.g. language with region
-> format `en-US` (English as spoken in the United States).
+> 在 `next.config` 文件中定义语言环境时，可以使用任何格式的
+> [UTS 区域标识符](https://www.unicode.org/reports/tr35/tr35-59/tr35.html#Identifiers)，
+> 例如带地区的语言格式 `en-US`（美国使用的英语）。
 
-## Configure the docs theme
+## 配置文档主题
 
-Add the `i18n` option to your `theme.config.jsx` to configure the language
-dropdown:
+在 `theme.config.jsx` 中添加 `i18n` 选项来配置语言下拉菜单：
 
 ```js filename="theme.config.jsx"
 i18n: [
@@ -57,25 +55,18 @@ i18n: [
 ]
 ```
 
-## Automatically detect and redirect to user-selected language (_optional_)
+## 自动检测并重定向至用户首选语言（可选）
 
-You can automatically detect the user's preferred language and redirect them to
-the corresponding version of the site. To achieve this, create a `middleware.ts`
-or `middleware.js` file in the root of your project and export Nextra's
-middleware function from `nextra/locales`:
+可以自动检测用户偏好的语言并重定向至对应语言版本的网站。要实现此功能，需在项目根目录创建 `middleware.ts` 或 `middleware.js` 文件，并从 `nextra/locales` 导出 Nextra 的中间件函数：
 
 <ExampleCode example="swr-site" filePath="middleware.ts" metadata="{1}" />
 
 > [!WARNING]
 >
-> This approach will not work for i18n sites that are statically exported with
-> `output: 'export'` in `nextConfig`.
+> 此方法不适用于在 `nextConfig` 中配置了 `output: 'export'` 的静态导出国际化网站。
 
-## Custom 404 page (_optional_)
+## 自定义 404 页面（可选）
 
-You can have a custom `not-found.jsx` with translations for an i18n website that
-uses a shared theme layout. For guidance on implementing this, you can check out
-the
-[SWR i18n example](https://github.com/shuding/nextra/blob/c9d0ffc8687644401412b8adc34af220cccddf82/examples/swr-site/app/%5Blang%5D/not-found.ts).
+对于使用共享主题布局的国际化网站，可以创建带翻译的自定义 `not-found.jsx`。具体实现可参考 [SWR 国际化示例](https://github.com/shuding/nextra/blob/c9d0ffc8687644401412b8adc34af220cccddf82/examples/swr-site/app/%5Blang%5D/not-found.ts)。
 
 </Steps>

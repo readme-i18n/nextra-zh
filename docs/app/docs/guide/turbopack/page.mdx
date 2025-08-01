@@ -1,7 +1,6 @@
-# Usage with Turbopack
+# 与 Turbopack 配合使用
 
-To use [Turbopack](https://nextjs.org/docs/architecture/turbopack), simple
-append the `--turbopack` flag to your development command:
+要使用 [Turbopack](https://nextjs.org/docs/architecture/turbopack)，只需在开发命令后添加 `--turbopack` 标志：
 
 ```diff filename="package.json"
 "scripts": {
@@ -12,19 +11,13 @@ append the `--turbopack` flag to your development command:
 
 > [!NOTE]
 >
-> Without `--turbopack` flag Next.js under the hood uses
-> [Webpack](https://github.com/webpack/webpack), written in JavaScript.
+> 若不使用 `--turbopack` 标志，Next.js 底层会采用 JavaScript 编写的 [Webpack](https://github.com/webpack/webpack)。
 
-## Only serializable options are supported
+## 仅支持可序列化选项
 
-For this moment only JSON serializable values can be passed in `nextra`
-function. This mean that with Turbopack enabled you can't pass custom
-`remarkPlugins`, `rehypePlugins` or `recmaPlugins` since they are functions.
+目前 `nextra` 函数仅支持传递 JSON 可序列化的值。这意味着启用 Turbopack 时，无法传递自定义的 `remarkPlugins`、`rehypePlugins` 或 `recmaPlugins`，因为它们都是函数类型。
 
-The following options could be passed only without Turbopack or only while
-building your app with `next build`
-([since Turbopack isn't support `next build` for now](https://nextjs.org/docs/architecture/turbopack#unsupported-features)
-and Webpack is used instead).
+以下选项只能在未启用 Turbopack 时传递，或仅在通过 `next build` 构建应用时使用（[因为 Turbopack 目前不支持 `next build`](https://nextjs.org/docs/architecture/turbopack#unsupported-features)，此时会回退到 Webpack）。
 
 ```js filename="next.config.js" {5-7}
 import nextra from 'nextra'
@@ -38,7 +31,7 @@ const withNextra = nextra({
 })
 ```
 
-If you try to pass them, you'll get an error from Turbopack:
+若尝试传递这些选项，将会收到来自 Turbopack 的错误提示。
 
 ```text copy=false
 Error: loader nextra/loader for match "./{src/app,app}/**/page.{md,mdx}" does not have serializable options.

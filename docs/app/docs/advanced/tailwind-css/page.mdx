@@ -1,4 +1,5 @@
 ---
+
 icon: TailwindIcon
 ---
 
@@ -6,40 +7,36 @@ import { Steps } from 'nextra/components'
 
 # Tailwind CSS
 
-Tailwind CSS is a CSS framework that provides a set of pre-defined CSS classes
-to quickly style elements.
+Tailwind CSS 是一个 CSS 框架，提供一组预定义的 CSS 类来快速为元素添加样式。
 
 <Steps>
 
-## Follow the official guide
+## 遵循官方指南
 
-Follow the official
-[Tailwind CSS guide for Next.js](https://tailwindcss.com/docs/guides/nextjs) to
-set up Tailwind CSS for your project.
+按照官方提供的 [Next.js 版 Tailwind CSS 指南](https://tailwindcss.com/docs/guides/nextjs) 为项目配置 Tailwind CSS。
 
-## Create the `globals.css` file
+## 创建 `globals.css` 文件
 
-Import Tailwind CSS into `globals.css`:
+在 `globals.css` 中导入 Tailwind CSS：
 
 ```css filename="globals.css"
 @import 'tailwindcss';
 
-/* Optional: import Nextra theme styles */
-@import 'nextra-theme-docs/style.css'; /* or nextra-theme-blog/style.css */
+/* 可选：导入 Nextra 主题样式 */
+@import 'nextra-theme-docs/style.css'; /* 或 nextra-theme-blog/style.css */
 
 @variant dark (&:where(.dark *));
 ```
 
-## Import styles in the root layout
+## 在根布局中导入样式
 
-To apply the styles globally, import the `globals.css` file in your root layout
-file:
+如需全局应用样式，请在根布局文件中导入 `globals.css`：
 
 ```jsx filename="app/layout.jsx"
 import '../path/to/your/globals.css'
 
 export default async function RootLayout({ children }) {
-  // ... Your layout logic here
+  // ... 您的布局逻辑
 }
 ```
 

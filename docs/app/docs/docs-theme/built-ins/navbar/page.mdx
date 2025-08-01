@@ -1,19 +1,20 @@
 ---
+
 sidebarTitle: Navbar
 ---
 
 import { ToggleVisibilitySection } from 'components/toggle-visibility-section'
 import { generateTsFromZod } from 'nextra/tsdoc'
 
-# Navbar Component
+# 导航栏组件
 
-## Props
+## 属性配置
 
 <APIDocs componentName="Navbar" packageName="nextra-theme-docs" />
 
 ### Logo
 
-The logo of the website rendered on the navbar.
+显示在导航栏上的网站标志。
 
 <figure>
   <>![Customized Logo](/assets/docs/logo.png)</>
@@ -39,15 +40,13 @@ The logo of the website rendered on the navbar.
 />
 ```
 
-### Project link
+### 项目链接
 
-Show a button that links to your project's homepage on the navbar. By default,
-it links to Nextra's GitHub repository.
+在导航栏上显示一个跳转到项目主页的按钮。默认情况下，该按钮会链接到 Nextra 的 GitHub 仓库。
 
-You can configure `projectLink` and `projectIcon` to customize the project link,
-for example make it link to your GitLab repository:
+你可以通过配置 `projectLink` 和 `projectIcon` 来自定义项目链接，例如将其指向你的 GitLab 仓库：
 
-![Project link](/assets/docs/project-link.png)
+![项目链接](/assets/docs/project-link.png)
 
 ```jsx filename="app/layout.jsx"
 <Navbar
@@ -60,13 +59,11 @@ for example make it link to your GitLab repository:
 />
 ```
 
-### Chat link
+### 聊天链接
 
-Show a button that links to your project's forum or other social media on the
-navbar.
+在导航栏上显示一个跳转到项目论坛或其他社交媒体的按钮。
 
-You can configure `chatLink` and `chatIcon` to customize the chat link, for
-example make it link to your Twitter account:
+你可以通过配置 `chatLink` 和 `chatIcon` 来自定义聊天链接，例如将其指向你的 Twitter 账号：
 
 ```jsx filename="app/layout.jsx"
 <Navbar
@@ -82,9 +79,8 @@ example make it link to your Twitter account:
 />
 ```
 
-### Menu and custom links
+### 菜单与自定义链接
 
-Check out [Page Configuration](/docs/docs-theme/page-configuration#navbar-items)
-to learn how to add custom menus or links to the navbar.
+查看[页面配置](/docs/docs-theme/page-configuration#navbar-items)了解如何向导航栏添加自定义菜单或链接。
 
 <ToggleVisibilitySection element="`<Navbar>`" property="navbar" />
