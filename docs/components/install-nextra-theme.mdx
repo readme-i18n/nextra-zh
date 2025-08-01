@@ -1,4 +1,4 @@
-Add the following scripts to your `package.json`:
+在您的 `package.json` 中添加以下脚本：
 
 ```json filename="package.json"
 "scripts": {
@@ -10,22 +10,20 @@ Add the following scripts to your `package.json`:
 
 > [!TIP]
 >
-> You can enable Turbopack in development by appending the `--turbopack` flag to
-> the `dev` command:
+> 您可以通过在 `dev` 命令后添加 `--turbopack` 标志来启用开发环境下的 Turbopack：
 >
 > ```diff filename="package.json"
 > - "dev": "next",
 > + "dev": "next --turbopack",
 > ```
 
-You can start the server in development mode with the following command
-according to your package manager:
+根据您使用的包管理器，可以通过以下命令启动开发服务器：
 
 ```sh npm2yarn
 npm run dev
 ```
 
-or in production mode:
+或使用生产模式：
 
 ```sh npm2yarn
 npm run build
@@ -34,13 +32,11 @@ npm run start
 
 > [!NOTE]
 >
-> If you're not familiar with Next.js, note that development mode is
-> significantly slower since Next.js compiles every page you navigate to.
+> 如果您不熟悉 Next.js，请注意开发模式会显著较慢，因为 Next.js 会编译您访问的每个页面。
 
-### Add Next.js config
+### 添加 Next.js 配置
 
-Create a `next.config.mjs` file in your project's root directory with the
-following content:
+在项目根目录下创建 `next.config.mjs` 文件，内容如下：
 
 ```js filename="next.config.mjs"
 import nextra from 'nextra'
@@ -56,18 +52,14 @@ export default withNextra({
 })
 ```
 
-With this configuration, Nextra will handle Markdown files in your Next.js
-project. For more Nextra configuration options, check out the
-[Guide](/docs/guide).
+通过此配置，Nextra 将处理 Next.js 项目中的 Markdown 文件。更多 Nextra 配置选项，请查阅[指南](/docs/guide)。
 
-### Add [`mdx-components` file](/docs/file-conventions/mdx-components-file)
+### 添加 [`mdx-components` 文件](/docs/file-conventions/mdx-components-file)
 
-### Setup search
+### 设置搜索功能
 
-To set up search, follow the instructions on the
-[Search Engine](/docs/guide/search#setup) page.
+要设置搜索功能，请按照[搜索引擎](/docs/guide/search#setup)页面的说明操作。
 
-### Create the root layout
+### 创建根布局
 
-Next, create the root layout of your application inside the `app` folder. This
-layout will be used to configure your Nextra Theme:
+接下来，在 `app` 文件夹内创建应用程序的根布局。该布局将用于配置您的 Nextra 主题：
