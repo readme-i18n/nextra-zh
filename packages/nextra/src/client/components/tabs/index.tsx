@@ -7,8 +7,7 @@ import { Tabs as _Tabs, Tab } from './index.client.js'
 // Error: Cannot access Tab.propTypes on the server. You cannot dot into a client module from a
 // server component. You can only pass the imported name through.
 /**
- * A built-in component for creating tabbed content, helping organize related information in a
- * compact, interactive layout.
+ * 一个内置组件，用于创建带标签的内容，帮助以紧凑、交互式的布局组织相关信息。
  *
  * @example
  * <Tabs items={['pnpm', 'npm', 'yarn']}>
@@ -28,9 +27,9 @@ import { Tabs as _Tabs, Tab } from './index.client.js'
  * </Tabs>
  * ```
  *
- * ### Default Selected Index
+ * ### 默认选中索引
  *
- * You can use the `defaultIndex` prop to set the default tab index:
+ * 你可以使用 `defaultIndex` 属性来设置默认的标签页索引：
  *
  * ```mdx /defaultIndex="1"/
  * import { Tabs } from 'nextra/components'
@@ -40,7 +39,7 @@ import { Tabs as _Tabs, Tab } from './index.client.js'
  * </Tabs>
  * ```
  *
- * And you will have `npm` as the default tab:
+ * 这样 `npm` 就会作为默认选中的标签页：
  *
  * <Tabs items={['pnpm', 'npm', 'yarn']} defaultIndex="1">
  *   <Tabs.Tab>**pnpm**: Fast, disk space efficient package manager.</Tabs.Tab>

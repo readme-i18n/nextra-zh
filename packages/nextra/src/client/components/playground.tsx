@@ -8,19 +8,19 @@ import { Callout } from './callout.js'
 
 type PlaygroundProps = {
   /**
-   * String with source MDX.
+   * 包含源 MDX 的字符串。
    * @example '# hello world <br /> nice to see you'
    */
   source: string
   /**
-   * Fallback component for loading.
+   * 加载时的回退组件。
    * @default null
    */
   fallback?: ReactElement | null
 } & Pick<MDXRemoteProps, 'components' | 'scope'>
 
 /**
- * A built-in component lets you write Nextra-compatible MDX that renders only on the client.
+ * 一个内置组件，允许你编写仅在客户端渲染的 Nextra 兼容 MDX。
  * @example
  * <PlaygroundDemo />
  *
@@ -30,7 +30,7 @@ type PlaygroundProps = {
  *
  * # Playground
  *
- * Below is a playground component. It mixes into the rest of your MDX perfectly.
+ * 下面是一个 playground 组件。它与你的 MDX 完美融合。
  *
  * <Playground
  *   source="## Hello world"
@@ -38,7 +38,7 @@ type PlaygroundProps = {
  * />
  * ```
  *
- * You may also specify a fallback component like so:
+ * 你也可以像这样指定一个回退组件：
  *
  * ```mdx filename="Usage with Fallback"
  * import { Playground } from 'nextra/components'
@@ -50,12 +50,10 @@ type PlaygroundProps = {
  * />
  * ```
  *
- * ### Avoiding unstyled outputs
+ * ### 避免无样式输出
  *
- * To prevent unstyled elements, import `useMDXComponents` from your
- * `mdx-components` file. Call this function and pass the returned components to
- * the `components` prop. You can also include your custom components as the first
- * argument:
+ * 为了防止无样式元素，从你的 `mdx-components` 文件中导入 `useMDXComponents`。
+ * 调用此函数并将返回的组件传递给 `components` 属性。你也可以将你的自定义组件作为第一个参数包含进去：
  *
  * ```mdx {1,6-8}
  * import { Playground } from 'nextra/components'

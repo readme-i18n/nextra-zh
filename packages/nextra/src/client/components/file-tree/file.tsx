@@ -15,7 +15,7 @@ export const File: FC<FileProps> = ({ name, active }) => {
         active && 'x:text-primary-600'
       )}
     >
-      {/* Text can shrink icon */}
+      {/* 文本可以缩小图标 */}
       <FileIcon height="14" className="x:shrink-0" />
       {name}
     </li>

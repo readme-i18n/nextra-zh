@@ -33,11 +33,11 @@ export const Tabs: FC<
   {
     items: (TabItem | TabObjectItem)[]
     children: ReactNode
-    /** LocalStorage key for persisting the selected tab. */
+    /** 用于持久化选中标签页的 LocalStorage 键名。 */
     storageKey?: string
-    /** Tabs CSS class name. */
+    /** 标签页组的 CSS 类名。 */
     className?: TabListProps['className']
-    /** Tab CSS class name. */
+    /** 单个标签页的 CSS 类名。 */
     tabClassName?: HeadlessTabProps['className']
   } & Pick<TabGroupProps, 'defaultIndex' | 'selectedIndex' | 'onChange'>
 > = ({

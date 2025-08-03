@@ -2,25 +2,23 @@ import cn from 'clsx'
 import type { FC, HTMLAttributes } from 'react'
 
 /**
- * A built-in component to slightly expand content beyond the container's width, `<Bleed>` allows it
- * to overflow on both sides.
+ * 一个内置组件，用于将内容略微扩展超出容器宽度，`<Bleed>` 允许内容在两侧溢出。
  *
- * It's ideal for enhancing the presentation of graphical elements, offering a more immersive and
- * visually appealing reading experience.
+ * 它非常适合增强图形元素的呈现，提供更具沉浸感和视觉吸引力的阅读体验。
  *
  * @example
  *
- * You can put text, image, video or any component inside.
+ * 你可以在其中放入文本、图片、视频或任何组件。
  *
- * ### Text
+ * ### 文本
  *
  * <Bleed className="bg-white dark:bg-neutral-800 px-16 py-10 text-center border">
- *   _There is nothing to writing. All you do is sit down at a typewriter and **bleed**._
+ *   _写作没什么难的。你所要做的就是坐在打字机前，然后 **流血**。_
  *
- *   — Ernest Hemingway
+ *   — 欧内斯特·海明威
  * </Bleed>
  *
- * ### Video
+ * ### 视频
  *
  * <Bleed>
  *   <iframe
@@ -31,9 +29,9 @@ import type { FC, HTMLAttributes } from 'react'
  *   />
  * </Bleed>
  *
- * ### Full-bleed
+ * ### 全出血
  *
- * You can even make it full-bleed by using `<Bleed full>`:
+ * 你甚至可以通过使用 `<Bleed full>` 使其全出血：
  *
  * <Bleed full>![Nextra](/opengraph-image.jpeg)</Bleed>
  *
@@ -42,7 +40,7 @@ import type { FC, HTMLAttributes } from 'react'
  * ```mdx filename="MDX"
  * import { Bleed } from 'nextra/components'
  *
- * <Bleed>Hey, I can use **Markdown** syntax here.</Bleed>
+ * <Bleed>嘿，我可以在这里使用 **Markdown** 语法。</Bleed>
  *
  * <Bleed full>![Nextra](https://nextra.site/og.jpeg)</Bleed>
  *
@@ -58,7 +56,7 @@ import type { FC, HTMLAttributes } from 'react'
  */
 export const Bleed: FC<
   {
-    /** Extend content to the very edges of its container. */
+    /** 将内容扩展到其容器的边缘。 */
     full: boolean
   } & HTMLAttributes<HTMLDivElement>
 > = ({ full, className, ...props }) => {

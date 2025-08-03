@@ -8,30 +8,28 @@ const BANNER_CLASS_NAME = 'nextra-banner'
 
 type BannerProps = HTMLAttributes<HTMLDivElement> & {
   /**
-   * Closable banner or not.
+   * 是否可关闭横幅。
    * @default true
    */
   dismissible?: boolean
   /**
-   * Storage key to keep the banner state.
+   * 用于保存横幅状态的存储键名。
    * @default 'nextra-banner'
    */
   storageKey?: string
 }
 
 /**
- * A built-in component to show a banner on the top of the website. It can be used to show a warning
- * or a notice.
+ * 一个内置组件，用于在网站顶部显示横幅。可用于显示警告或通知。
  *
  * @example
  * ### Banner key
  *
- * A banner can be dismissed. By default, it's used by
+ * 横幅可以被关闭。默认情况下，它使用
  * [localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
- * to keep the banner state on the client.
+ * 在客户端保存横幅状态。
  *
- * If you have updated your banner text, you should change the key to make sure the banner is shown
- * again. The best practice is to always use a descriptive key for the current text, for example:
+ * 如果您更新了横幅文本，应更改键名以确保横幅再次显示。最佳实践是始终为当前文本使用描述性键名，例如：
  *
  * ![Banner](https://nextra.site/assets/docs/banner.png)
  *

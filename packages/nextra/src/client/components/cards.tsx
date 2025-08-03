@@ -8,7 +8,7 @@ const Card: FC<{
   arrow?: boolean
   href: string
   children?: ReactNode
-  /** CSS class name. */
+  /** CSS 类名。 */
   className?: string
 }> = ({ children, title, icon, arrow, href, className, ...props }) => {
   return (
@@ -53,7 +53,7 @@ const Card: FC<{
 const _Cards: FC<
   {
     /**
-     * Number of columns.
+     * 列数。
      * @default 3
      */
     num?: number
@@ -78,11 +78,11 @@ const _Cards: FC<
 }
 
 /**
- * A built-in component that allows you to display content in a visually appealing card format. It
- * includes options for adding an icon, title, link and an image to related content.
+ * 一个内置组件，允许你以视觉上吸引人的卡片格式显示内容。
+ * 包括添加图标、标题、链接和相关内容图片的选项。
  *
  * @example
- * ### Grouped cards
+ * ### 分组卡片
  *
  * <Cards>
  *   <Cards.Card
@@ -102,7 +102,7 @@ const _Cards: FC<
  *   />
  * </Cards>
  *
- * ### Single card
+ * ### 单张卡片
  *
  * <br />
  * <Cards.Card
@@ -113,13 +113,11 @@ const _Cards: FC<
  * />
  *
  * @usage
- * ### Grouped cards
+ * ### 分组卡片
  *
- * Import the `<Cards>` component to your page, which includes the `<Card>` component.
+ * 将 `<Cards>` 组件导入到你的页面，该组件包括 `<Card>` 组件。
  *
- * Then, optionally import the icons that you want to use. To create a set of cards, follow the
- * example below where the `<Cards.Card>` component is used to create a card and the `<Cards>`
- * component is used to group multiple cards together.
+ * 然后，可选地导入你想使用的图标。要创建一组卡片，按照下面的例子，其中 `<Cards.Card>` 组件用于创建卡片，`<Cards>` 组件用于将多张卡片分组在一起。
  *
  * ```mdx filename="MDX"
  * import { Cards } from 'nextra/components'
@@ -144,11 +142,9 @@ const _Cards: FC<
  * </Cards>
  * ```
  *
- * ### Single card
+ * ### 单张卡片
  *
- * A `<Card>` not wrapped in a `<Cards>` component will not be grouped with other cards. This can
- * be useful if you want to display a single card in a different format than the other cards on the
- * page.
+ * 未包裹在 `<Cards>` 组件中的 `<Card>` 不会与其他卡片分组。如果你想要以不同于页面上其他卡片的格式显示单张卡片，这可能很有用。
  *
  * ```mdx filename="MDX"
  * <Cards.Card

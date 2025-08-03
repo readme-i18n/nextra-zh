@@ -45,7 +45,7 @@ export const Folder: FC<FolderProps> = ({
           )
         }
       >
-        {/* Text can shrink icon */}
+        {/* 文本可以缩小图标 */}
         <ComponentToUse height="14" className="x:shrink-0" />
         {name}
       </Button>

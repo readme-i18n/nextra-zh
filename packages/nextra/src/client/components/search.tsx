@@ -55,34 +55,34 @@ type InputProps = Omit<
 
 interface SearchProps extends InputProps {
   /**
-   * Not found text.
+   * 未找到文本。
    * @default 'No results found.'
    */
   emptyResult?: ReactNode
   /**
-   * Error text.
+   * 错误文本。
    * @default 'Failed to load search index.'
    * */
   errorText?: ReactNode
   /**
-   * Loading text.
+   * 加载中文本。
    * @default 'Loading…'
    */
   loading?: ReactNode
   /**
-   * Placeholder text.
+   * 占位文本。
    * @default 'Search documentation…'
    */
   placeholder?: string
-  /** Input container CSS class name. */
+  /** 输入容器的 CSS 类名。 */
   className?: string
   searchOptions?: PagefindSearchOptions
   /**
-   * Callback function that triggers whenever the search input changes.
+   * 每当搜索输入发生变化时触发的回调函数。
    *
-   * This prop is **not serializable** and cannot be used directly in a server-side layout.
+   * 此属性**不可序列化**，不能直接在服务器端布局中使用。
    *
-   * To use this prop, wrap the component in a **client-side** wrapper. Example:
+   * 要使用此属性，请将组件包装在**客户端**包装器中。示例：
    *
    * ```tsx filename="search-with-callback.jsx"
    * 'use client'
@@ -100,7 +100,7 @@ interface SearchProps extends InputProps {
    * }
    * ```
    *
-   * Then pass the wrapper to the layout:
+   * 然后将包装器传递给布局：
    *
    * ```tsx filename="app/layout.jsx"
    * import { SearchWithCallback } from '../path/to/your/search-with-callback'
@@ -108,7 +108,7 @@ interface SearchProps extends InputProps {
    * <Layout search={<SearchWithCallback />} {...rest} />
    * ```
    *
-   * @param query - The current search input string.
+   * @param query - 当前的搜索输入字符串。
    */
   onSearch?: (query: string) => void
 }
@@ -130,13 +130,10 @@ const DEV_SEARCH_NOTICE = (
 )
 
 /**
- * A built-in search component provides a seamless and fast search
- * experience out of the box. Under the hood, it leverages the
- * [Pagefind package](https://pagefind.app) — a fully client-side search engine optimized for static
- * sites. Pagefind indexes your content at build time and enables highly performant,
- * zero-JavaScript-dependency searches at runtime.
+ * 内置搜索组件提供开箱即用的无缝快速搜索体验。在底层，它利用了
+ * [Pagefind 包](https://pagefind.app) —— 一个为静态站点优化的全客户端搜索引擎。Pagefind 在构建时索引您的内容，并在运行时实现高性能、零 JavaScript 依赖的搜索。
  *
- * @see [Nextra search setup guide](https://nextra.site/docs/guide/search)
+ * @see [Nextra 搜索设置指南](https://nextra.site/docs/guide/search)
  */
 export const Search: FC<SearchProps> = ({
   className,

@@ -3,61 +3,56 @@ import type { FC, HTMLAttributes } from 'react'
 import { useId } from 'react'
 
 /**
- * A built-in component to turn a numbered list into a visual representation of
- * steps.
+ * 一个内置组件，用于将编号列表转换为步骤的视觉表示。
  *
  * @example
  * <Steps>
  *
- * ### This is the first step
+ * ### 这是第一步
  *
- * This is the first step description.
+ * 这是第一步的描述。
  *
- * ### This is the second step
+ * ### 这是第二步
  *
- * This is the second step description.
+ * 这是第二步的描述。
  *
- * ### This is the third step
+ * ### 这是第三步
  *
- * This is the third step description.
+ * 这是第三步的描述。
  *
  * </Steps>
  *
  * @usage
- * Wrap a set of Markdown headings (from `<h2>` to `<h6>`) with the `<Steps>`
- * component to display them as visual steps. You can choose the appropriate
- * heading level based on the content hierarchy on the page.
+ * 用 `<Steps>` 组件包裹一组 Markdown 标题（从 `<h2>` 到 `<h6>`）以将它们显示为视觉步骤。您可以根据页面上的内容层次结构选择合适的标题级别。
  *
  * ```mdx filename="MDX" {7-15}
  * import { Steps } from 'nextra/components'
  *
- * ## Getting Started
+ * ## 开始使用
  *
- * Here is some description.
+ * 这里是一些描述。
  *
  * <Steps>
- * ### Step 1
+ * ### 第一步
  *
- * Contents for step 1.
+ * 第一步的内容。
  *
- * ### Step 2
+ * ### 第二步
  *
- * Contents for step 2.
+ * 第二步的内容。
  * </Steps>
  * ```
  *
- * ### Excluding Headings from Table of Contents
+ * ### 从目录中排除标题
  *
- * To exclude the headings from the `<Steps>` component (or any other headings)
- * to appear in the Table of Contents, replace the Markdown headings `### ...`
- * with `<h3>` HTML element wrapped in curly braces.
+ * 要从 `<Steps>` 组件（或任何其他标题）中排除标题出现在目录中，请将 Markdown 标题 `### ...` 替换为用花括号包裹的 `<h3>` HTML 元素。
  *
  * ```diff filename="MDX"
  * <Steps>
- * - ### Step 1
- * + {<h3>Step 1</h3>}
+ * - ### 第一步
+ * + {<h3>第一步</h3>}
  *
- * Contents for step 1.
+ * 第一步的内容。
  * </Steps>
  * ```
  */

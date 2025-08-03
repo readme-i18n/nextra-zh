@@ -9,10 +9,10 @@ import { Tree } from './tree.js'
 // Error: Cannot access File.propTypes on the server. You cannot dot into a client
 // module from a server component. You can only pass the imported name through.
 /**
- * A built-in component to visually represent a file tree.
+ * 一个内置组件，用于可视化展示文件树结构。
  *
  * @example
- * Click the folder to test the dynamic functionality of the file tree.
+ * 点击文件夹测试文件树的动态功能。
  *
  * <FileTree>
  *   <FileTree.Folder name="content" defaultOpen>
@@ -28,9 +28,8 @@ import { Tree } from './tree.js'
  * </FileTree>
  *
  * @usage
- * Create the file tree structure by nesting `<FileTree.Folder>` and
- * `<FileTree.File>` components within a `<FileTree>`. Name each file or folder
- * with the `name` attribute. Use `defaultOpen` to set the folder to open on load.
+ * 通过在 `<FileTree>` 中嵌套 `<FileTree.Folder>` 和 `<FileTree.File>` 组件来创建文件树结构。
+ * 使用 `name` 属性为每个文件或文件夹命名。使用 `defaultOpen` 设置文件夹在加载时是否展开。
  *
  * ```mdx filename="MDX"
  * import { FileTree } from 'nextra/components'

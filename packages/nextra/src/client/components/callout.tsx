@@ -48,125 +48,125 @@ const classes: Record<CalloutType, string> = {
 
 type CalloutProps = HTMLAttributes<HTMLDivElement> & {
   /**
-   * Defines the style of the callout and determines the default icon if `emoji` is not provided.
+   * 定义提示框的样式，并在未提供 `emoji` 时决定默认图标。
    *
-   * If set to `null`, no border, background, or text styling will be applied.
+   * 如果设置为 `null`，则不会应用边框、背景或文本样式。
    * @default 'default'
    */
   type?: CalloutType | null
   /**
-   * Icon displayed in the callout. Can be a string emoji or a custom React element.
+   * 提示框中显示的图标。可以是字符串形式的emoji或自定义React元素。
    *
-   * Default values based on `type`:
-   * - `<GitHubTipIcon />` for `type: 'default'`
-   * - `<GitHubCautionIcon />` for `type: 'error'`
-   * - `<GitHubNoteIcon />` for `type: 'info'`
-   * - `<GitHubWarningIcon />` for `type: 'warning'`
-   * - `<GitHubImportantIcon />` for `type: 'important'`
-   * @default Determined by `type`
+   * 基于 `type` 的默认值：
+   * - `<GitHubTipIcon />` 对应 `type: 'default'`
+   * - `<GitHubCautionIcon />` 对应 `type: 'error'`
+   * - `<GitHubNoteIcon />` 对应 `type: 'info'`
+   * - `<GitHubWarningIcon />` 对应 `type: 'warning'`
+   * - `<GitHubImportantIcon />` 对应 `type: 'important'`
+   * @default 由 `type` 决定
    */
   emoji?: ReactNode
 }
 
 /**
- * A built-in component to show important information to the reader.
+ * 一个内置组件，用于向读者展示重要信息。
  *
  * @example
  * <Callout>
- *   A **callout** is a short piece of text intended to attract attention.
+ *   **提示框**是一段旨在吸引注意力的简短文本。
  * </Callout>
  *
  * <Callout type="info">
- *   A **callout** is a short piece of text intended to attract attention.
+ *   **提示框**是一段旨在吸引注意力的简短文本。
  * </Callout>
  *
  * <Callout type="warning">
- *   A **callout** is a short piece of text intended to attract attention.
+ *   **提示框**是一段旨在吸引注意力的简短文本。
  * </Callout>
  *
  * <Callout type="error">
- *   A **callout** is a short piece of text intended to attract attention.
+ *   **提示框**是一段旨在吸引注意力的简短文本。
  * </Callout>
  *
  * <Callout type="important">
- *   A **callout** is a short piece of text intended to attract attention.
+ *   **提示框**是一段旨在吸引注意力的简短文本。
  * </Callout>
  *
  * @usage
- * ### Default
+ * ### 默认
  *
- * <Callout>Helpful advice for doing things better or more easily.</Callout>
+ * <Callout>帮助您更好或更轻松地完成事情的实用建议。</Callout>
  *
  * ```mdx
  * import { Callout } from 'nextra/components'
  *
- * <Callout>Helpful advice for doing things better or more easily.</Callout>
+ * <Callout>帮助您更好或更轻松地完成事情的实用建议。</Callout>
  * ```
  *
- * ### Info
+ * ### 信息
  *
  * <Callout type="info">
- *   Useful information that users should know, even when skimming content.
+ *   即使用户快速浏览内容，也应了解的有用信息。
  * </Callout>
  *
  * ```mdx
  * import { Callout } from 'nextra/components'
  *
  * <Callout type="info">
- *   Useful information that users should know, even when skimming content.
+ *   即使用户快速浏览内容，也应了解的有用信息。
  * </Callout>
  * ```
  *
- * ### Warning
+ * ### 警告
  *
  * <Callout type="warning">
- *   Urgent info that needs immediate user attention to avoid problems.
+ *   需要用户立即关注的紧急信息，以避免问题。
  * </Callout>
  *
  * ```mdx
  * import { Callout } from 'nextra/components'
  *
  * <Callout type="warning">
- *   Urgent info that needs immediate user attention to avoid problems.
+ *   需要用户立即关注的紧急信息，以避免问题。
  * </Callout>
  * ```
  *
- * ### Error
+ * ### 错误
  *
  * <Callout type="error">
- *   Advises about risks or negative outcomes of certain actions.
+ *   关于某些行动的风险或负面结果的建议。
  * </Callout>
  *
  * ```mdx
  * import { Callout } from 'nextra/components'
  *
  * <Callout type="error">
- *   Advises about risks or negative outcomes of certain actions.
+ *   关于某些行动的风险或负面结果的建议。
  * </Callout>
  * ```
  *
- * ### Important
+ * ### 重要
  *
  * <Callout type="important">
- *   Key information users need to know to achieve their goal.
+ *   用户需要了解的关键信息，以实现他们的目标。
  * </Callout>
  *
  * ```mdx
  * import { Callout } from 'nextra/components'
  *
  * <Callout type="important">
- *   Key information users need to know to achieve their goal.
+ *   用户需要了解的关键信息，以实现他们的目标。
  * </Callout>
  * ```
  *
- * ### Custom icon
+ * ### 自定义图标
  *
- * <Callout type="info" emoji="⭐">Nextra has 13k stars on GitHub!</Callout>
+ * <Callout type="info" emoji="⭐">Nextra在GitHub上有13k星！</Callout>
  *
  * ```mdx
  * import { Callout } from 'nextra/components'
  *
- * <Callout type="info" emoji="⭐">Nextra has 13k stars on GitHub!</Callout>
+ * <Callout type="info" emoji="⭐">Nextra在GitHub上有13k星！</Callout>
  * ```
  */
 export const Callout: FC<CalloutProps> = ({

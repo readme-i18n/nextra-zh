@@ -103,14 +103,12 @@ export const HeadPropsSchema = z.strictObject({
 })
 
 /**
- * Configure the `<head>` tags, primary color, background color and favicon glyph
- * of the website.
+ * 配置网站的 `<head>` 标签、主色调、背景颜色和 favicon 图标。
  *
  * @usage
- * ### Static head tags
+ * ### 静态 head 标签
  *
- * If you have static head tags, they should be put as `children` in `Head`. For
- * example:
+ * 如果有静态 head 标签，应将其作为 `children` 放入 `Head` 中。例如：
  *
  * ```jsx filename="app/layout.jsx" {8}
  * import { Layout } from 'my-nextra-theme'
@@ -130,12 +128,11 @@ export const HeadPropsSchema = z.strictObject({
  * }
  * ```
  *
- * ### Dynamic tags based on page
+ * ### 基于页面的动态标签
  *
- * You can dynamically generate the head tags based on the current page's front
- * matter. For example:
+ * 可以根据当前页面的 front matter 动态生成 head 标签。例如：
  *
- * #### via Markdown front matter
+ * #### 通过 Markdown front matter
  *
  * ```mdx filename="my-page/page.mdx"
  * ---
@@ -144,7 +141,7 @@ export const HeadPropsSchema = z.strictObject({
  * ---
  * ```
  *
- * #### via exporting `metadata` object
+ * #### 通过导出 `metadata` 对象
  *
  * ```mdx filename="my-page/page.mdx"
  * export const metadata = {
@@ -153,7 +150,7 @@ export const HeadPropsSchema = z.strictObject({
  * }
  * ```
  *
- * #### in [dynamic routes with catch-all segment](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#catch-all-segments)
+ * #### 在[带有 catch-all 段的动态路由中](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#catch-all-segments)
  *
  * ```jsx filename="app/[[...mdxPath]]/page.jsx"
  * import { importPage } from 'nextra/pages'
@@ -168,22 +165,19 @@ export const HeadPropsSchema = z.strictObject({
  * }
  * ```
  *
- * ### Theme color
+ * ### 主题颜色
  *
- * You can adjust the theme color of the website by setting primary Hue, Saturation
- * and Lightness (HSL) values for light and dark themes. Try it out for this
- * website:
+ * 可以通过为浅色和深色主题设置主色调的色相（Hue）、饱和度（Saturation）
+ * 和亮度（Lightness，HSL）值来调整网站的主题颜色。尝试为这个网站调整：
  *
- * | Hue (H)                                            | Saturation (S)                                            | Lightness (L)                                             | Background Color   |
+ * | 色相 (H)                                            | 饱和度 (S)                                            | 亮度 (L)                                             | 背景颜色   |
  * | -------------------------------------------------- | --------------------------------------------------------- | --------------------------------------------------------- | ------------------ |
  * | <Slider max={360} cssVar="--nextra-primary-hue" /> | <Slider max={100} cssVar="--nextra-primary-saturation" /> | <Slider max={100} cssVar="--nextra-primary-lightness"  /> | <BackgroundColor/> |
  *
  * > [!TIP]
  * >
- * > You can adjust the lightness independently for dark or light mode to increase
- * > legibility. E.g. to have a neutral primary color you can set the primary color
- * > to be white `HSL(0, 0%, 100%)` on dark theme and gray `HSL(0, 0%, 50%)` for
- * > light theme.
+ * > 可以独立调整深色或浅色模式的亮度以提高可读性。例如，要有一个中性主色调，
+ * > 可以在深色主题上设置主色调为白色 `HSL(0, 0%, 100%)`，在浅色主题上为灰色 `HSL(0, 0%, 50%)`。
  * >
  * > ```jsx filename="app/layout.jsx"
  * > <Head
@@ -198,10 +192,9 @@ export const HeadPropsSchema = z.strictObject({
  * > />
  * > ```
  *
- * ### Favicon glyph
+ * ### Favicon 图标
  *
- * This isn't supported by all browsers, but it's a nice way to customize the
- * favicon of the website simply by using an emoji or character.
+ * 并非所有浏览器都支持此功能，但这是通过使用表情符号或字符自定义网站 favicon 的好方法。
  *
  * ```jsx filename="app/layout.jsx"
  * <Head faviconGlyph="✦" />
