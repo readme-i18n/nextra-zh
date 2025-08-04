@@ -176,7 +176,7 @@ export interface HeadProps {
       light: number
     }
 
-    //**
+    /**
      * 主主题色调的亮度。<br/>范围：`0 - 100`
      * @default {
      *   "dark": 55,
