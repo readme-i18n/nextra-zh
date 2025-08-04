@@ -1,60 +1,60 @@
 export interface NextraConfig {
   /**
-   * Enable the copy button for all code blocks by default, without needing to set `copy=true` attribute in the code block metadata.
+   * 默认启用所有代码块的复制按钮，无需在代码块元数据中设置 `copy=true` 属性。
    * > [!TIP]
    * >
-   * > You could still disable the button for specific blocks using `copy=false` attribute.
+   * > 仍可通过 `copy=false` 属性为特定代码块禁用该按钮。
    */
   defaultShowCopyCode?: boolean
 
   /**
-   * Option to enable search functionality. When enabled, it sets the `data-pagefind-body` attribute on the `<main>` element.
+   * 启用搜索功能的选项。启用后，会在 `<main>` 元素上设置 `data-pagefind-body` 属性。
    * > [!TIP]
    * >
-   * > When set to `codeblocks: false`, it adds the `data-pagefind-ignore="all"` attribute to all code blocks (`<pre>` elements).
+   * > 当设置为 `codeblocks: false` 时，会为所有代码块（`<pre>` 元素）添加 `data-pagefind-ignore="all"` 属性。
    * @default {
    *   "codeblocks": false
    * }
    */
   search?: boolean | {
     /**
-     * Whether to index code blocks.
+     * 是否索引代码块。
      */
     codeblocks: boolean
   }
 
   /**
-   * Option to automatically optimizing your static image imports with the Markdown syntax.
+   * 自动优化使用 Markdown 语法导入的静态图像的选项。
    * > [!TIP]
    * >
-   * > Example: `![Hello](/demo.png)`.
+   * > 示例：`![Hello](/demo.png)`。
    * @default true
    */
   staticImage?: boolean
 
   /**
-   * Adds estimated reading time of `.md` and `.mdx` files using [readingTime](https://npmjs.com/package/reading-time) package.
+   * 使用 [readingTime](https://npmjs.com/package/reading-time) 包为 `.md` 和 `.mdx` 文件添加预计阅读时间。
    * > [!TIP]
    * >
-   * > The reading time is added to the front matter under the `readingTime` key.
+   * > 阅读时间会添加到 front matter 中的 `readingTime` 键下。
    */
   readingTime?: boolean
 
   /**
-   * Enable LaTeX either with [KaTeX](https://katex.org) to pre-render LaTeX expressions directly in MDX or [MathJax](https://mathjax.org) to dynamically render math in the browser.
+   * 启用 LaTeX，可通过 [KaTeX](https://katex.org) 直接在 MDX 中预渲染 LaTeX 表达式，或通过 [MathJax](https://mathjax.org) 在浏览器中动态渲染数学公式。
    */
   latex?: boolean | {
     renderer: "mathjax"
 
     options?: {
       /**
-       * URL for MathJax.
+       * MathJax 的 URL。
        * @default "https://cdnjs.cloudflare.com"
        */
       src?: string
 
       /**
-       * MathJax config. See [configuring MathJax](https://docs.mathjax.org/en/latest/options/index.html).
+       * MathJax 配置。参见 [configuring MathJax](https://docs.mathjax.org/en/latest/options/index.html)。
        */
       config?: import("better-react-mathjax").MathJax3Config
     }
@@ -62,19 +62,19 @@ export interface NextraConfig {
     renderer: "katex"
 
     /**
-     * KaTeX options. See https://katex.org/docs/options.html.
+     * KaTeX 选项。参见 https://katex.org/docs/options.html。
      */
     options: import("rehype-katex").Options
   }
 
   /**
-   * Enable or disable syntax highlighting.
+   * 启用或禁用语法高亮。
    * @default true
    */
   codeHighlight?: boolean
 
   /**
-   * Options specific to MDX compiling.
+   * MDX 编译的特定选项。
    * @remarks `MdxOptions`
    * @default {
    *   "format": "detect",
@@ -83,31 +83,31 @@ export interface NextraConfig {
    */
   mdxOptions?: {
     /**
-     * List of rehype plugins.
+     * rehype 插件列表。
      */
     rehypePlugins?: import("@mdx-js/mdx").ProcessorOptions["rehypePlugins"]
 
     /**
-     * List of remark plugins.
+     * remark 插件列表。
      */
     remarkPlugins?: import("@mdx-js/mdx").ProcessorOptions["remarkPlugins"]
 
     /**
-     * List of recma plugins. This is a new ecosystem, currently in beta, to transform esast trees (JavaScript).
+     * recma 插件列表。这是一个新的生态系统，目前处于测试阶段，用于转换 esast 树（JavaScript）。
      */
     recmaPlugins?: import("@mdx-js/mdx").ProcessorOptions["recmaPlugins"]
 
     /**
-     * Format of the file.
-     * - `'md'` means treat as markdown
-     * - `'mdx'` means treat as MDX
-     * - `'detect'` means try to detect the format based on file path.
+     * 文件的格式。
+     * - `'md'` 表示视为 markdown
+     * - `'mdx'` 表示视为 MDX
+     * - `'detect'` 表示尝试基于文件路径检测格式。
      * @default "detect"
      */
     format?: "detect" | "mdx" | "md"
 
     /**
-     * Configuration options for [Rehype Pretty Code](https://github.com/rehype-pretty/rehype-pretty-code).
+     * [Rehype Pretty Code](https://github.com/rehype-pretty/rehype-pretty-code) 的配置选项。
      * @remarks `RehypePrettyCodeOptions`
      * @default {}
      */
@@ -115,21 +115,21 @@ export interface NextraConfig {
   }
 
   /**
-   * Allows you to whitelist HTML elements to be replaced with components defined in the `mdx-components.js` file.
+   * 允许你将 HTML 元素白名单替换为 `mdx-components.js` 文件中定义的组件。
    * > [!TIP]
    * >
-   * > By default, Nextra only replaces `<details>` and `<summary>` elements.
+   * > 默认情况下，Nextra 仅替换 `<details>` 和 `<summary>` 元素。
    */
   whiteListTagsStyling?: string[]
 
   /**
-   * Option to serve your `.md` and `.mdx` files from the `content` directory at a custom path instead of the root (`/`).
+   * 选项，用于从 `content` 目录以自定义路径而非根路径（`/`）提供 `.md` 和 `.mdx` 文件。
    * @default "/"
    */
   contentDirBasePath?: string
 
   /**
-   * Prefixes locale to all links in the page map information. Useful for i18n when you don't want to use Nextra's `middleware` function.
+   * 在页面地图信息中为所有链接添加语言环境前缀。对于不想使用 Nextra 的 `middleware` 函数的 i18n 场景非常有用。
    * @default false
    */
   unstable_shouldAddLocaleToLinks?: boolean
@@ -154,7 +154,7 @@ export interface HeadProps {
    */
   color?: {
     /**
-     * The hue of the primary theme color.<br/>Range: `0 - 360`
+     * 主主题色调的色相。<br/>范围：`0 - 360`
      * @default {
      *   "dark": 204,
      *   "light": 212
@@ -167,7 +167,7 @@ export interface HeadProps {
     }
 
     /**
-     * The saturation of the primary theme color.<br/>Range: `0 - 100`
+     * 主主题色调的饱和度。<br/>范围：`0 - 100`
      * @default 100
      */
     saturation?: number | {
@@ -176,8 +176,8 @@ export interface HeadProps {
       light: number
     }
 
-    /**
-     * The lightness of the primary theme color.<br/>Range: `0 - 100`
+    //**
+     * 主主题色调的亮度。<br/>范围：`0 - 100`
      * @default {
      *   "dark": 55,
      *   "light": 45
@@ -191,7 +191,7 @@ export interface HeadProps {
   }
 
   /**
-   * The glyph to use as the favicon.
+   * 用作 favicon 的符号。
    */
   faviconGlyph?: string
 
@@ -203,20 +203,20 @@ export interface HeadProps {
    */
   backgroundColor?: {
     /**
-     * Background color for dark theme.<br/>Format: `"rgb(RRR,GGG,BBB)" | "#RRGGBB"`
+     * 暗色主题的背景颜色。<br/>格式：`"rgb(RRR,GGG,BBB)" | "#RRGGBB"`
      * @default "rgb(17,17,17)"
      */
     dark?: string
 
     /**
-     * Background color for light theme.<br/>Format: `"rgb(RRR,GGG,BBB)" | "#RRGGBB"`
+     * 亮色主题的背景颜色。<br/>格式：`"rgb(RRR,GGG,BBB)" | "#RRGGBB"`
      * @default "rgb(250,250,250)"
      */
     light?: string
   }
 
   /**
-   * Content of `<head>`.
+   * `<head>` 的内容。
    */
   children?: React.ReactNode
 }
