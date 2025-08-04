@@ -88,28 +88,27 @@ function findFirstRoute(items: DocsItem[]): string | undefined {
 }
 
 type NormalizedResult = {
-  /** Active type for current page, used to determine layout in theme. */
+  /** 当前页面的活动类型，用于确定主题中的布局。 */
   activeType?: 'doc' | 'page' | 'menu'
   /**
-   * Active index for current page, used for pagination in combination with `flatDocsDirectories`
-   * items.
+   * 当前页面的活动索引，与 `flatDocsDirectories` 项结合用于分页。
    */
   activeIndex: number
   activeThemeContext: PageTheme
   /**
-   * Parsed [front matter](https://jekyllrb.com/docs/front-matter) or exported
-   * [Metadata](https://nextjs.org/docs/app/building-your-application/optimizing/metadata) from page.
+   * 解析自 [front matter](https://jekyllrb.com/docs/front-matter) 或从页面导出的
+   * [Metadata](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)。
    */
   activeMetadata?: FrontMatter
-  /** Active path for current page, used for breadcrumb navigation. */
+  /** 当前页面的活动路径，用于面包屑导航。 */
   activePath: Item[]
-  /** All directories in the tree structure. */
+  /** 树形结构中的所有目录。 */
   directories: Item[]
-  /** Directories with `type: 'doc'` in `_meta` file. */
+  /** 在 `_meta` 文件中标记为 `type: 'doc'` 的目录。 */
   docsDirectories: DocsItem[]
-  /** Flattened directories with `type: 'doc'` in `_meta` file. */
+  /** 在 `_meta` 文件中标记为 `type: 'doc'` 的扁平化目录。 */
   flatDocsDirectories: DocsItem[]
-  /** Navbar items, items which have `type: 'page'` in `_meta` file. */
+  /** 导航栏项目，即在 `_meta` 文件中标记为 `type: 'page'` 的项。 */
   topLevelNavbarItems: (PageItem | MenuItem)[]
 }
 

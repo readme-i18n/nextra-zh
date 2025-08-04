@@ -11,10 +11,10 @@ import {
 } from './remark-plugins/index.js'
 
 /**
- * `nextra/dist/server/page-map/placeholder.js` imports all `metadata`s from `.md`/`.mdx` files to
- * build `pageMap`.
- * If a request includes the resource query `?metadata`, compiling MDX to JSX is unnecessary.
- * This step can be skipped to improve performance in the development environment.
+ * `nextra/dist/server/page-map/placeholder.js` 从 `.md`/`.mdx` 文件中导入所有 `metadata` 以
+ * 构建 `pageMap`。
+ * 如果请求包含资源查询 `?metadata`，则无需将 MDX 编译为 JSX。
+ * 可以跳过此步骤以提高开发环境中的性能。
  */
 export async function compileMetadata(
   source: string,

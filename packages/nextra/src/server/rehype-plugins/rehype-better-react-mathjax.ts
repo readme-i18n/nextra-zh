@@ -63,8 +63,8 @@ function wrapInMathJaxContext(
 }
 
 /**
- * Wrap the math in the appropriate braces. Defaults to `\(...\)` for inline and `\[...\]` for display,
- * but will use the braces provided by `options` if they are present.
+ * 将数学公式包裹在适当的括号中。默认为行内公式使用 `\(...\)`，显示公式使用 `\[...\]`，
+ * 但如果 `options` 提供了括号，则会使用其提供的括号。
  */
 function wrapInBraces(
   source: string,
@@ -80,7 +80,7 @@ function wrapInBraces(
 }
 
 /**
- * Wraps math in a `<MathJax>` component so that it can be rendered by `better-react-mathjax`.
+ * 将数学公式包裹在 `<MathJax>` 组件中，以便 `better-react-mathjax` 可以渲染它。
  */
 export const rehypeBetterReactMathjax: Plugin<
   [Opts: MathJaxOptions, isRemoteContent: boolean],

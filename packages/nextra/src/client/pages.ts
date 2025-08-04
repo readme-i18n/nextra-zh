@@ -6,30 +6,30 @@ import { logger } from '../server/utils.js'
 import type { EvaluateResult } from '../types.js'
 
 /**
- * Function to import an MDX/Markdown page from the `content` directory.
+ * 用于从 `content` 目录导入 MDX/Markdown 页面的函数。
  *
- * This function is essential for Nextra's dynamic page loading from a catch-all route.
+ * 此函数对于 Nextra 从全捕获路由动态加载页面至关重要。
  *
  * @returns
- * A Promise that resolves to an object containing:
- *  - `default`: The MDX component to render
- *  - `toc`: Table of contents list
- *  - `metadata`: Page's front matter or `metadata` object including `title`, `description`, etc.
+ * 一个解析为包含以下内容的对象的 Promise：
+ *  - `default`: 要渲染的 MDX 组件
+ *  - `toc`: 目录列表
+ *  - `metadata`: 页面的 front matter 或包含 `title`、`description` 等的 `metadata` 对象。
  *
  * @example
- * ### Basic usage in a dynamic Next.js route
+ * ### 在动态 Next.js 路由中的基本用法
  *
  * ```ts
  * const { default: MDXContent, toc, metadata } = await importPage(['docs', 'getting-started'])
  * ```
  *
- * ### Usage with i18n
+ * ### 与 i18n 一起使用
  *
  * ```ts
  * const { default: MDXContent } = await importPage(['docs', 'getting-started'], 'en')
  * ```
  *
- * ### Import page's front matter in `generateMetadata` function
+ * ### 在 `generateMetadata` 函数中导入页面的 front matter
  *
  * ```ts
  * // app/[[...mdxPath]]/page.tsx
@@ -42,7 +42,7 @@ import type { EvaluateResult } from '../types.js'
  * }
  * ```
  *
- * ### Import page in a catch-all route
+ * ### 在全捕获路由中导入页面
  *
  * ```tsx
  * // app/[[...mdxPath]]/page.tsx
@@ -66,20 +66,20 @@ import type { EvaluateResult } from '../types.js'
  * ```
  *
  * @see
- * - [Content Directory Documentation](https://nextra.site/docs/file-conventions/content-directory)
- * - [Next.js Dynamic Routes](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes)
- * - [Next.js Metadata API](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
+ * - [内容目录文档](https://nextra.site/docs/file-conventions/content-directory)
+ * - [Next.js 动态路由](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes)
+ * - [Next.js 元数据 API](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
  */
 export async function importPage(
   /**
-   * Array of path segments representing the route to the page.
+   * 表示页面路由的路径段数组。
    *
-   * E.g., for the route `/docs/getting-started/installation`, pass `['docs', 'getting-started', 'installation']`.
+   * 例如，对于路由 `/docs/getting-started/installation`，传递 `['docs', 'getting-started', 'installation']`。
    * @default []
    */
   pathSegments: string[] = [],
   /**
-   * The language segment when using i18n.
+   * 使用 i18n 时的语言段。
    * @default ''
    */
   lang = ''
@@ -101,22 +101,21 @@ export async function importPage(
 }
 
 /**
- * Generates static parameters based on your `content` directory structure.
+ * 根据您的 `content` 目录结构生成静态参数。
  *
- * This helper function is designed to work with Next.js' `generateStaticParams` function to create
- * static paths for all your MDX/Markdown pages.
+ * 此辅助函数设计用于与 Next.js 的 `generateStaticParams` 函数一起工作，为所有 MDX/Markdown 页面创建静态路径。
  *
- * @returns A function that generates an array of parameters for static page generation.
+ * @returns 一个生成用于静态页面生成的参数数组的函数。
  *
  * @example
- * ### Basic usage with a catch-all route
+ * ### 与全捕获路由的基本用法
  *
  * ```ts
  * // app/[[...slug]]/page.tsx
  * export const generateStaticParams = generateStaticParamsFor('slug')
  * ```
  *
- * ### Usage with i18n support
+ * ### 支持 i18n 的用法
  *
  * ```ts
  * // app/[locale]/[[...mdxPath]]/page.tsx
@@ -124,14 +123,14 @@ export async function importPage(
  * ```
  *
  * @see
- * - [Next.js `generateStaticParams` function](https://nextjs.org/docs/app/api-reference/functions/generate-static-params)
- * - [Content Directory Structure](https://nextra.site/docs/file-conventions/content-directory)
+ * - [Next.js `generateStaticParams` 函数](https://nextjs.org/docs/app/api-reference/functions/generate-static-params)
+ * - [内容目录结构](https://nextra.site/docs/file-conventions/content-directory)
  */
 export function generateStaticParamsFor(
-  /** The name of your catch-all route segment (e.g., `'slug'`, `'mdxPath'`). */
+  /** 您的全捕获路由段的名称（例如，`'slug'`、`'mdxPath'`）。 */
   segmentKey: string,
   /**
-   * The name of the locale segment when you have i18n.
+   * 当您有 i18n 时的语言段名称。
    * @default "lang"
    */
   localeSegmentKey = 'lang'

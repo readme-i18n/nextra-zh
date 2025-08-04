@@ -6,29 +6,28 @@ import type { MDXComponents } from './mdx-components.js'
 
 export type MDXRemoteProps = Readonly<{
   /**
-   * An object mapping names to React components.
-   * The key used will be the name accessible to MDX.
+   * 将名称映射到 React 组件的对象。
+   * 使用的键名将是 MDX 中可访问的名称。
    *
    * @example
-   * `{ ComponentName: Component }` will be accessible in the MDX as `<ComponentName>`.
+   * `{ ComponentName: Component }` 在 MDX 中将作为 `<ComponentName>` 可访问。
    */
   components?: MDXComponents
   /**
-   * Pass-through variables for use in the MDX content.
-   * These variables will be available in the MDX scope.
+   * 用于 MDX 内容中的透传变量。
+   * 这些变量将在 MDX 作用域中可用。
    */
   scope?: Scope
   /**
-   * Raw JavaScript compiled MDX source code, a result of Nextra's
-   * [`compileMdx` function](https://nextra.site/api/compilemdx).
+   * Nextra 的 [`compileMdx` 函数](https://nextra.site/api/compilemdx) 编译的原始 JavaScript MDX 源代码。
    */
   compiledSource: string
 }>
 
 /**
- * A React component that renders compiled MDX content.
+ * 一个渲染编译后 MDX 内容的 React 组件。
  *
- * @returns A rendered React element that renders the MDX content.
+ * @returns 渲染 MDX 内容的 React 元素。
  * @example
  * ```mdx filename="example.mdx"
  * import { compileMdx } from 'nextra/compile'

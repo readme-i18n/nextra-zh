@@ -10,35 +10,35 @@ function importPageMap(lang = ''): Promise<{
 const defaultLocale = process.env.NEXTRA_DEFAULT_LOCALE
 
 /**
- * Retrieves the page map structure for a given route handling nested routes.
+ * 获取给定路由的页面映射结构，处理嵌套路由。
  *
- * The page map structure represents the hierarchical organization of your documentation or content,
- * where each item can be either a page or a folder containing more pages.
+ * 页面映射结构表示文档或内容的层级组织，
+ * 其中每个项目可以是页面或包含更多页面的文件夹。
  *
- * @returns A Promise that resolves to an array of `PageMapItem` objects representing the page structure
- * such as `MdxFile`, `Folder` and `MetaJsonFile`.
+ * @returns 一个解析为`PageMapItem`对象数组的Promise，表示页面结构
+ * 如`MdxFile`、`Folder`和`MetaJsonFile`。
  *
  * @example
  * ```ts
  * import { getPageMap } from 'nextra/page-map'
  *
- * // Get the root page map
+ * // 获取根页面映射
  * const rootPageMap = await getPageMap()
  *
- * // Get the page map for a specific route
+ * // 获取特定路由的页面映射
  * const blogPageMap = await getPageMap('/blog')
  *
- * // Get the page map for a specific language when using i18n
+ * // 使用i18n时获取特定语言的页面映射
  * const enPageMap = await getPageMap('/en')
  * ```
  *
- * @throws {Error} when the specified route segment cannot be found in the page map.
+ * @throws {Error} 当在页面映射中找不到指定的路由段时。
  *
- * @see [Page Map Structure Documentation](https://nextra.site/docs/file-conventions/meta-file#pagemap-structure).
+ * @see [页面映射结构文档](https://nextra.site/docs/file-conventions/meta-file#pagemap-structure)。
  */
 export async function getPageMap(
   /**
-   * The route path to retrieve the page map for.
+   * 要获取页面映射的路由路径。
    * @default "/"
    */
   route = '/'

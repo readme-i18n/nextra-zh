@@ -1,6 +1,6 @@
 /**
- * We explicitly didn't put this file in `rehype-twoslash-popup.ts` to avoid
- * having warnings which comes from `@typescript/vfs` https://github.com/shuding/nextra/pull/3349
+ * 我们特意没有将此文件放在 `rehype-twoslash-popup.ts` 中，以避免
+ * 来自 `@typescript/vfs` 的警告 https://github.com/shuding/nextra/pull/3349
  */
 
 import { rendererRich } from '@shikijs/twoslash'

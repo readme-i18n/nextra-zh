@@ -2,8 +2,8 @@
 'use no memo'
 
 /*
- * ⚠️ Attention!
- * This file should be never used directly, only in loader.ts
+ * ⚠️ 注意！
+ * 此文件不应直接使用，仅在 loader.ts 中使用
  */
 import { useMDXComponents as getMDXComponents } from 'next-mdx-import-source-file'
 import type { ComponentProps, FC } from 'react'

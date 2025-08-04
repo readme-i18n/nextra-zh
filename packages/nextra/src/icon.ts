@@ -1,5 +1,5 @@
 /*
- * This file is used in tsup patch to generate types for SVG files.
+ * 该文件用于在 tsup 补丁中为 SVG 文件生成类型。
  **/
 import type { FC, SVGProps } from 'react'
 

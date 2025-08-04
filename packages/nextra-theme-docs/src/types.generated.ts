@@ -1,25 +1,25 @@
 export interface LayoutProps {
   /**
-   * Rendered [`<Banner>` component](/docs/built-ins/banner). E.g. `<Banner {...bannerProps} />`
+   * 渲染的 [`<Banner>` 组件](/docs/built-ins/banner)。例如 `<Banner {...bannerProps} />`
    */
   banner?: React.ReactNode
 
   children: React.ReactNode
 
   /**
-   * Show or hide the dark mode select button.
+   * 显示或隐藏暗黑模式选择按钮。
    * @default true
    */
   darkMode?: boolean
 
   /**
-   * URL of the documentation repository.
+   * 文档仓库的 URL。
    * @default "https://github.com/shuding/nextra"
    */
   docsRepositoryBase?: string
 
   /**
-   * Content of the edit link.
+   * 编辑链接的内容。
    * @default "Edit this page"
    */
   editLink?: React.ReactNode
@@ -32,60 +32,60 @@ export interface LayoutProps {
    */
   feedback?: {
     /**
-     * Content of the feedback link.
+     * 反馈链接的内容。
      * @default "Question? Give us feedback"
      */
     content?: React.ReactNode
 
     /**
-     * Labels that can be added to the new created issue.
+     * 可以添加到新创建问题中的标签。
      * @default "feedback"
      */
     labels?: string
 
     /**
-     * Feedback link URL.
+     * 反馈链接的 URL。
      * 
-     * By default, it's a link to the issue creation form of the docs repository, with the current page title prefilled:
-     * [example](https://github.com/shuding/nextra/issues/new?title=Feedback%20for%20%E2%80%9CTheme%20Configuration%E2%80%9D&labels=feedback).
+     * 默认情况下，它是一个指向文档仓库问题创建表单的链接，并预填了当前页面标题：
+     * [示例](https://github.com/shuding/nextra/issues/new?title=Feedback%20for%20%E2%80%9CTheme%20Configuration%E2%80%9D&labels=feedback)。
      */
     link?: string
   }
 
   /**
-   * Rendered [`<Footer>` component](/docs/docs-theme/built-ins/footer). E.g. `<Footer {...footerProps} />`
+   * 渲染的 [`<Footer>` 组件](/docs/docs-theme/built-ins/footer)。例如 `<Footer {...footerProps} />`
    */
   footer?: React.ReactNode
 
   /**
-   * Options to configure the language dropdown for [the i18n docs website](/docs/guide/i18n).
+   * 为 [国际化文档网站](/docs/guide/i18n) 配置语言下拉菜单的选项。
    * @default []
    */
   i18n?: {
     /**
-     * Locale from `i18n.locales` field in `next.config` file.
+     * 来自 `next.config` 文件中 `i18n.locales` 字段的区域设置。
      */
     locale: string
 
     /**
-     * Locale name in dropdown.
+     * 下拉菜单中的区域名称。
      */
     name: string
   }[]
 
   /**
-   * Component to render the last updated info.
+   * 渲染最后更新信息的组件。
    * @default <LastUpdated />
    */
   lastUpdated?: React.ReactElement
 
   /**
-   * Rendered [`<Navbar>` component](/docs/docs-theme/built-ins/navbar). E.g. `<Navbar {...navbarProps} />`
+   * 渲染的 [`<Navbar>` 组件](/docs/docs-theme/built-ins/navbar)。例如 `<Navbar {...navbarProps} />`
    */
   navbar?: React.ReactNode
 
   /**
-   * Enable or disable navigation link.
+   * 启用或禁用导航链接。
    * @default true
    */
   navigation?: boolean | {
@@ -95,7 +95,7 @@ export interface LayoutProps {
   }
 
   /**
-   * Configuration for the [next-themes](https://github.com/pacocoursey/next-themes#themeprovider) package.
+   * [next-themes](https://github.com/pacocoursey/next-themes#themeprovider) 包的配置。
    * @default {
    *   "attribute": "class",
    *   "defaultTheme": "system",
@@ -128,12 +128,12 @@ export interface LayoutProps {
   }
 
   /**
-   * Page map list. Result of `getPageMap(route = '/')` call.
+   * 页面地图列表。`getPageMap(route = '/')` 调用的结果。
    */
   pageMap: import("nextra").PageMapItem[]
 
   /**
-   * Rendered [`<Search>` component](/docs/built-ins/search). E.g. `<Search {...searchProps} />`
+   * 渲染的 [`<Search>` 组件](/docs/built-ins/search)。例如 `<Search {...searchProps} />`
    * @default <Search />
    */
   search?: React.ReactNode
@@ -147,31 +147,31 @@ export interface LayoutProps {
    */
   sidebar?: {
     /**
-     * If `true`, automatically collapse inactive folders above `defaultMenuCollapseLevel`.
+     * 如果为 `true`，自动折叠 `defaultMenuCollapseLevel` 以上的非活动文件夹。
      */
     autoCollapse?: boolean
 
     /**
-     * Specifies the folder level at which the menu on the left is collapsed by default.
+     * 指定左侧菜单默认折叠的文件夹级别。
      * @default 2
      */
     defaultMenuCollapseLevel?: number
 
     /**
-     * Hide/show sidebar by default.
+     * 默认隐藏/显示侧边栏。
      * @default true
      */
     defaultOpen?: boolean
 
     /**
-     * Hide/show sidebar toggle button.
+     * 隐藏/显示侧边栏切换按钮。
      * @default true
      */
     toggleButton?: boolean
   }
 
   /**
-   * Translation of options in the theme switch.
+   * 主题切换选项的翻译。
    * @default {
    *   "dark": "Dark",
    *   "light": "Light",
@@ -204,24 +204,24 @@ export interface LayoutProps {
    */
   toc?: {
     /**
-     * Text of back to top button.
+     * 返回顶部按钮的文本。
      * @default "Scroll to top"
      */
     backToTop?: React.ReactNode
 
     /**
-     * Display extra content below the TOC content.
+     * 在 TOC 内容下方显示额外内容。
      */
     extraContent?: React.ReactNode
 
     /**
-     * Float the TOC next to the content.
+     * 将 TOC 浮动在内容旁边。
      * @default true
      */
     float?: boolean
 
     /**
-     * Title of the TOC sidebar.
+     * TOC 侧边栏的标题。
      * @default "On This Page"
      */
     title?: React.ReactNode

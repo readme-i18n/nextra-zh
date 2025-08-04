@@ -157,9 +157,9 @@ export async function loader(
 /*
  * https://github.com/vercel/next.js/issues/71453#issuecomment-2431810574
  *
- * Replace `await import(`./placeholder.js?lang=${lang}`)`
+ * 将 `await import(`./placeholder.js?lang=${lang}`)`
  *
- * with:
+ * 替换为：
  *
  * await {
  * "en": () => import("./placeholder.js?lang=en"),
@@ -167,7 +167,7 @@ export async function loader(
  * "ru": () => import("./placeholder.js?lang=ru")
  * }[locale]()
  *
- * So static analyzer will know which `resourceQuery` to pass to the loader
+ * 这样静态分析器就能知道要传递哪个 `resourceQuery` 给加载器
  **/
 function replaceDynamicResourceQuery(
   rawJs: string,

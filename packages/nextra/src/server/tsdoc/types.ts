@@ -1,67 +1,67 @@
 export type GeneratedType = {
-  /** Type fields. */
+  /** 类型字段。 */
   entries: TypeField[]
 }
 
 export type Tags = Record<string, string>
 
 export type ReturnField = {
-  /** Function return type. */
+  /** 函数返回类型。 */
   type: string
 }
 
 export type GeneratedDefinition = {
   /**
-   * Where type definition is located on disk.
+   * 类型定义在磁盘上的位置。
    */
   filePath?: string
   /**
-   * Definition name.
+   * 定义名称。
    */
   name: string
   /**
-   * Definition description.
+   * 定义描述。
    */
   description?: string
   /**
-   * [TSDoc tags](https://tsdoc.org/pages/spec/tag_kinds).
+   * [TSDoc 标签](https://tsdoc.org/pages/spec/tag_kinds)。
    */
   tags?: Tags
 }
 
 export type GeneratedFunction = {
   signatures: {
-    /** Function parameters. */
+    /** 函数参数。 */
     params: TypeField[]
-    /** Function return. */
+    /** 函数返回值。 */
     returns: TypeField[] | ReturnField
   }[]
 }
 
 export type TypeField = {
-  /** Field name. */
+  /** 字段名。 */
   name: string
-  /** Field type. */
+  /** 字段类型。 */
   type: string
-  /** Field description. */
+  /** 字段描述。 */
   description?: string
-  /** Is field optional. */
+  /** 字段是否可选。 */
   optional?: boolean
-  /** Field tags. */
+  /** 字段标签。 */
   tags?: Tags
 }
 
 export type BaseArgs = {
-  /** TypeScript source code to be processed. */
+  /** 待处理的 TypeScript 源代码。 */
   code: string
   /**
-   * The name of the exported declaration.
+   * 导出声明的名称。
    * @default "default"
    */
   exportName?: string
   /**
-   * Whether to flatten nested objects.
-   * E.g. `{ foo: { bar: string } }` will be represented as: `{ foo.bar: string }`
+   * 是否展平嵌套对象。
+   * 例如：`{ foo: { bar: string } }` 将被表示为：`{ foo.bar: string }`
    * @default false
    */
   flattened?: boolean

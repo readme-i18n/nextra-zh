@@ -29,11 +29,11 @@ function getHeadersLocale(request: NextRequest): string {
  *
  * @example
  * ```ts
- * // Basic usage
+ * // 基本用法
  * export { middleware } from 'nextra/locales'
  *
  * export const config = {
- *   // Matcher ignoring `/_next/` and `/api/`
+ *   // 忽略 `/_next/` 和 `/api/` 的匹配器
  *   matcher: [
  *     '/((?!api|_next/static|_next/image|favicon.ico|icon.svg|apple-icon.png|manifest|_pagefind).*)'
  *   ]

@@ -51,26 +51,26 @@ const shouldUseConfigTurbopack =
   nextMajorVersion > 15 || (nextMajorVersion === 15 && nextMinorVersion > 2)
 
 /**
- * Nextra is a Next.js plugin that allows you to create Markdown-based content with ease.
+ * Nextra 是一个 Next.js 插件，可让你轻松创建基于 Markdown 的内容。
  *
  * @example
  * ```js filename="next.config.mjs"
  * import nextra from 'nextra'
  *
- * // Set up Nextra with its configuration
+ * // 使用其配置设置 Nextra
  * const withNextra = nextra({
- *   // ... Add Nextra-specific options here
+ *   // ... 在此添加 Nextra 特定选项
  * })
  *
- * // Export the final Next.js config with Nextra included
+ * // 导出包含 Nextra 的最终 Next.js 配置
  * export default withNextra({
- *   // ... Add regular Next.js options here
+ *   // ... 在此添加常规 Next.js 选项
  * })
  * ```
  * @see
- * - [`NextraConfig` options](https://nextra.site/api/nextra)
- * - [Nextra documentation](https://nextra.site)
- * - [`NextConfig` options](https://nextjs.org/docs/pages/api-reference/config/next-config-js)
+ * - [`NextraConfig` 选项](https://nextra.site/api/nextra)
+ * - [Nextra 文档](https://nextra.site)
+ * - [`NextConfig` 选项](https://nextjs.org/docs/pages/api-reference/config/next-config-js)
  */
 const nextra = (nextraConfig: NextraConfig) => {
   const { error, data: loaderOptions } =

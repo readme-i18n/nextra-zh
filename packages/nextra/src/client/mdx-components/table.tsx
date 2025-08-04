@@ -43,8 +43,7 @@ const Td: FC<HTMLAttributes<HTMLTableCellElement>> = props => {
 }
 
 /**
- * A collection of built-in components designed to create styled, non-markdown
- * (i.e., literal) HTML tables.
+ * 一组内置组件，用于创建带样式的非 Markdown（即字面）HTML 表格。
  *
  * @example
  * <Table className="mt-6">

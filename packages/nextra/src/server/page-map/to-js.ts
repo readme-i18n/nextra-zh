@@ -60,7 +60,7 @@ export function convertPageMapToJs({
     body: [{ type: 'ExpressionStatement', expression: pageMapAst }]
   })
 
-  let pageMapRawJs = pageMapResult.value.slice(0, -2 /* replace semicolon */)
+  let pageMapRawJs = pageMapResult.value.slice(0, -2 /* 替换分号 */)
   if (globalMetaPath) {
     pageMapRawJs = `mergeMetaWithPageMap(${pageMapRawJs}, globalMeta, true)`
   }

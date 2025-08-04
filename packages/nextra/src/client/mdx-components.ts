@@ -4,12 +4,12 @@ import { ImageZoom } from './components/image-zoom.js'
 import { Anchor } from './mdx-components/anchor.js'
 
 /**
- * A valid JSX string component.
+ * 一个有效的 JSX 字符串组件。
  */
 type StringComponent = Exclude<keyof JSX.IntrinsicElements, 'img' | 'a'>
 
 /**
- * Any allowed JSX component.
+ * 任何允许的 JSX 组件。
  */
 type Component<Props> = FC<Props> | StringComponent
 
@@ -18,29 +18,28 @@ export interface NestedMDXComponents {
 }
 
 /**
- * MDX components may be passed as the `components`.
+ * MDX 组件可以作为 `components` 传递。
  *
- * The key is the name of the element to override. The value is the component to render instead.
+ * 键是要覆盖的元素名称，值是要渲染的替代组件。
  */
 export type MDXComponents = NestedMDXComponents & {
   [Key in StringComponent]?: FC<ComponentPropsWithoutRef<Key>>
 } & {
   /**
-   * If a wrapper component is defined, the MDX content will be wrapped inside it.
+   * 如果定义了包装组件，MDX 内容将被包装在其中。
    */
   wrapper?: MDXWrapper
 } & DefaultMdxComponents
 
 type DefaultMdxComponents = {
   /**
-   * Nextra's `<ImageZoom />` component with zoom functionality.
-   * Uses `<NextImage>` for static images and falls back to a standard `<img>` element for others.
+   * Nextra 的 `<ImageZoom />` 组件，具有缩放功能。
+   * 对静态图像使用 `<NextImage>`，对其他情况回退到标准的 `<img>` 元素。
    */
   img?: typeof ImageZoom
   /**
-   * Nextra's `<Anchor />` component for rendering links.
-   * Uses `<NextLink>` for internal navigation and falls back to a regular `<a>` element for
-   * external links.
+   * Nextra 的 `<Anchor />` 组件，用于渲染链接。
+   * 对内部导航使用 `<NextLink>`，对外部链接回退到常规的 `<a>` 元素。
    */
   a?: typeof Anchor
 }
@@ -51,20 +50,20 @@ const DEFAULT_COMPONENTS = {
 } satisfies DefaultMdxComponents
 
 /**
- * Get current MDX components.
- * @returns The current set of MDX components.
+ * 获取当前的 MDX 组件。
+ * @returns 当前的 MDX 组件集合。
  */
 export type UseMDXComponents<
   /**
-   * Default MDX components
+   * 默认的 MDX 组件
    */
   DefaultMDXComponents extends MDXComponents
 > = {
   <components extends MDXComponents>(
     /**
-     * An object where:
-     * - The key is the name of the HTML element to override.
-     * - The value is the component to render instead.
+     * 一个对象，其中：
+     * - 键是要覆盖的 HTML 元素名称。
+     * - 值是要渲染的替代组件。
      * @remarks `MDXComponents`
      */
     components: components

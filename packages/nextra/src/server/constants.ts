@@ -1,6 +1,6 @@
 /*
- * Benefit of server/constants - do not include unneeded `path` polyfill in client bundle,
- * while importing constants in client file
+ * 使用 server/constants 的好处 - 不在客户端包中包含不必要的 `path` polyfill，
+ * 同时能在客户端文件中导入常量
  */
 import type { Property } from 'estree'
 

@@ -34,14 +34,12 @@ const DEFAULT_FILENAME = '$.ts'
 let compilerObject: ts.TypeChecker
 
 /**
- * Generate documentation for properties of `type` and `interface` and parameters and returns
- * signature of `function`.
- * @returns Parsed TSDoc definition from TypeScript `type`, `interface` or `function`.
+ * 为 `type` 和 `interface` 的属性以及 `function` 的参数和返回签名生成文档。
+ * @returns 从 TypeScript 的 `type`、`interface` 或 `function` 解析出的 TSDoc 定义。
  * @example
- * To generate documentation for a `type`, `interface`, or `function`, export it via the `code`
- * argument.
+ * 要为 `type`、`interface` 或 `function` 生成文档，通过 `code` 参数导出它。
  *
- * ### As a `default` export
+ * ### 作为 `default` 导出
  *
  * ```mdx
  * import { generateDefinition, TSDoc } from 'nextra/tsdoc'
@@ -53,7 +51,7 @@ let compilerObject: ts.TypeChecker
  * />
  * ```
  *
- * ### As a named export
+ * ### 作为命名导出
  *
  * ```mdx
  * import { generateDefinition, TSDoc } from 'nextra/tsdoc'
@@ -179,7 +177,7 @@ export function generateDefinition({
 }
 
 /**
- * If no comments are found on the symbol, use the alias symbol's comments.
+ * 如果在符号上找不到注释，则使用别名符号的注释。
  */
 function getCommentAndTags(declaration: ExportedDeclarations): {
   comment: ts.SymbolDisplayPart[]

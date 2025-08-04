@@ -67,7 +67,7 @@ type CompileMdxOptions = Pick<
 /**
  * @example
  * ```ts
- * // Usage with MDXRemote
+ * // 与 MDXRemote 一起使用的示例
  * import { compileMdx } from 'nextra/compile'
  * import { MDXRemote } from 'nextra/mdx-remote'
  *

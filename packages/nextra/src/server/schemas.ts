@@ -266,10 +266,10 @@ export const itemSchema = z.strictObject({
   type: z.enum(['page', 'doc']).optional(),
   title,
   /**
-   * An option to control how an item should be displayed in the sidebar:
-   * - `normal`: the default behavior, item will be displayed
-   * - `hidden`: the item will not be displayed in the sidebar entirely
-   * - `children`: if the item is a folder, itself will be hidden but all its children will still be processed
+   * 控制侧边栏中项目显示方式的选项：
+   * - `normal`: 默认行为，项目将显示
+   * - `hidden`: 项目将完全不在侧边栏中显示
+   * - `children`: 如果项目是文件夹，其本身将被隐藏，但其所有子项仍将被处理
    */
   display: z.enum(['normal', 'hidden', 'children']).optional(),
   theme: pageThemeSchema.optional()

@@ -109,24 +109,24 @@ export type SeparatorItem = z.infer<typeof separatorItemSchema>
 export type MenuItem = z.infer<typeof menuSchema>
 
 /**
- * Options that can be passed to `pagefind.search()`.
- * @remarks Copied from https://github.com/CloudCannon/pagefind/blob/2a0aa90cfb78bb8551645ac9127a1cd49cf54add/pagefind_web_js/types/index.d.ts#L72-L82
+ * 可传递给 `pagefind.search()` 的选项。
+ * @remarks 复制自 https://github.com/CloudCannon/pagefind/blob/2a0aa90cfb78bb8551645ac9127a1cd49cf54add/pagefind_web_js/types/index.d.ts#L72-L82
  */
 export type PagefindSearchOptions = {
   /**
-   * If set, this call will load all assets but return before searching. Prefer using `pagefind.preload()` instead.
+   * 如果设置，此调用将加载所有资源但在搜索前返回。建议改用 `pagefind.preload()`。
    */
   preload?: boolean
   /**
-   * Add more verbose console logging for this search query.
+   * 为此搜索查询添加更详细的控制台日志。
    */
   verbose?: boolean
   /**
-   * The set of filters to execute with this search. Input type is extremely flexible, see the filtering docs for details.
+   * 与此搜索一起执行的过滤器集。输入类型非常灵活，详情请参阅过滤文档。
    */
   filters?: object
   /**
-   * The set of sorts to use for this search, instead of relevancy.
+   * 用于此搜索的排序集，而非相关性排序。
    */
   sort?: object
 }
@@ -137,10 +137,10 @@ export type NextraMetadata = Metadata & {
 }
 
 export type EvaluateResult = {
-  /** The MDX component to render. */
+  /** 要渲染的 MDX 组件。 */
   default: FC<any>
-  /** Table of contents list. */
+  /** 目录列表。 */
   toc: Heading[]
-  /** Page's front matter or `metadata` object including `title`, `description`, etc. */
+  /** 页面的 front matter 或包含 `title`、`description` 等的 `metadata` 对象。 */
   metadata: $NextraMetadata
 }
