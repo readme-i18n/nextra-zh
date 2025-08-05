@@ -12,9 +12,11 @@ import styles from './page.module.css'
 import './page.css'
 import type { FC } from 'react'
 
+// ...导入保持不变...
+
 export const metadata: Metadata = {
   description:
-    'Build fast, customizable, and content-rich websites with Nextra. Powered by Next.js, it offers seamless Markdown support, customizable themes, file conventions, and easy integration with MDX, making it perfect for documentation, blogs, and static websites.'
+    '使用 Nextra 快速构建可自定义且内容丰富的网站。基于 Next.js，支持无缝的 Markdown、可自定义的主题、文件约定和与 MDX 的轻松集成，是构建文档、博客和静态网站的理想选择。'
 }
 
 const IndexPage: FC = () => {
@@ -22,21 +24,21 @@ const IndexPage: FC = () => {
     <div className="home-content">
       <div className="content-container">
         <h1 className="headline">
-          Make beautiful websites <br className="max-sm:hidden" />
-          with Next.js & MDX
+          使用 Next.js 和 MDX <br className="max-sm:hidden" />
+          构建精美网站
         </h1>
         <p className="subtitle">
-          Simple, powerful and flexible site generation framework{' '}
+          简单、强大、灵活的网站生成框架
           <br className="max-md:hidden" />
-          with everything you love from{' '}
+          拥有你喜爱的{' '}
           <Link href="https://nextjs.org" className="text-current">
             Next.js
-          </Link>
-          .
+          </Link>{' '}
+          所有特性。
         </p>
         <p className="subtitle">
           <Link className={styles.cta} href="/docs">
-            Get started <span>→</span>
+            开始使用 <span>→</span>
           </Link>
         </p>
       </div>
@@ -50,37 +52,37 @@ const IndexPage: FC = () => {
               id="docs-card"
               href="/docs/docs-theme/start"
             >
-              <Image src={docsCard} alt="Background" loading="eager" />
+              <Image src={docsCard} alt="背景图" loading="eager" />
               <Image
                 src={docsCardDark}
-                alt="Background (Dark)"
+                alt="背景图（深色模式）"
                 loading="eager"
               />
               <h3>
-                Full-power documentation <br className="show-on-mobile" />
-                in minutes
+                几分钟内构建 <br className="show-on-mobile" />
+                强大的文档站点
               </h3>
             </Feature>
             <Feature index={1} centered href="/docs/guide/image">
               <h3>
-                Links and images are <br className="show-on-mobile" />
-                always <span className="font-light">optimized</span>
+                链接和图片始终 <br className="show-on-mobile" />
+                <span className="font-light">自动优化</span>
               </h3>
               <p className="mb-8 text-start">
-                Nextra automatically converts Markdown links and images to use{' '}
+                Nextra 会自动将 Markdown 中的链接与图片转换为{' '}
                 <Link href="https://nextjs.org/docs/routing/introduction#linking-between-pages">
                   Next.js Link
                 </Link>{' '}
-                and{' '}
+                与{' '}
                 <Link href="https://nextjs.org/docs/app/getting-started/images#local-images">
                   Next.js Image
-                </Link>{' '}
-                when possible. No slow navigation or layout shift.
+                </Link>
+                ，避免页面跳转迟缓和布局抖动。
               </p>
               <div>
                 <div className={styles.optimization}>
                   <div style={{ fontSize: '.9rem' }} className="leading-8">
-                    <code>[Learn more](/more)</code>
+                    <code>[了解更多](/more)</code>
                     <br />
                     <code>![Hero](/hero.png)</code>
                   </div>
@@ -104,22 +106,21 @@ const IndexPage: FC = () => {
               href="/docs/guide/syntax-highlighting"
             >
               <h3>
-                Advanced syntax <br className="show-on-mobile" />
-                highlighting solution
+                高级语法高亮 <br className="show-on-mobile" />
+                解决方案
               </h3>
               <p>
-                Performant and reliable build-time syntax highlighting powered
-                by <Link href="https://shiki.style">Shiki</Link>.
+                构建时高效可靠的语法高亮，使用{' '}
+                <Link href="https://shiki.style">Shiki</Link> 驱动。
               </p>
             </Feature>
             <Feature index={3} href="/docs/guide/i18n">
               <h3>
-                I18n as easy as <br className="show-on-mobile" />
-                creating new files
+                国际化（i18n） <br className="show-on-mobile" />
+                简单至极
               </h3>
               <p className="mb-4">
-                Place your page files in folders specific to each locale, Nextra
-                and Next.js will handle the rest for you.
+                只需将页面放入不同语言的文件夹中，Nextra 和 Next.js 将自动处理其余部分。
               </p>
               <I18n />
             </Feature>
@@ -137,9 +138,9 @@ const IndexPage: FC = () => {
                 >
                   MDX 3
                 </Link>{' '}
-                lets you use Components inside Markdown,{' '}
+                让你在 Markdown 中使用组件，
                 <br className="hide-medium" />
-                with huge performance boost since v1.
+                性能比 v1 提升巨大。
               </p>
             </Feature>
             <Feature
@@ -205,9 +206,8 @@ const IndexPage: FC = () => {
                   mixBlendMode: 'difference'
                 }}
               >
-                Dark <br />
-                mode <br />
-                included
+                内置 <br />
+                暗黑模式
               </MotionH3>
             </Feature>
             <Feature
@@ -217,17 +217,15 @@ const IndexPage: FC = () => {
               href="/docs/docs-theme/theme-configuration#search"
             >
               <h3>
-                Full-text search,
-                <br />
-                zero-config needed
+                全文搜索，<br />
+                无需配置
               </h3>
               <p className="z-2">
-                Nextra indexes your content automatically at build-time and
-                performs incredibly fast full-text search via{' '}
+                Nextra 会在构建时自动索引内容，并通过{' '}
                 <Link href="https://github.com/cloudcannon/pagefind">
                   Pagefind
-                </Link>
-                .
+                </Link>{' '}
+                提供超快速的全文搜索。
               </p>
               <div className="z-1 absolute inset-0 size-full bg-[linear-gradient(to_right,white_250px,_transparent)] max-sm:hidden dark:bg-[linear-gradient(to_right,#202020_250px,_transparent)]" />
               <video
@@ -266,8 +264,8 @@ const IndexPage: FC = () => {
               href="/docs/docs-theme/page-configuration"
             >
               <h3>
-                Organize pages intuitively, <br />
-                with file-system routing from Next.js
+                文件即页面，<br />
+                直观管理页面结构
               </h3>
             </Feature>
             <Feature
@@ -279,44 +277,40 @@ const IndexPage: FC = () => {
                 minHeight: 288
               }}
             >
-              <h3>A11y as a top priority</h3>
+              <h3>无障碍支持是优先事项</h3>
               <p>
-                Nextra respects system options <br className="show-on-mobile" />
-                such as <b>Increase Contrast</b> and <b>Reduce Motion</b>.
+                Nextra 支持系统偏好设置，如 <b>提高对比度</b> 和{' '}
+                <b>减少动画</b>。
               </p>
             </Feature>
             <Feature index={9} href="/docs/guide/ssg">
               <h3>
-                Hybrid rendering, <br />
-                next generation
+                下一代混合渲染
               </h3>
               <p className="mr-6">
-                You can leverage the hybrid rendering power from Next.js with
-                your Markdown content including{' '}
+                利用 Next.js 的混合渲染能力处理 Markdown 内容，包括{' '}
                 <Link href="https://nextjs.org/docs/app/building-your-application/rendering/server-components">
                   Server Components
-                </Link>
-                ,{' '}
+                </Link>、{' '}
                 <Link href="https://nextjs.org/docs/app/building-your-application/rendering/client-components">
                   Client Components
-                </Link>
-                , and{' '}
+                </Link> 与{' '}
                 <Link href="https://nextjs.org/docs/app/building-your-application/data-fetching/incremental-static-regeneration">
-                  Incremental Static Regeneration (ISR)
-                </Link>
-                .
+                  ISR（增量静态生成）
+                </Link>。
               </p>
             </Feature>
             <Feature index={10} large>
-              <h3>And more...</h3>
+              <h3>更多功能...</h3>
               <p>
-                SEO / RTL Layout / Pluggable Themes / Built-in Components / Last
-                Git Edit Time / Multi-Docs...
-                <br />A lot of new possibilities to be explored.
+                SEO / RTL 布局 / 可插拔主题 / 内置组件 / Git 最后编辑时间 /
+                多文档站点...
+                <br />
+                更多可能等待你来探索。
               </p>
               <p className="subtitle">
                 <Link className="no-underline" href="/docs">
-                  Start using Nextra →
+                  立即开始使用 Nextra →
                 </Link>
               </p>
             </Feature>

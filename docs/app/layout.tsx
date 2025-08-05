@@ -96,7 +96,7 @@ const RootLayout: FC<{
 }> = async ({ children }) => {
   const pageMap = await getEnhancedPageMap()
   return (
-    <html lang="en" dir="ltr" suppressHydrationWarning>
+    <html lang="zh" dir="ltr" suppressHydrationWarning>
       <Head />
       <body>
         <Layout
