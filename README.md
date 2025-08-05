@@ -4,7 +4,8 @@
 
 ## 文档
 
-https://nextra.site
+官方文档: https://nextra.site  
+中文文档: http://nextra-zh.readme-i18n.com
 
 ## 开发指南
 
