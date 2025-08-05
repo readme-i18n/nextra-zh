@@ -12,12 +12,11 @@ import type { GeneratedFunction, TypeField } from './types.js'
 
 type TSDocProps = {
   /**
-   * Parsed `type`, `interface` or `function` definition from
-   * [`generateDefinition` function](https://nextra.site/api/generatedefinition).
+   * 从 [`generateDefinition` 函数](https://nextra.site/api/generatedefinition) 解析出的 `type`、`interface` 或 `function` 定义。
    */
   definition: ReturnType<typeof generateDefinition>
   /**
-   * Override the function to render markdown into JSX nodes.
+   * 重写将 markdown 渲染为 JSX 节点的函数。
    * @default
    * async function renderMarkdownDefault(description?: string): Promise<ReactNode> {
    *   if (!description) return
@@ -27,13 +26,13 @@ type TSDocProps = {
    */
   renderMarkdown?: typeof renderMarkdownDefault
   /**
-   * Type links map.
+   * 类型链接映射。
    * @default {}
    */
   typeLinkMap?: Record<string, string>
   /**
-   * Custom content to display when a function has no parameters.
-   * @default <Callout type="info">This function does not accept any parameters.</Callout>
+   * 当函数没有参数时显示的自定义内容。
+   * @default <Callout type="info">此函数不接受任何参数。</Callout>
    */
   noParametersContent?: ReactNode
 }
@@ -69,52 +68,48 @@ const classes = {
 }
 
 /**
- * A built-in component lets you generate documentation from `type`, `interface`, and `function`
- * definitions  using [TSDoc](https://tsdoc.org) annotations.
+ * 一个内置组件，让你能够使用 [TSDoc](https://tsdoc.org) 注解从 `type`、`interface` 和 `function` 定义生成文档。
  *
- * ## What it generates
+ * ## 生成内容
  *
- * ### For `type` and `interface`
+ * ### 对于 `type` 和 `interface`
  *
- * Generates a **properties table** with:
+ * 生成一个**属性表格**，包含：
  *
- * - Name
- * - Type and description
- * - Default Value
- * - Permalink
+ * - 名称
+ * - 类型和描述
+ * - 默认值
+ * - 永久链接
  *
- * ### For `function`
+ * ### 对于 `function`
  *
- * 1. **Parameters table**, including:
+ * 1. **参数表格**，包括：
  *
- *    - Name
- *    - Type and description
- *    - Default value
- *    - Permalink
+ *    - 名称
+ *    - 类型和描述
+ *    - 默认值
+ *    - 永久链接
  *
- * 2. **Return signature table**, including:
- *    - Description
- *    - Return values table
+ * 2. **返回签名表格**，包括：
+ *    - 描述
+ *    - 返回值表格
  *
  * > [!TIP]
  * >
- * > - Permalink is a `#` anchor link for easy reference to individual rows.
- * > - Descriptions are parsed from inline TSDoc comments or the `@description`
- * >   tag.
- * > - Supports full Markdown/MDX syntax in descriptions.
- * > - Default values are extracted from the `@default` or `@defaultValue` tags.
- * > - Return descriptions come from the `@returns` tag.
+ * > - 永久链接是一个 `#` 锚链接，便于引用单个行。
+ * > - 描述从内联 TSDoc 注释或 `@description` 标签解析。
+ * > - 在描述中支持完整的 Markdown/MDX 语法。
+ * > - 默认值从 `@default` 或 `@defaultValue` 标签提取。
+ * > - 返回描述来自 `@returns` 标签。
  *
  * > [!WARNING]
  * >
- * > **Server Component Only** – TSDoc component cannot be used in a client
- * > component.<br />
- * > **Available from:** Nextra 4.3 (alpha).<br />
- * > **Dependency:** Uses TypeScript Compiler API from
- * > [`ts-morph`](https://github.com/dsherret/ts-morph).
+ * > **仅限服务器组件** – TSDoc 组件不能用于客户端组件。<br />
+ * > **自以下版本可用：** Nextra 4.3 (alpha)。<br />
+ * > **依赖：** 使用来自 [`ts-morph`](https://github.com/dsherret/ts-morph) 的 TypeScript 编译器 API。
  *
  * @example
- * To generate the props table for the `TSDoc` component shown on this page:
+ * 要为本页显示的 `TSDoc` 组件生成属性表格：
  *
  * ```mdx
  * import { generateDefinition, TSDoc } from 'nextra/tsdoc'
@@ -129,9 +124,9 @@ const classes = {
  * />
  * ```
  *
- * ### Overriding a type
+ * ### 重写类型
  *
- * You can override the inferred type using the `@remarks` tag using backticks (`).
+ * 你可以使用 `@remarks` 标签和反引号（`）重写推断的类型。
  *
  * <ExampleTSDoc />
  */
@@ -176,7 +171,7 @@ export const TSDoc: FC<TSDocProps> = ({
     index = ''
   }: Readonly<{
     signature: GeneratedFunction['signatures'][number]
-    /** Signature index, will be appended to returns anchor. */
+    /** 签名索引，将附加到返回锚点。 */
     index?: string | number
   }>) {
     const slugger = new Slugger()
@@ -389,7 +384,7 @@ function linkify(
     if (href) {
       result.push(
         <Link key={result.length} href={href}>
-          {/* use React fragment to avoid rendering external link icon */}
+          {/* 使用 React fragment 避免渲染外部链接图标 */}
           <>{chunk}</>
         </Link>
       )
