@@ -33,13 +33,13 @@ export type GeneratedFunction = {
   signatures: {
     /** 函数参数。 */
     params: TypeField[]
-    /** 函数返回值。 */
+    /** 函数返回。 */
     returns: TypeField[] | ReturnField
   }[]
 }
 
 export type TypeField = {
-  /** 字段名。 */
+  /** 字段名称。 */
   name: string
   /** 字段类型。 */
   type: string

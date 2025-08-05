@@ -13,7 +13,7 @@ import type { FC, HTMLAttributes } from 'react'
  * ### 文本
  *
  * <Bleed className="bg-white dark:bg-neutral-800 px-16 py-10 text-center border">
- *   _写作没什么难的。你所要做的就是坐在打字机前，然后 **流血**。_
+ *   _写作没有什么秘诀。你只需要坐在打字机前，然后 **倾注心血**。_
  *
  *   — 欧内斯特·海明威
  * </Bleed>
@@ -31,7 +31,7 @@ import type { FC, HTMLAttributes } from 'react'
  *
  * ### 全出血
  *
- * 你甚至可以通过使用 `<Bleed full>` 使其全出血：
+ * 你甚至可以通过使用 `<Bleed full>` 使其 full-bleed：
  *
  * <Bleed full>![Nextra](/opengraph-image.jpeg)</Bleed>
  *

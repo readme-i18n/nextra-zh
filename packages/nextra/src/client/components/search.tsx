@@ -130,10 +130,9 @@ const DEV_SEARCH_NOTICE = (
 )
 
 /**
- * 内置搜索组件提供开箱即用的无缝快速搜索体验。在底层，它利用了
- * [Pagefind 包](https://pagefind.app) —— 一个为静态站点优化的全客户端搜索引擎。Pagefind 在构建时索引您的内容，并在运行时实现高性能、零 JavaScript 依赖的搜索。
+ * 内置搜索组件提供开箱即用的无缝快速搜索体验。在底层，它利用了[Pagefind包](https://pagefind.app)——一个专为静态站点优化的全客户端搜索引擎。Pagefind在构建时索引您的内容，并在运行时实现高性能、零JavaScript依赖的搜索。
  *
- * @see [Nextra 搜索设置指南](https://nextra.site/docs/guide/search)
+ * @see [Nextra搜索设置指南](https://nextra.site/docs/guide/search)
  */
 export const Search: FC<SearchProps> = ({
   className,

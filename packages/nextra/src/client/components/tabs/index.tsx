@@ -29,7 +29,7 @@ import { Tabs as _Tabs, Tab } from './index.client.js'
  *
  * ### 默认选中索引
  *
- * 你可以使用 `defaultIndex` 属性来设置默认的标签页索引：
+ * 可以使用 `defaultIndex` 属性设置默认标签页索引：
  *
  * ```mdx /defaultIndex="1"/
  * import { Tabs } from 'nextra/components'
@@ -39,7 +39,7 @@ import { Tabs as _Tabs, Tab } from './index.client.js'
  * </Tabs>
  * ```
  *
- * 这样 `npm` 就会作为默认选中的标签页：
+ * 这样 `npm` 将成为默认标签页：
  *
  * <Tabs items={['pnpm', 'npm', 'yarn']} defaultIndex="1">
  *   <Tabs.Tab>**pnpm**: Fast, disk space efficient package manager.</Tabs.Tab>

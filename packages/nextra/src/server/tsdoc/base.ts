@@ -177,7 +177,7 @@ export function generateDefinition({
 }
 
 /**
- * 如果在符号上找不到注释，则使用别名符号的注释。
+ * 如果在符号上未找到注释，则使用别名符号的注释。
  */
 function getCommentAndTags(declaration: ExportedDeclarations): {
   comment: ts.SymbolDisplayPart[]

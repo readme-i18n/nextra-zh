@@ -91,7 +91,7 @@ type NormalizedResult = {
   /** 当前页面的活动类型，用于确定主题中的布局。 */
   activeType?: 'doc' | 'page' | 'menu'
   /**
-   * 当前页面的活动索引，与 `flatDocsDirectories` 项结合用于分页。
+   * 当前页面的活动索引，与 `flatDocsDirectories` 项结合使用以实现分页。
    */
   activeIndex: number
   activeThemeContext: PageTheme

@@ -68,7 +68,7 @@ import type { EvaluateResult } from '../types.js'
  * @see
  * - [内容目录文档](https://nextra.site/docs/file-conventions/content-directory)
  * - [Next.js 动态路由](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes)
- * - [Next.js 元数据 API](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
+ * - [Next.js Metadata API](https://nextjs.org/docs/app/building-your-application/optimizing/metadata)
  */
 export async function importPage(
   /**

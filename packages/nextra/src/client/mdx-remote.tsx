@@ -19,7 +19,7 @@ export type MDXRemoteProps = Readonly<{
    */
   scope?: Scope
   /**
-   * Nextra 的 [`compileMdx` 函数](https://nextra.site/api/compilemdx) 编译的原始 JavaScript MDX 源代码。
+   * 由 Nextra 的 [`compileMdx` 函数](https://nextra.site/api/compilemdx) 编译的原始 JavaScript MDX 源代码。
    */
   compiledSource: string
 }>

@@ -52,7 +52,7 @@ type PlaygroundProps = {
  *
  * ### 避免无样式输出
  *
- * 为了防止无样式元素，从你的 `mdx-components` 文件中导入 `useMDXComponents`。
+ * 为了防止无样式的元素，从你的 `mdx-components` 文件中导入 `useMDXComponents`。
  * 调用此函数并将返回的组件传递给 `components` 属性。你也可以将你的自定义组件作为第一个参数包含进去：
  *
  * ```mdx {1,6-8}

@@ -150,7 +150,7 @@ export const HeadPropsSchema = z.strictObject({
  * }
  * ```
  *
- * #### 在[带有 catch-all 段的动态路由中](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#catch-all-segments)
+ * #### 在 [带有 catch-all 段的动态路由中](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes#catch-all-segments)
  *
  * ```jsx filename="app/[[...mdxPath]]/page.jsx"
  * import { importPage } from 'nextra/pages'
@@ -177,7 +177,7 @@ export const HeadPropsSchema = z.strictObject({
  * > [!TIP]
  * >
  * > 可以独立调整深色或浅色模式的亮度以提高可读性。例如，要有一个中性主色调，
- * > 可以在深色主题上设置主色调为白色 `HSL(0, 0%, 100%)`，在浅色主题上为灰色 `HSL(0, 0%, 50%)`。
+ * > 可以在深色主题中设置主色调为白色 `HSL(0, 0%, 100%)`，在浅色主题中为灰色 `HSL(0, 0%, 50%)`。
  * >
  * > ```jsx filename="app/layout.jsx"
  * > <Head
@@ -194,7 +194,7 @@ export const HeadPropsSchema = z.strictObject({
  *
  * ### Favicon 图标
  *
- * 并非所有浏览器都支持此功能，但这是通过使用表情符号或字符自定义网站 favicon 的好方法。
+ * 并非所有浏览器都支持，但这是通过使用表情符号或字符自定义网站 favicon 的好方法。
  *
  * ```jsx filename="app/layout.jsx"
  * <Head faviconGlyph="✦" />

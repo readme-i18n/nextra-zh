@@ -41,7 +41,7 @@ export interface NextraConfig {
   readingTime?: boolean
 
   /**
-   * 启用 LaTeX，可通过 [KaTeX](https://katex.org) 直接在 MDX 中预渲染 LaTeX 表达式，或通过 [MathJax](https://mathjax.org) 在浏览器中动态渲染数学公式。
+   * 启用 LaTeX，可以使用 [KaTeX](https://katex.org) 直接在 MDX 中预渲染 LaTeX 表达式，或使用 [MathJax](https://mathjax.org) 在浏览器中动态渲染数学公式。
    */
   latex?: boolean | {
     renderer: "mathjax"
@@ -123,13 +123,13 @@ export interface NextraConfig {
   whiteListTagsStyling?: string[]
 
   /**
-   * 选项，用于从 `content` 目录以自定义路径而非根路径（`/`）提供 `.md` 和 `.mdx` 文件。
+   * 从 `content` 目录以自定义路径而非根路径（`/`）提供 `.md` 和 `.mdx` 文件的选项。
    * @default "/"
    */
   contentDirBasePath?: string
 
   /**
-   * 在页面地图信息中为所有链接添加语言环境前缀。对于不想使用 Nextra 的 `middleware` 函数的 i18n 场景非常有用。
+   * 在页面地图信息中为所有链接添加区域设置前缀。在不使用 Nextra 的 `middleware` 函数时，对 i18n 很有用。
    * @default false
    */
   unstable_shouldAddLocaleToLinks?: boolean
@@ -203,13 +203,13 @@ export interface HeadProps {
    */
   backgroundColor?: {
     /**
-     * 暗色主题的背景颜色。<br/>格式：`"rgb(RRR,GGG,BBB)" | "#RRGGBB"`
+     * 深色主题的背景颜色。<br/>格式：`"rgb(RRR,GGG,BBB)" | "#RRGGBB"`
      * @default "rgb(17,17,17)"
      */
     dark?: string
 
     /**
-     * 亮色主题的背景颜色。<br/>格式：`"rgb(RRR,GGG,BBB)" | "#RRGGBB"`
+     * 浅色主题的背景颜色。<br/>格式：`"rgb(RRR,GGG,BBB)" | "#RRGGBB"`
      * @default "rgb(250,250,250)"
      */
     light?: string

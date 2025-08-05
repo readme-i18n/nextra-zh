@@ -167,7 +167,7 @@ export async function loader(
  * "ru": () => import("./placeholder.js?lang=ru")
  * }[locale]()
  *
- * 这样静态分析器就能知道要传递哪个 `resourceQuery` 给加载器
+ * 这样静态分析器就能知道要传递给加载器的 `resourceQuery`
  **/
 function replaceDynamicResourceQuery(
   rawJs: string,

@@ -95,25 +95,25 @@ type CalloutProps = HTMLAttributes<HTMLDivElement> & {
  * @usage
  * ### 默认
  *
- * <Callout>帮助您更好或更轻松地完成事情的实用建议。</Callout>
+ * <Callout>有助于更好或更轻松地完成事情的实用建议。</Callout>
  *
  * ```mdx
  * import { Callout } from 'nextra/components'
  *
- * <Callout>帮助您更好或更轻松地完成事情的实用建议。</Callout>
+ * <Callout>有助于更好或更轻松地完成事情的实用建议。</Callout>
  * ```
  *
  * ### 信息
  *
  * <Callout type="info">
- *   即使用户快速浏览内容，也应了解的有用信息。
+ *   即使用户快速浏览内容也应了解的有用信息。
  * </Callout>
  *
  * ```mdx
  * import { Callout } from 'nextra/components'
  *
  * <Callout type="info">
- *   即使用户快速浏览内容，也应了解的有用信息。
+ *   即使用户快速浏览内容也应了解的有用信息。
  * </Callout>
  * ```
  *
@@ -148,14 +148,14 @@ type CalloutProps = HTMLAttributes<HTMLDivElement> & {
  * ### 重要
  *
  * <Callout type="important">
- *   用户需要了解的关键信息，以实现他们的目标。
+ *   用户需要了解的关键信息以实现其目标。
  * </Callout>
  *
  * ```mdx
  * import { Callout } from 'nextra/components'
  *
  * <Callout type="important">
- *   用户需要了解的关键信息，以实现他们的目标。
+ *   用户需要了解的关键信息以实现其目标。
  * </Callout>
  * ```
  *

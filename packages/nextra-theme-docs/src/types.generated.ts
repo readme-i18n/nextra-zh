@@ -7,7 +7,7 @@ export interface LayoutProps {
   children: React.ReactNode
 
   /**
-   * 显示或隐藏暗黑模式选择按钮。
+   * 显示或隐藏深色模式选择按钮。
    * @default true
    */
   darkMode?: boolean
@@ -46,7 +46,7 @@ export interface LayoutProps {
     /**
      * 反馈链接的 URL。
      * 
-     * 默认情况下，它是一个指向文档仓库问题创建表单的链接，并预填了当前页面标题：
+     * 默认情况下，它是指向文档仓库问题创建表单的链接，并预填了当前页面标题：
      * [示例](https://github.com/shuding/nextra/issues/new?title=Feedback%20for%20%E2%80%9CTheme%20Configuration%E2%80%9D&labels=feedback)。
      */
     link?: string
@@ -128,7 +128,7 @@ export interface LayoutProps {
   }
 
   /**
-   * 页面地图列表。`getPageMap(route = '/')` 调用的结果。
+   * 页面映射列表。`getPageMap(route = '/')` 调用的结果。
    */
   pageMap: import("nextra").PageMapItem[]
 
@@ -147,7 +147,7 @@ export interface LayoutProps {
    */
   sidebar?: {
     /**
-     * 如果为 `true`，自动折叠 `defaultMenuCollapseLevel` 以上的非活动文件夹。
+     * 如果为 `true`，则自动折叠 `defaultMenuCollapseLevel` 以上的非活动文件夹。
      */
     autoCollapse?: boolean
 
@@ -171,7 +171,7 @@ export interface LayoutProps {
   }
 
   /**
-   * 主题切换选项的翻译。
+   * 主题切换中的选项翻译。
    * @default {
    *   "dark": "Dark",
    *   "light": "Light",

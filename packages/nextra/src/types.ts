@@ -122,11 +122,11 @@ export type PagefindSearchOptions = {
    */
   verbose?: boolean
   /**
-   * 与此搜索一起执行的过滤器集。输入类型非常灵活，详情请参阅过滤文档。
+   * 与此搜索一起执行的过滤器集合。输入类型非常灵活，详情请参阅过滤文档。
    */
   filters?: object
   /**
-   * 用于此搜索的排序集，而非相关性排序。
+   * 用于此搜索的排序集合，而非相关性排序。
    */
   sort?: object
 }

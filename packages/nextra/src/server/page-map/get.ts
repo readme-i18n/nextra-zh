@@ -12,11 +12,11 @@ const defaultLocale = process.env.NEXTRA_DEFAULT_LOCALE
 /**
  * 获取给定路由的页面映射结构，处理嵌套路由。
  *
- * 页面映射结构表示文档或内容的层级组织，
+ * 页面映射结构表示文档或内容的层次组织，
  * 其中每个项目可以是页面或包含更多页面的文件夹。
  *
- * @returns 一个解析为`PageMapItem`对象数组的Promise，表示页面结构
- * 如`MdxFile`、`Folder`和`MetaJsonFile`。
+ * @returns 一个解析为表示页面结构的 `PageMapItem` 对象数组的 Promise，
+ * 例如 `MdxFile`、`Folder` 和 `MetaJsonFile`。
  *
  * @example
  * ```ts
@@ -28,17 +28,17 @@ const defaultLocale = process.env.NEXTRA_DEFAULT_LOCALE
  * // 获取特定路由的页面映射
  * const blogPageMap = await getPageMap('/blog')
  *
- * // 使用i18n时获取特定语言的页面映射
+ * // 使用 i18n 时获取特定语言的页面映射
  * const enPageMap = await getPageMap('/en')
  * ```
  *
- * @throws {Error} 当在页面映射中找不到指定的路由段时。
+ * @throws {Error} 当在页面映射中找不到指定的路由段时抛出错误。
  *
  * @see [页面映射结构文档](https://nextra.site/docs/file-conventions/meta-file#pagemap-structure)。
  */
 export async function getPageMap(
   /**
-   * 要获取页面映射的路由路径。
+   * 要检索页面映射的路由路径。
    * @default "/"
    */
   route = '/'
